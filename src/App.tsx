@@ -1,8 +1,10 @@
+import Register from "./pages/Register"; 
+
 const App = () => {
   return (
-    <div>
-      <p>testeee</p>
-    </div>
+    <>
+      <Register />
+    </>
   );
 };
 
