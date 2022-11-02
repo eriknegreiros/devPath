@@ -6,6 +6,13 @@
       "name": "Petrus",
       "occupation": "Estudante",
       "id": 1
+    },
+    {
+      "email": "pietro@mail.com",
+      "password": "$2a$10$/VzRFXvZPoXIZXoYiVsWnuhv1TY2h1vS9PBoQ4ahYhxg9IJBKCvx6",
+      "name": "Pietro",
+      "occupation": "Estudante",
+      "id": 2
     }
   ]
 }
