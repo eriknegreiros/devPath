@@ -1,4 +1,5 @@
-import Form from "../../components/Form";
+import Form from "../../Components/Form";
+import img from '../../Assets/img-register.svg'
 
 import { Header, Main } from "./styles";
 
@@ -6,7 +7,7 @@ const Register = () => {
   return (
     <>
       <Header>
-        <img src="logo.svg" alt="" />
+        <img src={img} alt="" />
         <section className="buttons-header">
           <button>Voltar</button>
           <button>Cadastro</button>
@@ -21,6 +22,7 @@ const Register = () => {
           <Form />
         </section>
       </Main>
+      
     </>
   );
 };

@@ -1,9 +1,9 @@
-import Register from "./pages/Register"; 
+import RoutesMain from "./Routes/index"; 
 
 const App = () => {
   return (
     <>
-      <Register />
+     <RoutesMain/>
     </>
   );
 };
