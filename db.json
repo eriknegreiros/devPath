@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "email": "petrusdev@mail.com",
+      "password": "$2a$10$qScevT9tltbAehTQoN3aX.GaCNcR3fIE1jk9hzXzhmf2DwxpC4prS",
+      "name": "Petrus",
+      "occupation": "Estudante",
+      "id": 1
+    }
+  ]
+}
