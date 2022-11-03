@@ -1,9 +1,11 @@
+
+import RoutesMain from "./Routes/index"; 
+
 const App = () => {
   return (
-    <div>
-      <p>testeee</p>
-    </div>
+    <>
+     <RoutesMain/>
+    </>
   );
 };
-
 export default App;
