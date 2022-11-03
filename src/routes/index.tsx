@@ -3,6 +3,8 @@ import Register from "../pages/Register";
 import Home from "../pages/Home";
 import WhoWeAre from "../pages/WhoWeAre";
 import SelectTask from "../pages/Dashboard/SelectTask";
+import Login from "../pages/login";
+
 
 const RoutesMain = () => {
   return (
@@ -11,7 +13,8 @@ const RoutesMain = () => {
       <Route path="*" element={<Home />} />
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />
-      <Route path="/dashboard/selectTask" element={<SelectTask />} />
+      <Route path="/dashboard/selectTask" element={<SelectTask/>} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 };
