@@ -9,8 +9,8 @@ export const Header = styled.header`
 
   padding: 40px 25px;
 
-  background: #000610;
-  border-bottom: 1px solid #051866;
+  background: var(--main-color);
+  border-bottom: 1px solid var(--main-color2);
 
   img {
     width: 150px;
@@ -30,18 +30,18 @@ export const Header = styled.header`
       font-family: "Inter";
       font-style: normal;
       font-weight: 700;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: var(--text-size5);
+      line-height: 18px;
       text-align: center;
 
-      border: none;
+      border: 1px solid transparent;
       border-radius: 8px;
 
-      color: #ffffff;
-      background: #010a26;
+      color: var(--text-color5);
+      background: var(--main-color2);
 
       &:hover {
-        border: 1px solid #ffffff;
+        border: 1px solid var(--text-color5);
       }
     }
   }
@@ -59,28 +59,30 @@ export const Main = styled.main`
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  font-size: 22px;
+  font-size: var(--text-size2);
   line-height: 24px;
 
-  background: #000610;
+  background: var(--main-color);
 
   .form-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
 
     width: 80%;
+    margin-top: 40px;
 
     h3 {
-      font-size: 36px;
-      line-height: 40px;
+      margin-bottom: 30px;
+
+      font-size: var(--text-size);
+      line-height: 28px;
       text-align: center;
     }
 
     p {
-      font-size: 24px;
-      line-height: 28px;
+      font-size: var(--text-size4);
+      line-height: 16px;
       text-align: center;
     }
   }
