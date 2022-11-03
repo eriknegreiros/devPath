@@ -14,7 +14,10 @@ const HeaderMenu = () => {
             {" "}
             <p>Quem Somos</p>
           </Link>
-          <p>Login</p>
+          <Link to="/login">
+            {" "}
+            <p>Login</p>
+          </Link>
           <Link to="/signUp">
             {" "}
             <p>Cadastro</p>
