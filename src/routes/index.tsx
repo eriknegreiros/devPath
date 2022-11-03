@@ -3,6 +3,7 @@ import Register from "../pages/Register";
 import Home from "../pages/Home";
 import WhoWeAre from "../pages/WhoWeAre";
 import Login from "../pages/login";
+import DashboardContents from "../pages/DashboardContents";
 
 const RoutesMain = () => {
   return (
@@ -12,6 +13,7 @@ const RoutesMain = () => {
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />
       <Route path="/" element={<Login />} />
+      <Route path="dashboard" element={< DashboardContents />} />
     </Routes>
   );
 };
