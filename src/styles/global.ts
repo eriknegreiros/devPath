@@ -5,9 +5,12 @@ const GlobalStyle = createGlobalStyle`
         --main-color: #010A26;
         --main-color2: #051866;
         --main-color3: #5259FF;
+        --main-color4: #000610;
 
         --positive-color: #3FE864;
         --negative-color: #E83F5B;
+
+        --white: #FFFFFF;
 
         --text-color: #121214;
         --text-color2: #212529;
@@ -22,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
         --text-size4: 14px;
         --text-size5: 16px;
         --main-wiigth2: regular;
+        
+
+        --font:'Inter', sans-serif;
+
     }
     
     *{
@@ -38,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background-color: var(--main-color);
+    background-color: var(--main-color4);
     color: var(--text-color5);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
