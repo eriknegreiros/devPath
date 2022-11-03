@@ -12,17 +12,17 @@ const FormStyles = styled.form`
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: var(--text-size2);
   line-height: 24px;
 
-  color: #ffffff;
+  color: var(--text-color5);
 
   label {
     font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: var(--text-size4);
+    line-height: 16px;
 
-    margin: 20px 0 8px 0;
+    margin: 15px 0 3px 0;
   }
 
   input {
@@ -33,12 +33,12 @@ const FormStyles = styled.form`
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: var(--text-size3);
     line-height: 24px;
 
     border: none;
 
-    color: #000610;
+    color: var(--main-color);
     background: transparent;
 
     &::placeholder {
@@ -46,14 +46,13 @@ const FormStyles = styled.form`
     }
   }
 
-  p {
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 20px;
+  .error {
+    font-weight: 600;
+    font-size: var(--text-size4);
+    line-height: 16px;
     text-align: left !important;
 
-
-    color: red;
+    color: var(--negative-color);
   }
 
   div,
@@ -68,13 +67,13 @@ const FormStyles = styled.form`
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: var(--text-size3);
     line-height: 24px;
 
     border-radius: 4px;
 
-    color: rgba(5, 24, 102, 0.54);
-    background: #c2c9e3;
+    color: var(--main-color2);
+    background: var(--text-color5);
   }
 
   select {
@@ -83,7 +82,7 @@ const FormStyles = styled.form`
 
     border: none;
 
-    color: #000610;
+    color: var(--text-color);
   }
 
   button {
@@ -94,22 +93,22 @@ const FormStyles = styled.form`
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-size: 28px;
+    font-size: var(--text-size);
     line-height: 30px;
     text-align: center;
 
-    border: 1px solid #ffffff;
+    border: 1px solid var(--text-color5);
     border-radius: 10px;
 
-    color: #ffffff;
-    background: #010a26;
+    color: var(--text-color5);
+    background: var(--main-color);
 
     &:hover {
-      background: #000610;
+      background: var(--main-color2);
     }
 
     &:active {
-      background: #051866;
+      background: var(--main-color3);
     }
   }
 `;

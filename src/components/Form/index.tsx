@@ -11,20 +11,20 @@ const Form = () => {
   const { registerUser } = useContext(UserContext);
 
   const formSchema = yup.object().shape({
-    name: yup.string().required("Nome obrigatório"),
-    email: yup.string().required("Email obrigatório").email("Email inválido"),
+    name: yup.string().required("*Nome obrigatório"),
+    email: yup.string().required("*Email obrigatório").email("Email inválido"),
     password: yup
       .string()
-      .required("Senha obrigatória")
+      .required("*Senha obrigatória")
       .matches(
         /(^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*_-])).{8,}$/,
-        "Deve conter 8 caracteres, uma maiúscula, uma minúscula, um número e um caracter especial"
+        "*Deve conter 8 caracteres, uma maiúscula, uma minúscula, um número e um caracter especial"
       ),
     confirmPassword: yup
       .string()
       .oneOf(
         [yup.ref("password")],
-        "Confirmação de senha deve ser igual a senha"
+        "*Confirmação de senha deve ser igual a senha"
       ),
   });
 
@@ -48,7 +48,7 @@ const Form = () => {
         />
         <HiUser />
       </div>
-      <p>{errors.name?.message}</p>
+      <p className="error">{errors.name?.message}</p>
 
       <label htmlFor="email">Email</label>
       <div>
@@ -60,7 +60,7 @@ const Form = () => {
         />
         <HiOutlineMail />
       </div>
-      <p>{errors.email?.message}</p>
+      <p className="error">{errors.email?.message}</p>
 
       <label htmlFor="password">Senha</label>
       <div>
@@ -73,7 +73,7 @@ const Form = () => {
         />
         <HiEye />
       </div>
-      <p>{errors.password?.message}</p>
+      <p className="error">{errors.password?.message}</p>
 
       <label htmlFor="confirmPassword">Confirmar a senha</label>
       <div>
@@ -86,7 +86,7 @@ const Form = () => {
         />
         <HiEye />
       </div>
-      <p>{errors.confirmPassword?.message}</p>
+      <p className="error">{errors.confirmPassword?.message}</p>
 
       <label htmlFor="occupation">Ocupação</label>
       <select id="select-ocuppation" {...register("occupation")}>
