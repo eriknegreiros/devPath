@@ -1,19 +1,23 @@
 import frontEnd from "../../Assets/frontend-line-basic.png"
+import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard"
 import {ContainerMain} from "./style"
 
 const DashboardContents = () => {
     return (
-
+        <>
+           <HeaderDashboard />
         
-       <ContainerMain>
-        <aside>
-        <h2>Front-End</h2>
-        <p>Nnivél Básico</p>
-        </aside>
+        <ContainerMain>
+
+            <aside>
+                <h2>Front-End</h2>
+                <p>Nnivél Básico</p>
+            </aside>
 
 
         <ul>
             <img src={ frontEnd } alt="Linha do Tempo tecnologias" />
+            
             <li className="CardTech">
                 <h3>Introdução ao IDE</h3>
                 <p>Introdução ao ambiente de desenvolvimento (Visual Studio Code)</p>
@@ -27,6 +31,7 @@ const DashboardContents = () => {
         </ul>
 
        </ContainerMain>
+        </>
     )
 }
 export default DashboardContents
