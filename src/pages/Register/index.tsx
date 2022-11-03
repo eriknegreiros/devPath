@@ -1,8 +1,8 @@
-import Form from "../../components/Register/Form";
+import Form from "../../Components/Register/Form";
 import img from "../../Assets/img-register.svg";
 
 import { Main } from "./styles";
-import Header from "../../components/Register/Header";
+import Header from "../../Components/Register/Header";
 
 const Register = () => {
   return (
