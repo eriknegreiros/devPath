@@ -1,3 +1,4 @@
+
 import RoutesMain from "./Routes/index"; 
 
 const App = () => {
@@ -7,5 +8,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;
