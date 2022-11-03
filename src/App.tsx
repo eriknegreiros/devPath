@@ -1,9 +1,12 @@
+import RoutesMain from "./routes";
+import GlobalStyle from "./styles/global";
+
 const App = () => {
   return (
-    <div>
-      <p>testeee</p>
-    </div>
+    <>
+      <GlobalStyle />
+      <RoutesMain />
+    </>
   );
 };
-
 export default App;
