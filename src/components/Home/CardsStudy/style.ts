@@ -5,7 +5,8 @@ export const Section = styled.section`
   border-bottom: 1px solid var(--main-color2);
 
   @media (min-width: 768px) {
-    height: 97vh;
+    min-height: 97vh;
+    max-height: 180vh;
   }
 `;
 
@@ -42,8 +43,8 @@ export const Card = styled.div`
 
   div {
     background-color: #c2c9e32b;
-    width: 300px;
-    height: 200px;
+    width: 280px;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,11 +53,13 @@ export const Card = styled.div`
     border-radius: 6px;
   }
 
-  .aoba {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  @media (min-width: 768px) {
+    div{
+      width: 20vw;
+    }
   }
+
+  
 
   img {
     width: 100px;

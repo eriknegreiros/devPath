@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { iUser, UserContext } from "../../Context/UserContext";
+import { iUser, UserContext } from "../../../Context/UserContext";
 import { useContext } from "react";
 import { HiUser, HiEye, HiOutlineMail } from "react-icons/hi";
 
@@ -66,7 +66,7 @@ const Form = () => {
       <div>
         <input
           id="password"
-          placeholder="*******"
+          placeholder="********"
           type="password"
           autoComplete="on"
           {...register("password")}
@@ -79,7 +79,7 @@ const Form = () => {
       <div>
         <input
           id="confirm-password"
-          placeholder="*******"
+          placeholder="********"
           type="password"
           autoComplete="on"
           {...register("confirmPassword")}
@@ -89,17 +89,21 @@ const Form = () => {
       <p className="error">{errors.confirmPassword?.message}</p>
 
       <label htmlFor="occupation">Ocupação</label>
-      <select id="select-ocuppation" {...register("occupation")}>
-        <option value="Estudante">Estudante</option>
-        <option value="Desenvolvedor Front-end">Desenvolvedor Front-end</option>
-        <option value="Desenvolvedor Back-end">Desenvolvedor Back-end</option>
-        <option value="Desenvolvedor Full-stack">
-          Desenvolvedor Full-stack
-        </option>
-        <option value="Design UI/UX">Design UI/UX</option>
-        <option value="Entusiasta Tech">Entusiasta Tech</option>
-        <option value="Outro">Outro</option>
-      </select>
+      <div className="divSelect">
+        <select id="appearanceSelect" {...register("occupation")}>
+          <option value="Estudante">Estudante</option>
+          <option value="Desenvolvedor Front-end">
+            Desenvolvedor Front-end
+          </option>
+          <option value="Desenvolvedor Back-end">Desenvolvedor Back-end</option>
+          <option value="Desenvolvedor Full-stack">
+            Desenvolvedor Full-stack
+          </option>
+          <option value="Design UI/UX">Design UI/UX</option>
+          <option value="Entusiasta Tech">Entusiasta Tech</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
 
       <button type="submit">Enviar</button>
     </FormStyles>

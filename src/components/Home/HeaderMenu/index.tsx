@@ -1,11 +1,26 @@
 import { Link } from "react-router-dom";
 import { Header } from "./style";
+import { motion } from "framer-motion";
+
+
 
 const HeaderMenu = () => {
   return (
     <>
+     <motion.div
+      initial={{ opacity: 0, y: -180 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        ease: "easeInOut",
+        duration: 0.7,
+        delay: 0.2,
+      }}>
+
       <Header>
+        
         <h1>DevPath</h1>
+       
+
         <li>
           <Link to="/">
             <p>Home</p>
@@ -14,13 +29,18 @@ const HeaderMenu = () => {
             {" "}
             <p>Quem Somos</p>
           </Link>
-          <p>Login</p>
+          <Link to="/login">
+            {" "}
+            <p>Login</p>
+          </Link>
           <Link to="/signUp">
             {" "}
             <p>Cadastro</p>
           </Link>
         </li>
       </Header>
+      </motion.div>
+
     </>
   );
 };

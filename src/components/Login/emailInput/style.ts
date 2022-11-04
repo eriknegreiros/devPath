@@ -4,10 +4,10 @@ const InputContainer = styled.div`
   width: 100%;
   height: 40px;
   border-radius: 4px;
-  border: solid 2px var(--main-color6);
+  border: none;
 
   padding-left: 10px;
-  background-color: white;
+  background-color: #c2c9e3;
   display: flex;
   align-items: center;
 
@@ -15,6 +15,7 @@ const InputContainer = styled.div`
     width: 100%;
     border: none;
     height: 100%;
+    background-color: #c2c9e3;
     font-size: var(--text-size3);
     outline: none;
   }
