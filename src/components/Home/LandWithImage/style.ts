@@ -30,7 +30,7 @@ export const Section = styled.section`
     text-align: center;
     font-size: 1.25rem;
     font-family: var(--font);
-    margin-left: 5px;
+    margin-left: 10px;
     margin-right: 5px;
   }
   p {
@@ -66,7 +66,7 @@ export const Section = styled.section`
 
     div {
       align-items: flex-start;
-      margin-left: 50px;
+      margin-left: 1.4vw;
       gap: 40px;
     }
 
