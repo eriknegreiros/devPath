@@ -23,7 +23,7 @@ const PasswordInput = ({ register } : IProps ) => {
     <DivInput>
       <input
         type={visibility ? "text" : "password"}
-        placeholder="Senha"
+        placeholder='senha'
         {...register(`password`)}
       />
       <button className="eye" type="button" onClick={toggleBtn}>

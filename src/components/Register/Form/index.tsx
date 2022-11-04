@@ -58,7 +58,7 @@ const Form = () => {
           type="email"
           {...register("email")}
         />
-        <HiOutlineMail />
+        <HiOutlineMail  />
       </div>
       <p className="error">{errors.email?.message}</p>
 

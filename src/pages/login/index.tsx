@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import Lottie from "react-lottie";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import Header from '../../Components/Register/Header'
+import img from '../../Assets/login.gif'
 
 interface iLogin {
   email: string;
@@ -15,8 +17,8 @@ interface iLogin {
 
 const Login = () => {
   const Schema = yup.object().shape({
-    password: yup.string().required("Senha obrigatorio!"),
     email: yup.string().required("Email obrigatorio!!").email(),
+    password: yup.string().required("Senha obrigatorio!"),
   });
 
   const {
@@ -39,22 +41,13 @@ const Login = () => {
 
   return (
     <ContainerLogin>
-      <header>
-        <div>
-          <h1>DevPath</h1>
-        </div>
-        <nav>
-          <Link className="buttonLink" to="/register">
-            Cadastrar-se
-          </Link>
-          <Link className="buttonLink" to="/">
-            Login
-          </Link>
-        </nav>
-      </header>
+     
+    <Header/>
+
       <main>
         <section className="container">
-          <Lottie options={defaultOptions}></Lottie>
+          <img className="img" src={img} alt="" />
+
         </section>
 
         <form>
@@ -68,7 +61,9 @@ const Login = () => {
 
           <label>Senha</label>
           <PasswordInput register={register} />
-          <p>{errors.email?.message}</p>
+          <p>{errors.password?.message}</p>
+
+          
 
           <Button>Entrar</Button>
           <section>

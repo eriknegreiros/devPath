@@ -1,5 +1,5 @@
 import Form from "../../Components/Register/Form";
-import img from "../../Assets/img-register.svg";
+import img from "../../Assets/Sign up.gif";
 
 import { Main } from "./styles";
 import Header from "../../Components/Register/Header";

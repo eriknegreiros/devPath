@@ -1,4 +1,4 @@
-import { AiOutlineMail } from "react-icons/ai";
+import { HiOutlineMail } from "react-icons/hi";
 import InputContainer from "./style";
 import React from "react";
 import {
@@ -16,7 +16,7 @@ const EmailInput = ({ register }: IProps) => {
     <InputContainer>
       <input type="email" placeholder="Email" {...register(`email`)} />
       <button type="button">
-        <AiOutlineMail />
+        <HiOutlineMail color="#5c6ca4" />
       </button>
     </InputContainer>
   );

@@ -23,11 +23,15 @@ export const Main = styled.main`
   }
 
   img {
-    width: 0vw;
+    display: none;
 
     @media screen and (min-width: 768px) {
-      width: 30vw;
+      width: 500px;
+      display: inline;
+      margin-top: 5vh;
     }
+
+   
   }
 
   .formSection {
@@ -45,14 +49,14 @@ export const Main = styled.main`
 
     .title {
       margin-bottom: 0.625rem;
-
+      margin-top: 5vh;
       font-size: 1.38rem;
       line-height: 1.5rem;
       text-align: center;
 
       @media screen and (min-width: 768px) {
         margin-bottom: 1.56rem;
-
+        margin-top: 20px;
         font-size: 1.63rem;
         line-height: 1.75rem;
       }

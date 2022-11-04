@@ -26,7 +26,7 @@ const FormStyles = styled.form`
   }
 
   input {
-    height: 2rem;
+    height: 1.8rem;
     width: 80%;
     margin: 0.3125rem 0;
 
@@ -52,7 +52,7 @@ const FormStyles = styled.form`
     }
 
     @media screen and (min-width: 768px) {
-      height: 2.25rem;
+      height: 1.8rem;
     }
   }
 
@@ -107,7 +107,7 @@ const FormStyles = styled.form`
     }
 
     @media screen and (min-width: 768px) {
-      height: 3rem;
+      height: 2.4rem;
     }
   }
 
