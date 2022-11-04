@@ -18,6 +18,7 @@ const InputContainer = styled.div`
     background-color: #c2c9e3;
     font-size: var(--text-size3);
     outline: none;
+    font-family: var(--font);
   }
   button {
     display: flex;
@@ -26,5 +27,6 @@ const InputContainer = styled.div`
     background-color: none;
     background-color: transparent;
   }
+
 `;
 export default InputContainer;
