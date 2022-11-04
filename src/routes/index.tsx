@@ -4,8 +4,9 @@ import Home from "../pages/Home";
 import WhoWeAre from "../pages/WhoWeAre";
 import SelectTask from "../pages/Dashboard/SelectTask";
 import Login from "../pages/login";
-import DashboardContents from "../pages/DashboardContents";
-
+import DashboardFrontBasic from "../pages/DashboardFrontBasic";
+import DashboardFrontIntermediario from "../pages/DashboardFrontIntermediario";
+import DashboardFrontAvancado from "../pages/DashboardFrontAvancado";
 
 const RoutesMain = () => {
   return (
@@ -17,10 +18,11 @@ const RoutesMain = () => {
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />
 
-      <Route path="/dashboard/selectTask" element={<SelectTask/>} />
-      <Route path="dashboard/selectTask/contents" element={< DashboardContents />} />
-
-
+      <Route path="/dashboard/selectTask" element={<SelectTask />} />
+      
+      <Route path="dashboard/selectTask/frontendbasic" element={<DashboardFrontBasic />} />
+      <Route path="dashboard/selectTask/frontendintermediario" element={<DashboardFrontIntermediario />} />
+      <Route path="dashboard/selectTask/frontendavancado" element={<DashboardFrontAvancado />} />
     </Routes>
   );
 };
