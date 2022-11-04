@@ -13,6 +13,8 @@ const GlobalStyle = createGlobalStyle`
         --positive-color: #3FE864;
         --negative-color: #E83F5B;
 
+        --white: #FFFFFF;
+
         --text-color: #121214;
         --text-color2: #212529;
         --text-color3: #343B41;
@@ -26,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
         --text-size4: 14px;
         --text-size5: 16px;
         --main-wiigth2: regular;
+        
+
+        --font:'Inter', sans-serif;
+
     }
     
     *{

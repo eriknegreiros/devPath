@@ -1,6 +1,5 @@
 import { Button, ContainerLogin } from "./style";
 import loginAnimation from "../../assets/loginAnimation.json";
-
 import { useForm } from "react-hook-form";
 import PasswordInput from "../../Components/Login/passwordVisibilte";
 import EmailInput from "../../Components/Login/emailInput";
