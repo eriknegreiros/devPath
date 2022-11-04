@@ -2,8 +2,8 @@ import { Button, ContainerLogin } from "./style";
 import loginAnimation from "../../assets/loginAnimation.json";
 
 import { useForm } from "react-hook-form";
-import PasswordInput from "../../components/Login/passwordVisibilte";
-import EmailInput from "../../components/Login/emailInput";
+import PasswordInput from "../../Components/Login/passwordVisibilte";
+import EmailInput from "../../Components/Login/emailInput";
 import { Link } from "react-router-dom";
 import Lottie from "react-lottie";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -58,7 +58,7 @@ const Login = () => {
           <Lottie options={defaultOptions}></Lottie>
         </section>
 
-        <form onSubmit={handleSubmit(show)}>
+        <form>
           <div>
             <h1>Login</h1>
           </div>

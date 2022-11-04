@@ -1,4 +1,4 @@
-import RoutesMain from "./routes";
+import RoutesMain from "./Routes";
 import GlobalStyle from "./styles/global";
 
 const App = () => {
