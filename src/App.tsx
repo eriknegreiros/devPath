@@ -1,6 +1,5 @@
 import RoutesMain from "./Routes/index";
 
-
 const App = () => {
   return (
     <>
