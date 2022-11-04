@@ -15,6 +15,8 @@ export const ContainerLogin = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    border-bottom: solid 1px var(--main-color2);
   }
   h1 {
     font-size: var(--text-size);
@@ -44,39 +46,56 @@ export const ContainerLogin = styled.div`
   }
   main {
     width: 100%;
-    height: 100%;
+    height: 650px;
     display: flex;
+    padding-top: 80px;
 
     justify-content: space-between;
     align-items: center;
   }
-  img {
+  .container {
     width: 50%;
-    height: 50%;
+    height: 100%;
   }
 
   form {
     width: 25%;
     height: 100%;
     display: flex;
+
     flex-direction: column;
     margin: 20px auto;
     color: white;
-    gap: 5px;
-  }
-  label {
-    font-size: var(--text-size4);
-    padding: 5px 0;
-  }
-  section {
-    width: 100%;
-    height: 40px;
-    text-align: center;
-  }
+    gap: 10px;
 
-  span {
-    align-items: center;
-    font-size: var(--text-size4);
+    div {
+      text-align: center;
+    }
+    h1 {
+      margin: 40px 0;
+    }
+
+    label {
+      font-size: var(--text-size3);
+      padding: 5px 0;
+    }
+    section {
+      width: 100%;
+      height: 40px;
+
+      text-align: center;
+
+      .toRegister {
+        align-items: center;
+        font-size: var(--text-size4);
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--main-color2);
+        }
+      }
+    }
   }
   @media (max-width: 768px) {
     main {
@@ -87,7 +106,7 @@ export const ContainerLogin = styled.div`
       max-width: 380px;
       height: 100%;
     }
-    img {
+    .container {
       display: none;
     }
     nav {

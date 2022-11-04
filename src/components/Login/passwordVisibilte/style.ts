@@ -7,7 +7,7 @@ const DivInput = styled.section`
   border: solid 2px var(--main-color6);
 
   padding-left: 10px;
-  background-color: white;
+  background-color: #c2c9e3;
   display: flex;
   align-items: center;
 
@@ -16,6 +16,7 @@ const DivInput = styled.section`
     border: none;
     height: 100%;
     font-size: var(--text-size3);
+    background-color: #c2c9e3;
     outline: none;
   }
   button {

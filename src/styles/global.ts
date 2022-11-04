@@ -5,6 +5,10 @@ const GlobalStyle = createGlobalStyle`
         --main-color: #010A26;
         --main-color2: #051866;
         --main-color3: #5259FF;
+        --main-color4: #000610;
+        --main-color5: #C2C9E3;
+        --main-color6: #5C6CA4;
+        --main-color7: #A6A8AA;
 
         --positive-color: #3FE864;
         --negative-color: #E83F5B;
@@ -38,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background-color: var(--main-color);
+    background-color: var(--main-color4);
     color: var(--text-color5);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;

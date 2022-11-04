@@ -1,11 +1,43 @@
 import { Button, ContainerLogin } from "./style";
-import login from "../../assets/login.svg";
+import loginAnimation from "../../assets/loginAnimation.json";
 
-import PasswordInput from "../../components/passwordVisibilte";
-import EmailInput from "../../components/emailInput";
+import { useForm } from "react-hook-form";
+import PasswordInput from "../../components/Login/passwordVisibilte";
+import EmailInput from "../../components/Login/emailInput";
 import { Link } from "react-router-dom";
+import Lottie from "react-lottie";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+interface iLogin {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
+  const Schema = yup.object().shape({
+    password: yup.string().required("Senha obrigatorio!"),
+    email: yup.string().required("Email obrigatorio!!").email(),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<iLogin>({
+    resolver: yupResolver(Schema),
+  });
+
+  /* lottie */
+  const defaultOptions = {
+    loop: true,
+    autoPlay: true,
+    animationData: loginAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMIdyMid slice",
+    },
+  };
+
   return (
     <ContainerLogin>
       <header>
@@ -22,19 +54,28 @@ const Login = () => {
         </nav>
       </header>
       <main>
-        <img src={login} alt="" />
-        <form>
+        <section className="container">
+          <Lottie options={defaultOptions}></Lottie>
+        </section>
+
+        <form onSubmit={handleSubmit(show)}>
+          <div>
+            <h1>Login</h1>
+          </div>
           <label>Email</label>
-          <EmailInput />
+
+          <EmailInput register={register} />
+          <p>{errors.email?.message}</p>
 
           <label>Senha</label>
-          <PasswordInput />
+          <PasswordInput register={register} />
+          <p>{errors.email?.message}</p>
 
           <Button>Entrar</Button>
           <section>
-            <span>
-              Ou crie uma conta <Link to="/register">aqui</Link>
-            </span>
+            <Link to="/register" className="toRegister">
+              Ou crie uma conta aqui
+            </Link>
           </section>
         </form>
       </main>
