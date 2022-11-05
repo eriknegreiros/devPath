@@ -8,7 +8,9 @@ const Header = () => {
     <HeaderStyles>
       <img src={logo} alt="logo" />
       <section className="buttonsHeader">
-        <Link className="link" to="/">Voltar</Link>
+        <Link className="link" to="/">
+          Voltar
+        </Link>
         <div className="namePage">Cadastro</div>
       </section>
     </HeaderStyles>

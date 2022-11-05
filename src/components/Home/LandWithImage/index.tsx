@@ -1,6 +1,7 @@
 import { Section } from "./style";
 import img from "../../../Assets/code.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const LandWithImage = () => {
   return (
@@ -34,7 +35,7 @@ const LandWithImage = () => {
               melhores oportunidades da sua carreira como dev.
             </p>
 
-            <button>Acesse já!</button>
+            <Link to={"./login"}>Acesse já!</Link>
           </div>
         </motion.div>
       </Section>

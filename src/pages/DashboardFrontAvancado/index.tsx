@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { CardTechStyled } from "../../Components/Dashboard/CardTechs/style";
-import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
-import TitleTech from "../../Components/Dashboard/TitleTech";
+import { CardTechStyled } from "../../components/Dashboard/CardTechs/style";
+import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
+import TitleTech from "../../components/Dashboard/TitleTech";
 import { ContainerMain } from "../DashboardFrontBasic/style";
 import { UlStyledAvancado } from "./style";
 import frontEndAvancado from "../../Assets/frontend-line-avancado.png";
-import Footer from "../../Components/Footer";
-import ModalContents from "../../Components/Dashboard/ModalContents";
+import Footer from "../../components/Footer";
+import ModalContents from "../../components/Dashboard/ModalContents";
 
 const DashboardFrontAvancado = () => {
   const [modal, setModal] = useState<boolean>(false);

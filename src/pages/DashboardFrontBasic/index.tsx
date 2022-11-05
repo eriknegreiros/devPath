@@ -1,9 +1,9 @@
 import { useState } from "react";
-import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
-import TitleTechDashboard from "../../Components/Dashboard/TitleTech";
-import { CardTechStyled } from "../../Components/Dashboard/CardTechs/style";
-import Footer from "../../Components/Footer";
-import ModalContents from "../../Components/Dashboard/ModalContents";
+import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
+import TitleTechDashboard from "../../components/Dashboard/TitleTech";
+import { CardTechStyled } from "../../components/Dashboard/CardTechs/style";
+import Footer from "../../components/Footer";
+import ModalContents from "../../components/Dashboard/ModalContents";
 import frontEndBasic from "../../Assets/frontend-line-basic.png";
 import { ContainerMain } from "./style";
 

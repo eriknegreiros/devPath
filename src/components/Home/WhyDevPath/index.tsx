@@ -7,34 +7,30 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import React from "react";
 
-
 interface IProps {
   children: React.ReactNode;
 }
 
 const WhyDevPath = () => {
-  
-
-  function FadeInWhenVisible({children}: IProps) {
+  function FadeInWhenVisible({ children }: IProps) {
     const controls = useAnimation();
     const [ref, inView] = useInView();
-  
+
     useEffect(() => {
       if (inView) {
         controls.start("visible");
       }
     }, [controls, inView]);
-  
+
     return (
       <motion.div
         ref={ref}
         animate={controls}
         initial="hidden"
-        transition={{ ease: "easeOut", duration: 0.5 }}
-
+        transition={{ ease: "easeOut", duration: 1 }}
         variants={{
           visible: { opacity: 1, scale: 1 },
-          hidden: { opacity: 0, scale: 0 }
+          hidden: { opacity: 0, scale: 0 },
         }}
       >
         {children}
@@ -42,21 +38,14 @@ const WhyDevPath = () => {
     );
   }
 
-    return (
-      <>
-        <DivText>
-          <h2>Por que escolher a devPath?</h2>
-        </DivText>
-        <FadeInWhenVisible>
+  return (
+    <>
+      <DivText>
+        <h2>Por que escolher a devPath?</h2>
+      </DivText>
+      <FadeInWhenVisible>
         <Section>
-
-
-        
-            
-        
-        
           <div>
-          
             <img src={objective} alt="" />
             <h3>Foco</h3>
             <p>
@@ -64,13 +53,7 @@ const WhyDevPath = () => {
               vamos direto ao ponto no que realmente importa para você dominar
               as ferramentas, não apenas conhecê-las.
             </p>
-          
           </div>
-          
-            
-          
-
-
 
           <div>
             <img src={study} alt="" />
@@ -88,15 +71,15 @@ const WhyDevPath = () => {
 
             <h3>Grátis</h3>
             <p>
-              Platoforma totalmente gratuita com a melhor curadoria de estudos,
+              Plataforma totalmente gratuita com a melhor curadoria de estudos,
               com as tecnologias mais atuais que vão te colocar no mercado de
               trabalho.
             </p>
           </div>
         </Section>
-        </FadeInWhenVisible>
-      </>
-    );
-  };
+      </FadeInWhenVisible>
+    </>
+  );
+};
 
 export default WhyDevPath;

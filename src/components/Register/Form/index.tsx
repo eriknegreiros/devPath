@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { iUser, UserContext } from "../../../Context/UserContext";
+import { iUser, UserContext } from "../../../context/UserContext";
 import { useContext } from "react";
 import { HiUser, HiEye, HiOutlineMail } from "react-icons/hi";
 
@@ -58,7 +58,7 @@ const Form = () => {
           type="email"
           {...register("email")}
         />
-        <HiOutlineMail  />
+        <HiOutlineMail />
       </div>
       <p className="error">{errors.email?.message}</p>
 
