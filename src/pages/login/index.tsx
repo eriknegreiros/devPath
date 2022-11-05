@@ -42,7 +42,7 @@ const Login = () => {
   return (
     <ContainerLogin>
      
-    <Header/>
+    <Header name='Login'/>
 
       <main>
         <section className="container">
