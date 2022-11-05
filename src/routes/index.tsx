@@ -4,9 +4,11 @@ import Home from "../pages/Home";
 import WhoWeAre from "../pages/WhoWeAre";
 import SelectTask from "../pages/Dashboard/SelectTask";
 import Login from "../pages/login";
-import DashboardFrontBasic from "../pages/DashboardFrontBasic";
-import DashboardFrontIntermediario from "../pages/DashboardFrontIntermediario";
-import DashboardFrontAvancado from "../pages/DashboardFrontAvancado";
+import Forum from "../pages/DashboardForum";
+import DashboardFrontBasic from "../components/Dashboard/DashboardFrontBasic";
+import DashboardFrontIntermediario from "../components/Dashboard/DashboardFrontIntermediario";
+import DashboardFrontAvancado from "../components/Dashboard/DashboardFrontAvancado";
+import SelectFrontEnd from "../pages/Dashboard/SelectFrontEnd";
 
 const RoutesMain = () => {
   return (
@@ -17,12 +19,21 @@ const RoutesMain = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />
-
       <Route path="/dashboard/selectTask" element={<SelectTask />} />
-      
-      <Route path="dashboard/selectTask/frontendbasic" element={<DashboardFrontBasic />} />
-      <Route path="dashboard/selectTask/frontendintermediario" element={<DashboardFrontIntermediario />} />
-      <Route path="dashboard/selectTask/frontendavancado" element={<DashboardFrontAvancado />} />
+      <Route path="dashboard/Forum" element={<Forum />} />
+      <Route path="/dashboard/frontEnd" element={<SelectFrontEnd />} />
+      <Route
+        path="dashboard/selectTask/frontendbasic"
+        element={<DashboardFrontBasic />}
+      />
+      <Route
+        path="dashboard/selectTask/frontendintermediario"
+        element={<DashboardFrontIntermediario />}
+      />
+      <Route
+        path="dashboard/selectTask/frontendavancado"
+        element={<DashboardFrontAvancado />}
+      />
     </Routes>
   );
 };

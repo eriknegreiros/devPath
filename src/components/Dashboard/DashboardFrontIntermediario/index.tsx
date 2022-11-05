@@ -1,4 +1,5 @@
 import { useState } from "react";
+<<<<<<< HEAD:src/pages/DashboardFrontIntermediario/index.tsx
 import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
 import TitleTechDashboard from "../../components/Dashboard/TitleTech";
 import Footer from "../../components/Footer";
@@ -7,6 +8,14 @@ import { CardTechStyled } from "../../components/Dashboard/CardTechs/style";
 import { UlStyle } from "../../pages/DashboardFrontIntermediario/style";
 import { ContainerMain } from "../DashboardFrontBasic/style";
 import ModalContents from "../../components/Dashboard/ModalContents";
+=======
+import TitleTechDashboard from "../TitleTech";
+import frontEndIntermediario from "../../../Assets/frontend-line-intermediario.png";
+import { CardTechStyled } from "../CardTechs/style";
+import { UlStyle } from "./style";
+import { ContainerMain } from "../DashboardFrontBasic/style";
+import ModalContents from "../ModalContents";
+>>>>>>> 729e92fd9fe8dcd36d8553239a3ca453494e0dc0:src/components/Dashboard/DashboardFrontIntermediario/index.tsx
 
 const DashboardFrontIntermediario = () => {
   const [modal, setModal] = useState<boolean>(false);
@@ -17,7 +26,7 @@ const DashboardFrontIntermediario = () => {
   }
   return (
     <>
-      <HeaderDashboard />
+      
 
       <ContainerMain>
         <TitleTechDashboard>
@@ -56,7 +65,7 @@ const DashboardFrontIntermediario = () => {
         <img src={frontEndIntermediario} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
-      <Footer />
+     
       {modal ? <ModalContents /> : <></>}
     </>
   );
