@@ -7,13 +7,13 @@ export const Main = styled.main`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 
   @media (min-width: 768px) {
-    width: 95vw;
+    width: 100vw;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto 100px auto;
+    justify-content: space-around;
+    margin: 0 auto 40px auto;
   }
 
   div {
@@ -31,7 +31,7 @@ export const Main = styled.main`
       width: 100%;
       flex-direction: row;
       justify-content: space-between;
-      margin: 60px auto 0 auto;
+      margin: 10px 20px 0px  10px;
     }
   }
 
@@ -66,7 +66,7 @@ export const Main = styled.main`
   }
 
   img {
-    max-width: 280px;
+    max-width: 250px;
   }
 
   p {

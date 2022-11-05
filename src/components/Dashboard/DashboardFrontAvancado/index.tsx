@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { CardTechStyled } from "../../Components/Dashboard/CardTechs/style";
-import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
-import TitleTech from "../../Components/Dashboard/TitleTech";
+import { CardTechStyled } from "../CardTechs/style";
+
+import TitleTech from "../TitleTech";
 import { ContainerMain } from "../DashboardFrontBasic/style";
 import { UlStyledAvancado } from "./style";
-import frontEndAvancado from "../../Assets/frontend-line-avancado.png";
-import Footer from "../../Components/Footer";
-import ModalContents from "../../Components/Dashboard/ModalContents";
+import frontEndAvancado from "../../../Assets/frontend-line-avancado.png";
+
+import ModalContents from "../ModalContents";
 
 const DashboardFrontAvancado = () => {
   const [modal, setModal] = useState<boolean>(false);
@@ -17,7 +17,7 @@ const DashboardFrontAvancado = () => {
   }
   return (
     <>
-      <HeaderDashboard />
+      
 
       <ContainerMain>
         <TitleTech>
@@ -70,7 +70,7 @@ const DashboardFrontAvancado = () => {
         <img src={frontEndAvancado} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
-      <Footer />
+
 
       {modal ? <ModalContents /> : <></>}
     </>

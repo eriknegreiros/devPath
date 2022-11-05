@@ -6,6 +6,7 @@ import logic from "../../../Assets/logic.png";
 import front from "../../../Assets/front.png";
 import back from "../../../Assets/back.png";
 
+
 const SelectTask = () => {
   return (
     <>
@@ -21,7 +22,7 @@ const SelectTask = () => {
           <p>Lógica de programação</p>
         </Link>
 
-        <Link to="">
+        <Link to="/dashboard/frontEnd">
           <img src={front} alt="imagem de lógica" />
           <p>Desenvolvimento Front-End</p>
         </Link>

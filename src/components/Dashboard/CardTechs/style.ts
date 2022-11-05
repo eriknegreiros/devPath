@@ -2,17 +2,20 @@ import styled from "styled-components"
 
 export const CardTechStyled = styled.li`
 
+
+
+
 &:nth-child(odd){
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         width: 30%;
-        height: 85px;
+        height: 115px;
         min-width: 105px;
         max-width: 350px;
 
-        margin: 0 0 0 60%;
+        margin: 0px 0 0 58%;
 
         cursor: pointer;
 
@@ -20,17 +23,20 @@ export const CardTechStyled = styled.li`
               font-style: normal;
               font-weight: 500;
               font-size: 1.5rem;
-              
+              position: relative;
+              top: 30px;
+
               margin: 5px 0;
-              text-align: center;
+              text-align: left;
             }
 
             p {
                 font-style: normal;
                 font-weight: 400;
                 font-size: 0.8rem;
-
-                text-align: center;
+                position: relative;
+              top: 30px;
+                text-align: left;
             }
     }
 
@@ -52,16 +58,19 @@ export const CardTechStyled = styled.li`
             font-style: normal;
             font-weight: 400;
             font-size: 1.5rem;
-            
+            position: relative;
+            top: 30px;
             margin: 5px 0;
-            text-align: center;
+            text-align: right;
         }
         
         p {
             font-style: normal;
             font-weight: 500;
             font-size: 0.8rem;
-            text-align: center;
+            text-align: right;
+            position: relative;
+            top: 30px;
         }
     }
     

@@ -7,7 +7,7 @@ import Header from "../../Components/Register/Header";
 const Register = () => {
   return (
     <>
-      <Header />
+      <Header name='Cadastro' />
 
       <Main>
         <img src={img} alt="registration-ilustration" />
