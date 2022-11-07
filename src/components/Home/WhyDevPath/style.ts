@@ -8,10 +8,10 @@ export const DivText = styled.div`
     margin-top: 50px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     h2 {
       text-align: left;
-      margin-left: 50px;
+      margin-bottom: 50px;
     }
   }
 `;
@@ -25,7 +25,8 @@ export const Section = styled.section`
   flex-wrap: wrap;
   gap: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
+    padding-bottom: 50px;
     flex-direction: row;
     gap: 80px;
   }
@@ -39,16 +40,15 @@ export const Section = styled.section`
     justify-content: center;
     flex-direction: column;
     gap: 20px;
-    margin-top: 60px;
+
     border-radius: 6px;
   }
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 767px) {
     div {
       width: 320px;
-      margin-bottom: 120px;
     }
-  }
+  } */
 
   img {
     width: 100px;
@@ -56,13 +56,13 @@ export const Section = styled.section`
   }
 
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
   p {
-    font-size: 1.2rem;
-    margin: 10px;
+    font-size: 1.15rem;
+    padding: 10px;
     text-align: left;
   }
 `;

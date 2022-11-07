@@ -1,17 +1,30 @@
 import styled from "styled-components";
+import { FaBars } from "react-icons/fa";
 
 export const Header = styled.header`
-  height: 85px;
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+
   background-color: var(--main-color4);
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
   border-bottom: 1px solid var(--main-color2);
 
+  .containerHeader {
+    max-width: 1120px;
+    margin: 0 auto;
 
-  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav {
+    .toggle {
+      display: block;
+    }
+  }
+
+  @media (min-width: 767px) {
     flex-direction: row;
     justify-content: space-between;
 
@@ -21,27 +34,27 @@ export const Header = styled.header`
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: var(--font);
   }
 
-  li {
-    display: flex;
+  .navigation-menu li {
+    display: block;
     align-items: center;
-    gap: 5vw;
     margin-left: 5px;
     margin-right: 5px;
   }
 
-  a{
+  a {
     color: white;
     text-decoration: none;
   }
 
   @media (min-width: 768px) {
     li {
+      display: flex;
+      color: #000;
       margin-right: 50px;
-
     }
   }
 
@@ -53,8 +66,47 @@ export const Header = styled.header`
     cursor: pointer;
   }
 
-  p:hover{
+  p:hover {
     color: var(--main-color3);
     transition: 2.5s;
+  }
+`;
+
+export const Bars = styled(FaBars)`
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`;
+
+export const NavMenu = styled.ul`
+  display: none;
+
+  &.expanded {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+
+    width: 100%;
+    height: calc(100vh - 77px);
+    background-color: var(--main-color4);
+
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  @media screen and (min-width: 767px) {
+    display: flex;
+    gap: 1rem;
   }
 `;

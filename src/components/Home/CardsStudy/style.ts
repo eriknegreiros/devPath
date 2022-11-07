@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  height: 70vh;
+  /* height: 70vh; */
   border-bottom: 1px solid var(--main-color2);
 
-  @media (min-width: 768px) {
-    height: 97vh;
+  @media (min-width: 767px) {
+    max-height: 180vh;
   }
 `;
 
@@ -18,7 +18,7 @@ export const DivText = styled.div`
     text-align: center;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     h2 {
       text-align: left;
       margin-left: 35px;
@@ -30,20 +30,20 @@ export const DivText = styled.div`
 export const Card = styled.div`
   display: flex;
   align-items: center;
-  overflow-y: scroll;
+  overflow-x: scroll;
   gap: 40px;
   margin: 30px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px;
   }
 
   div {
     background-color: #c2c9e32b;
-    width: 300px;
-    height: 200px;
+    max-width: 280px;
+    height: 220px;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,10 +52,10 @@ export const Card = styled.div`
     border-radius: 6px;
   }
 
-  .aoba {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  @media (min-width: 767px) {
+    div {
+      width: 100%;
+    }
   }
 
   img {

@@ -1,28 +1,22 @@
-import Form from "../../Components/Form";
-import img from '../../Assets/img-register.svg'
+import Form from "../../components/Register/Form";
+import img from "../../Assets/Sign up.gif";
 
-import { Header, Main } from "./styles";
+import { Main } from "./styles";
+import Header from "../../components/Register/Header";
 
 const Register = () => {
   return (
     <>
-      <Header>
-        <img src={img} alt="" />
-        <section className="buttons-header">
-          <button>Voltar</button>
-          <button>Cadastro</button>
-        </section>
-      </Header>
+      <Header name='Cadastro' />
 
       <Main>
-        <img src="" alt="" />
-        <section className="form-section">
-          <h3>Crie agora sua conta! </h3>
-          <p>É grátis :)</p>
+        <img src={img} alt="registration-ilustration" />
+        <section className="formSection">
+          <h3 className="title">Crie agora sua conta! </h3>
+          <p className="subtitle">É grátis :)</p>
           <Form />
         </section>
       </Main>
-      
     </>
   );
 };

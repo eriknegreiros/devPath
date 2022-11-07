@@ -6,9 +6,9 @@ export const Section = styled.section`
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--main-color2);
-  height: 87vh;
+  height: 80vh;
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     flex-direction: row-reverse;
     justify-content: space-between;
   }
@@ -16,6 +16,12 @@ export const Section = styled.section`
   img {
     width: 250px;
     height: 250px;
+  }
+
+  @media (min-width: 500px) {
+    div {
+      width: 80%;
+    }
   }
 
   div {
@@ -30,7 +36,7 @@ export const Section = styled.section`
     text-align: center;
     font-size: 1.25rem;
     font-family: var(--font);
-    margin-left: 5px;
+    margin-left: 10px;
     margin-right: 5px;
   }
   p {
@@ -40,24 +46,29 @@ export const Section = styled.section`
     margin: 10px;
   }
 
-  button {
-    text-align: center;
-    font-family: var(--font);
-    font-size: 1rem;
+  a {
     width: 200px;
     height: 40px;
-    background-color: var(--main-color);
+
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+
+    padding-top: 8px;
+    border-radius: 8px;
+
+    font-family: var(--font);
     color: var(--text-color5);
     border: 1px solid var(--white);
-    border-radius: 8px;
+    background-color: var(--main-color);
   }
 
-  button:hover {
+  a:hover {
     background-color: var(--main-color2);
     transition: 2.5s;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     img {
       width: 400px;
       height: 400px;
@@ -66,7 +77,7 @@ export const Section = styled.section`
 
     div {
       align-items: flex-start;
-      margin-left: 50px;
+      margin-left: 1.4vw;
       gap: 40px;
     }
 
