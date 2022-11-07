@@ -5,9 +5,9 @@ import WhoWeAre from "../pages/WhoWeAre";
 import SelectTask from "../pages/Dashboard/SelectTask";
 import Login from "../pages/login";
 import Forum from "../pages/DashboardForum";
-import DashboardFrontBasic from "../components/Dashboard/DashboardFrontBasic";
-import DashboardFrontIntermediario from "../components/Dashboard/DashboardFrontIntermediario";
-import DashboardFrontAvancado from "../components/Dashboard/DashboardFrontAvancado";
+import DashboardFrontBasic from "../Components/Dashboard/DashboardFrontBasic";
+import DashboardFrontIntermediario from "../Components/Dashboard/DashboardFrontIntermediario";
+import DashboardFrontAvancado from "../Components/Dashboard/DashboardFrontAvancado";
 import SelectFrontEnd from "../pages/Dashboard/SelectFrontEnd";
 
 const RoutesMain = () => {
