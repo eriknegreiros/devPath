@@ -28,7 +28,7 @@ export const Section = styled.section`
   @media (min-width: 767px) {
     padding-bottom: 50px;
     flex-direction: row;
-    gap: 80px;
+    gap: 50px;
   }
 
   div {

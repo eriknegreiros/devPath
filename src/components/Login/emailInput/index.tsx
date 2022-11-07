@@ -14,7 +14,7 @@ interface IProps {
 const EmailInput = ({ register }: IProps) => {
   return (
     <InputContainer>
-      <input type="email" placeholder="Email" {...register(`email`)} />
+      <input placeholder="Email" {...register(`email`)} />
       <button type="button">
         <HiOutlineMail color="#5c6ca4" />
       </button>

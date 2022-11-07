@@ -1,8 +1,5 @@
 import { useState } from "react";
-
-
 import { CardTechStyled } from "../CardTechs/style";
-
 import TitleTech from "../TitleTech";
 import { ContainerMain } from "../DashboardFrontBasic/style";
 import { UlStyledAvancado } from "./style";

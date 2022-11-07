@@ -1,6 +1,6 @@
-import CardPosts from "../../Components/Dashboard/CardPosts";
-import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
-import Footer from "../../Components/Footer";
+import CardPosts from "../../components/Dashboard/CardPosts";
+import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
+import Footer from "../../components/Footer";
 import { DivButton, Main, DivUser } from "./style";
 
 const Forum = () => {

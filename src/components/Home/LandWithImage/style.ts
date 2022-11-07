@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--main-color2);
+
   height: 90.9vh;
+
+  height: 90vh;
 
   @media (min-width: 767px) {
     flex-direction: row-reverse;
@@ -20,7 +24,8 @@ export const Section = styled.section`
 
   @media (min-width: 500px) {
     div {
-      width: 80%;
+      width: 100%;
+      
     }
   }
 
@@ -30,6 +35,7 @@ export const Section = styled.section`
     align-items: center;
     justify-content: center;
     gap: 5px;
+    
   }
 
   h2 {
@@ -81,6 +87,7 @@ export const Section = styled.section`
       margin-left: 1.4vw;
       gap: 40px;
       margin-left: 4.5vw;
+
     }
 
     h2 {
