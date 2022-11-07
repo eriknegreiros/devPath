@@ -2,19 +2,16 @@ import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 
 export const Header = styled.header`
-  width: 100%;
-  padding: 1rem;
-  /* height: 70px;
-  display: flex;
-  align-items: center; */
 
+  width: 100vw;
+  height: 60px;
+  align-items: center;
   background-color: var(--main-color4);
   border-bottom: 1px solid var(--main-color2);
 
   .containerHeader {
-    max-width: 1120px;
-    margin: 0 auto;
-
+    width: 100vw;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,6 +24,8 @@ export const Header = styled.header`
   }
 
   @media (min-width: 767px) {
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
 
@@ -38,13 +37,13 @@ export const Header = styled.header`
   h1 {
     font-size: 1.5rem;
     font-family: var(--font);
+    margin-left: 35px;
   }
 
   .navigation-menu li {
     display: block;
     align-items: center;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 30px;
   }
 
   a {

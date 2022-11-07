@@ -6,6 +6,7 @@ import { UlStyledAvancado } from "./style";
 import frontEndAvancado from "../../../Assets/frontend-line-avancado.png";
 import ModalContents from "../ModalContents";
 
+
 const DashboardFrontAvancado = () => {
   const [modal, setModal] = useState<boolean>(false);
 

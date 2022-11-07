@@ -1,9 +1,8 @@
-import HeaderMenu from "../../components/Home/HeaderMenu";
-import LandWithImage from "../../components/Home/LandWithImage";
-import CardsStudy from "../../components/Home/CardsStudy";
-import WhyDevPath from "../../components/Home/WhyDevPath";
-import Footer from "../../components/Footer";
-import { Container } from "./style";
+import HeaderMenu from "../../Components/Home/HeaderMenu";
+import LandWithImage from "../../Components/Home/LandWithImage";
+import CardsStudy from "../../Components/Home/CardsStudy";
+import WhyDevPath from "../../Components/Home/WhyDevPath";
+import Footer from "../../Components/Footer";
 
 const Home = () => {
   return (

@@ -1,9 +1,6 @@
 import { useState } from "react";
-
-
 import TitleTechDashboard from "../TitleTech";
 import { CardTechStyled } from "../CardTechs/style";
-
 import ModalContents from "../ModalContents";
 import frontEndBasic from "../../../Assets/frontend-line-basic.png";
 import { ContainerMain } from "./style";
@@ -17,8 +14,6 @@ const DashboardFrontBasic = () => {
   }
   return (
     <>
-
-
       <ContainerMain>
         <TitleTechDashboard>
           <h2>Front-End</h2>
@@ -74,7 +69,6 @@ const DashboardFrontBasic = () => {
         <img src={frontEndBasic} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
-      
       {modal ? <ModalContents /> : <></>}
     </>
   );
