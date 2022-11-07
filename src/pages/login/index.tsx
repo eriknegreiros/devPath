@@ -1,8 +1,8 @@
 import { Button, ContainerLogin } from "./style";
-import login from "../../assets/login.svg";
+import login from "../../../src/Assets/login.svg";
 
-import PasswordInput from "../../components/passwordVisibilte";
-import EmailInput from "../../components/emailInput";
+import PasswordInput from "../../components/PasswordVisibilte";
+import EmailInput from "../../components/EmailInput";
 import { Link } from "react-router-dom";
 
 const Login = () => {

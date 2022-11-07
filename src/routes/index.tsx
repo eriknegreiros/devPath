@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
 import WhoWeAre from "../pages/WhoWeAre";
-import Login from "../pages/login";
+import Login from "../pages/Login";
 
 const RoutesMain = () => {
   return (
@@ -11,7 +11,7 @@ const RoutesMain = () => {
       <Route path="*" element={<Home />} />
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />
-      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 };

@@ -1,6 +1,5 @@
-import Form from "../../Components/Form";
+import Form from "../../components/Form";
 import img from '../../Assets/img-register.svg'
-
 import { Header, Main } from "./styles";
 
 const Register = () => {
