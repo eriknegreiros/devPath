@@ -1,40 +1,78 @@
 import { Button, ContainerLogin } from "./style";
+<<<<<<< HEAD
 import login from "../../../src/Assets/login.svg";
 
 import PasswordInput from "../../components/PasswordVisibilte";
 import EmailInput from "../../components/EmailInput";
+=======
+import loginAnimation from "../../Assets/loginAnimation.json";
+import { useForm } from "react-hook-form";
+import PasswordInput from "../../components/Login/emailInput/index";
+import EmailInput from "../../components/Login/emailInput";
+>>>>>>> c6ed82dd1b3dec19c96bd4d7c4ec4dd92ebcdee9
 import { Link } from "react-router-dom";
+import Lottie from "react-lottie";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import Header from "../../components/Register/Header";
+import img from "../../Assets/login.gif";
+
+interface iLogin {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
+  const Schema = yup.object().shape({
+    email: yup.string().required("Email obrigatorio!!").email(),
+    password: yup.string().required("Senha obrigatorio!"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<iLogin>({
+    resolver: yupResolver(Schema),
+  });
+
+  /* lottie */
+  const defaultOptions = {
+    loop: true,
+    autoPlay: true,
+    animationData: loginAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMIdyMid slice",
+    },
+  };
+
   return (
     <ContainerLogin>
-      <header>
-        <div>
-          <h1>DevPath</h1>
-        </div>
-        <nav>
-          <Link className="buttonLink" to="/register">
-            Cadastrar-se
-          </Link>
-          <Link className="buttonLink" to="/">
-            Login
-          </Link>
-        </nav>
-      </header>
+      <Header />
+
       <main>
-        <img src={login} alt="" />
+        <section className="container">
+          <img className="img" src={img} alt="" />
+        </section>
+
         <form>
+          <div>
+            <h1>Login</h1>
+          </div>
           <label>Email</label>
-          <EmailInput />
+
+          <EmailInput register={register} />
+          <p>{errors.email?.message}</p>
 
           <label>Senha</label>
-          <PasswordInput />
+          <PasswordInput register={register} />
+          <p>{errors.password?.message}</p>
 
           <Button>Entrar</Button>
           <section>
-            <span>
-              Ou crie uma conta <Link to="/register">aqui</Link>
-            </span>
+            <Link to="/register" className="toRegister">
+              Ou crie uma conta aqui
+            </Link>
           </section>
         </form>
       </main>
