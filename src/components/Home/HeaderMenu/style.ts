@@ -3,9 +3,10 @@ import { FaBars } from "react-icons/fa";
 
 export const Header = styled.header`
   width: 100%;
-  height: 70px;
+  padding: 1rem;
+  /* height: 70px;
   display: flex;
-  align-items: center;
+  align-items: center; */
 
   background-color: var(--main-color4);
   border-bottom: 1px solid var(--main-color2);
@@ -28,7 +29,7 @@ export const Header = styled.header`
   @media (min-width: 767px) {
     flex-direction: row;
     justify-content: space-between;
-    
+
     h1 {
       margin-left: 50px;
     }
