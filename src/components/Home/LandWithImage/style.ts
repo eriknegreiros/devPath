@@ -6,7 +6,7 @@ export const Section = styled.section`
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--main-color2);
-  height: 80vh;
+  height: 90.9vh;
 
   @media (min-width: 767px) {
     flex-direction: row-reverse;
@@ -73,12 +73,14 @@ export const Section = styled.section`
       width: 400px;
       height: 400px;
       margin-right: 35px;
+      
     }
 
     div {
       align-items: flex-start;
       margin-left: 1.4vw;
       gap: 40px;
+      margin-left: 4.5vw;
     }
 
     h2 {
