@@ -54,8 +54,18 @@ export const AuthProvider = ({ children }: iAuthProps) => {
 
       const response = await instance.post<iResponse>("/register",data);
 
-      toast.success("Cadastro Realizado com sucesso");
-
+      toast.success('Cadastro Realizado com Sucesso', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+        
+    
       navigate("/login");
     } catch (error: any) {
       const requestError = error
@@ -80,7 +90,16 @@ export const AuthProvider = ({ children }: iAuthProps) => {
 
       localStorage.setItem('@dev-path:token', accessToken);
 
-      toast.success('Logado com sucesso');
+      toast.success('Logado com Sucesso', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
 
       navigate("/dashboard/selectTask")
       

@@ -39,8 +39,8 @@ const DashboardFrontIntermediario = () => {
           </CardTechStyled>
 
           <CardTechStyled onClick={() => setFunctionIsOpen(true)}>
-            <h3>Funções Assíncronas</h3>
-            <p>
+            <h3 >Funções Assíncronas</h3>
+            <p >
               funções assíncronas são uma espécie de Promise, pois condicionam a
               sua execução na espera de alguns retornos, onde utilizamos a
               expressão await
@@ -51,8 +51,8 @@ const DashboardFrontIntermediario = () => {
             className="cardAjuste"
             onClick={() => setApiIsOpen(true)}
           >
-            <h3>API</h3>
-            <p>
+            <h3 className="adjust">API</h3>
+            <p className="adjustP">
               As APIs são um tipo de “ponte” que conectam aplicações, podendo
               ser utilizadas para os mais variados tipos de negócio, por
               empresas de diversos nichos de mercado ou tamanho.

@@ -144,10 +144,10 @@ const FormStyles = styled.form`
     background: var(--main-color6);
   }
 
-  @media screen and (min-width: 768px) {
-    height: 3.125rem;
-    margin-top: 1.875rem;
-  }
+    @media screen and (min-width: 768px) {
+      height: 4;
+
+    }
 `;
 
 export default FormStyles;

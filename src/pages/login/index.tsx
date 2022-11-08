@@ -33,16 +33,7 @@ const Login = () => {
     resolver: yupResolver(Schema),
   });
 
-  /* lottie */
-  const defaultOptions = {
-    loop: true,
-    autoPlay: true,
-    animationData: loginAnimation,
-    rendererSettings: {
-      preserveAspectRatio: "xMIdyMid slice",
-    },
-  };
-
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -51,7 +42,7 @@ const Login = () => {
       transition={{ duration: 1 }}
     >
       <ContainerLogin>
-        <Header />
+        <Header name='Login' />
         <main>
           <section className="container">
             <img className="img" src={img} alt="" />

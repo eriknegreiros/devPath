@@ -13,16 +13,16 @@ export const UlLogicaProgramacao = styled.ul`
     .cardAjuste {
       margin: 125px 0 140px 75%;
     }
-  }
 
-  @media (max-width: 465px) {
-    .cardAjuste {
-      margin: 90px 0 160px 75%;
+    @media (max-width: 465px) {
+      .cardAjuste {
+        margin: 90px 0 160px 75%;
+      }
     }
-  }
 
-  @media (max-width: 350px) {
-    height: 80vh;
-    margin-top: 0px;
+    @media (max-width: 350px) {
+      height: 80vh;
+      margin-top: 0px;
+    }
   }
 `;

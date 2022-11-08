@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const Modal = styled.div`
   width: 100vw;
   height: 100vh;
-
+  z-index: 999999;
   position: absolute;
   top: 0;
   left: 0;
+  
 
   font-family: "Inter";
   font-style: normal;
@@ -32,6 +33,10 @@ export const Header = styled.header`
   font-weight: 800;
   font-size: 22px;
   line-height: 26px;
+
+  span{
+    cursor: pointer;
+  }
 
   .butonsSection {
     display: flex;
@@ -84,6 +89,8 @@ export const Main = styled.main`
   height: 92vh;
   width: 100%;
   padding: 10px 0px;
+  gap: 30px;
+  
 
   section {
     box-sizing: border-box;
@@ -92,27 +99,24 @@ export const Main = styled.main`
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    gap: 3vw;
-
     width: 100%;
     height: auto;
-
+    margin-bottom: 20px;
     border-bottom: solid 1px #051866;
+    
   }
 
   .contentType {
     box-sizing: border-box;
-
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5px;
-
+    gap: 20px;
     width: 140px;
     padding: 5px 0px;
-
     h2{
       font-size: 22px;
+      
     }
   }
 

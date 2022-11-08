@@ -14,11 +14,11 @@ const React = () => {
         </div>
         <div className="contentFont">
           <ul>
-            <li>Documentação</li>
-            <li>Por que usar e como aprender React</li>
-            <li>Introdução ao React</li>
-            <li>Aprenda React do Básico</li>
-            <li>Cursos gratuitos de React - Site Oficial</li>
+           <a href="https://beta.reactjs.org/" target="_blank"rel="noopener noreferrer"> <li>Documentação</li></a>
+           <a href="https://kenzie.com.br/blog/react/" target="_blank"rel="noopener noreferrer"> <li>Por que usar e como aprender React</li></a>
+           <a href="https://blog.betrybe.com/react/" target="_blank"rel="noopener noreferrer"><li>Introdução ao React</li></a>
+           <a href="https://www.devmedia.com.br/react/" target="_blank"rel="noopener noreferrer"> <li>Aprenda React do Básico</li></a>
+           <a href="https://pt-br.reactjs.org/community/courses.html" target="_blank"rel="noopener noreferrer"><li>Cursos gratuitos de React - Site Oficial</li></a>
           </ul>
         </div>
       </section>
@@ -32,10 +32,10 @@ const React = () => {
 
         <div className="contentFont">
           <ul>
-            <li>React em 2022 - Rocketseat</li>
-            <li>Curso de React - Hora de Codar</li>
-            <li>React JS - João Ribeiro</li>
-            <li>Curso de React - Dicas para Devs</li>
+          <a href="https://www.youtube.com/watch?v=pDbcC-xSat4"target="_blank"rel="noopener noreferrer">  <li>React em 2022 - Rocketseat</li></a>
+          <a href="https://www.youtube.com/watch?v=FXqX7oof0I4&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO"target="_blank"rel="noopener noreferrer"> <li>Curso de React - Hora de Codar</li></a>
+          <a href="https://www.youtube.com/watch?v=C8M94QLJy0o&list=PLXik_5Br-zO9YVs9bxi7zoQlKq59VPTX1"target="_blank"rel="noopener noreferrer"> <li>React JS - João Ribeiro</li></a>
+          <a href="https://www.youtube.com/watch?v=ErjWNvP6mko"target="_blank"rel="noopener noreferrer"> <li>Curso de React - Dicas para Devs</li></a>
           </ul>
         </div>
       </section>

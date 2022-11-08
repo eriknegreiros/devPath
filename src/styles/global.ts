@@ -67,6 +67,15 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
+  a{
+    text-decoration: none;
+    color: #F8F9FA;
+  }
+
+  a:hover{
+    color: #5259FF;
+  }
+
   /* width */
   ::-webkit-scrollbar {
     width: 10px;

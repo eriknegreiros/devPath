@@ -85,7 +85,7 @@ export const Section = styled.section`
     }
 
     h2 {
-      width: 40vw;
+      width: 40vw;  
       font-size: 1.8rem;
       text-align: left;
     }

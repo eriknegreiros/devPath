@@ -9,6 +9,8 @@ export const Main = styled.main`
   flex-wrap: wrap;
   gap: 10px;
 
+ 
+
   @media (min-width: 768px) {
     width: 100vw;
     flex-direction: row;

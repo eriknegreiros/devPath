@@ -6,7 +6,7 @@ export const CardTechStyled = styled.li`
     flex-direction: column;
     justify-content: center;
 
-    width: 30%;
+    width: 100vw;
     height: 115px;
     min-width: 105px;
     max-width: 350px;
@@ -15,24 +15,24 @@ export const CardTechStyled = styled.li`
 
     cursor: pointer;
 
+
+
+  
+
     h3 {
       font-style: normal;
       font-weight: 500;
       font-size: 1.5rem;
-      position: relative;
-      top: 30px;
-
       margin: 5px 0;
-      text-align: left;
+      text-align: left;  
     }
 
     p {
       font-style: normal;
       font-weight: 400;
       font-size: 0.8rem;
-      position: relative;
-      top: 30px;
       text-align: left;
+      
     }
   }
 
@@ -53,8 +53,6 @@ export const CardTechStyled = styled.li`
       font-style: normal;
       font-weight: 400;
       font-size: 1.5rem;
-      position: relative;
-      top: 30px;
       margin: 5px 0;
       text-align: right;
     }
@@ -64,8 +62,6 @@ export const CardTechStyled = styled.li`
       font-weight: 500;
       font-size: 0.8rem;
       text-align: right;
-      position: relative;
-      top: 30px;
     }
   }
 
@@ -98,4 +94,5 @@ export const CardTechStyled = styled.li`
       margin: 0px 0 0 15%;
     }
   }
+
 `;
