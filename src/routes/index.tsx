@@ -1,41 +1,42 @@
-import { Routes, Route } from "react-router-dom";
-import Register from "../Pages/Register";
-import Home from "../Pages/Home";
-import WhoWeAre from "../Pages/WhoWeAre";
-import SelectTask from "../Pages/Dashboard/SelectTask";
-import Login from "../Pages/login";
-import Forum from "../Pages/DashboardForum";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Register from "../pages/Register";
+import Home from "../pages/Home";
+import WhoWeAre from "../pages/WhoWeAre";
+import SelectTask from "../pages/Dashboard/SelectTask";
+import Login from "../pages/login";
+import Forum from "../pages/DashboardForum";
 import DashboardFrontBasic from "../Components/Dashboard/DashboardFrontBasic";
 import DashboardFrontIntermediario from "../Components/Dashboard/DashboardFrontIntermediario";
 import DashboardFrontAvancado from "../Components/Dashboard/DashboardFrontAvancado";
-import SelectFrontEnd from "../Pages/Dashboard/SelectFrontEnd";
+import SelectFrontEnd from "../pages/Dashboard/SelectFrontEnd";
 
 const RoutesMain = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="*" element={<Home />} />
-      <Route path="/" element={<Login />} />
+      <Route path="*" element={<Navigate to={'/'}/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />
       <Route path="/dashboard/selectTask" element={<SelectTask />} />
       <Route path="dashboard/Forum" element={<Forum />} />
-      <Route path="/dashboard/frontEnd" element={<SelectFrontEnd />} />
-      <Route
-        path="dashboard/selectTask/frontendbasic"
-        element={<DashboardFrontBasic />}
-      />
-      <Route
-        path="dashboard/selectTask/frontendintermediario"
-        element={<DashboardFrontIntermediario />}
-      />
-      <Route
-        path="dashboard/selectTask/frontendavancado"
-        element={<DashboardFrontAvancado />}
-      />
+      
+
+      <Route path="dashboard/frontEnd" element={<SelectFrontEnd />}>
+
+        <Route index element={<DashboardFrontBasic />} />
+    
+        <Route path="frontEndIntermediary" element={<DashboardFrontIntermediario />} />
+
+        <Route path="frontEndAdvanced"element={ <DashboardFrontAvancado />} />
+     
+      </Route>
+  
+  
+  
     </Routes>
   );
 };
 
 export default RoutesMain;
+

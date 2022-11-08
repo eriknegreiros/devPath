@@ -1,11 +1,8 @@
 import { useContext, useState } from "react";
-import HeaderDashboard from "../../Dashboard/HeaderDashboard";
-import TitleTechDashboard from "../../Dashboard/TitleTech";
-import { CardTechStyled } from "../../Dashboard/CardTechs/style";
-import Footer from "../../Footer";
-import ModalContents from "../../Dashboard/ModalContents";
+import TitleTechDashboard from "../TitleTech";
+import { CardTechStyled } from "../CardTechs/style";
+import ModalContents from "../ModalContents";
 import frontEndBasic from "../../../Assets/frontend-line-basic.png";
-
 import { ContainerMain } from "./style";
 import GlobalModal from "../../Modal";
 
@@ -72,7 +69,6 @@ const DashboardFrontBasic = () => {
         </ul>
         <img src={frontEndBasic} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
-
       {isOpen ? (
         <GlobalModal title="Introdução ao IDE" onClose={() => setIsOpen(false)}>
           <ul>
@@ -118,6 +114,9 @@ const DashboardFrontBasic = () => {
           onClose={() => setIsOpen5(false)}
         />
       ) : null}
+
+      {modal ? <ModalContents /> : <></>}
+
     </>
   );
 };

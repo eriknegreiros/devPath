@@ -1,12 +1,11 @@
 import { useState } from "react";
-import HeaderDashboard from "../HeaderDashboard";
 import TitleTechDashboard from "../TitleTech";
-import Footer from "../../Footer";
 import frontEndIntermediario from "../../../Assets/frontend-line-intermediario.png";
 import { CardTechStyled } from "../CardTechs/style";
 import { UlStyle } from "../DashboardFrontIntermediario/style";
 import { ContainerMain } from "../DashboardFrontBasic/style";
 import ModalContents from "../ModalContents";
+
 
 const DashboardFrontIntermediario = () => {
   const [modal, setModal] = useState<boolean>(false);

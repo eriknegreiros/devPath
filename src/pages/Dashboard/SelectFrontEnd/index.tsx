@@ -1,19 +1,21 @@
-import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
 
+import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../../Components/Footer";
-import DashboardFrontBasic from "../../../Components/Dashboard/DashboardFrontBasic";
-import DashboardFrontIntermediario from "../../../Components/Dashboard/DashboardFrontIntermediario";
-import DashboardFrontAvancado from "../../../Components/Dashboard/DashboardFrontAvancado";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
+import { Outlet, useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Outlet } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
 
 const SelectFrontEnd = () => {
+  const navigate = useNavigate();
+
+  let location = useLocation();
+
   return (
     <>
       <HeaderDashboard />
@@ -24,18 +26,24 @@ const SelectFrontEnd = () => {
         navigation
         pagination={{ clickable: true }}
         slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
+        onSlideChange={(e) => {
+          console.log(e)
+          if (location.pathname === "/dashboard/frontEnd") {
+            navigate("frontEndIntermediary");
+          } else if (
+            location.pathname === "/dashboard/frontEnd/frontEndIntermediary"
+          ) {
+            navigate("frontEndAdvanced");
+          }
+        }}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide>{<DashboardFrontBasic />}</SwiperSlide>
-        <SwiperSlide>{<DashboardFrontIntermediario />}</SwiperSlide>
-        <SwiperSlide>{<DashboardFrontAvancado />}</SwiperSlide>
-        ...
-      </Swiper>
+        <SwiperSlide>{<Outlet />}</SwiperSlide>
+        <SwiperSlide>{<Outlet />}</SwiperSlide>
+        <SwiperSlide>{<Outlet />}</SwiperSlide>
+      </Swiper> 
 
       <Footer />
-
-      <Outlet />
     </>
   );
 };

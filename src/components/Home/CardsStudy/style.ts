@@ -41,9 +41,8 @@ export const Card = styled.div`
 
   div {
     background-color: #c2c9e32b;
-    max-width: 280px;
+    width: 380px;
     height: 220px;
-    width: 80vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,7 +53,7 @@ export const Card = styled.div`
 
   @media (min-width: 767px) {
     div {
-      width: 100%;
+      max-width: 25vw;      
     }
   }
 

@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import logo from "../../../Assets/logo.svg";
 
 import { HeaderStyles } from "./styles";
 
 const Header = ({ name }: any) => {
   return (
     <HeaderStyles>
-      <img src={logo} alt="logo" />
+      <h1>DevPath</h1>
       <section className="buttonsHeader">
         {/* // <Link className="link" to="/">
         //   Voltar
