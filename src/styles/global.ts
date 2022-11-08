@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
         --main-color7: #A6A8AA;
 
         --positive-color: #3FE864;
-        --negative-color: #E83F5B;
+        --negative-color: #ff000096;
 
         --white: #FFFFFF;
 

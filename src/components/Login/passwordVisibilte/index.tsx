@@ -16,9 +16,13 @@ const PasswordInput = ({ register }: IProps) => {
   };
   return (
     <DivInput>
-      <input placeholder="senha" {...register(`password`)} />
+      <input placeholder="Senha" {...register(`password`)} />
       <button className="eye" type="button" onClick={toggleBtn}>
-        {visibility ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+        {visibility ? (
+          <AiOutlineEyeInvisible color="#5c6ca4" />
+        ) : (
+          <AiOutlineEye color="#5c6ca4" />
+        )}
       </button>
     </DivInput>
   );

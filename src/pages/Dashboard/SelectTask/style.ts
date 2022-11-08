@@ -31,7 +31,7 @@ export const Main = styled.main`
       width: 100%;
       flex-direction: row;
       justify-content: space-between;
-      margin: 10px 20px 0px  10px;
+      margin: 10px 20px 0px 10px;
     }
   }
 

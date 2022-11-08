@@ -25,7 +25,6 @@ export const Section = styled.section`
   @media (min-width: 500px) {
     div {
       width: 100%;
-      
     }
   }
 
@@ -35,7 +34,6 @@ export const Section = styled.section`
     align-items: center;
     justify-content: center;
     gap: 5px;
-    
   }
 
   h2 {
@@ -79,7 +77,6 @@ export const Section = styled.section`
       width: 400px;
       height: 400px;
       margin-right: 35px;
-      
     }
 
     div {
@@ -87,7 +84,6 @@ export const Section = styled.section`
       margin-left: 1.4vw;
       gap: 40px;
       margin-left: 4.5vw;
-
     }
 
     h2 {

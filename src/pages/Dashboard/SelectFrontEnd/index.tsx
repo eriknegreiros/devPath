@@ -1,31 +1,18 @@
-
-import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
-import Footer from "../../../Components/Footer";
+import HeaderDashboard from "../../../components/Dashboard/HeaderDashboard";
+import Footer from "../../../components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-
-import { useLocation } from "react-router-dom";
-
 const SelectFrontEnd = () => {
   const navigate = useNavigate();
 
   let location = useLocation();
-
-  return (
-    <>
-      <HeaderDashboard />
-
-=======
-import { Outlet } from "react-router-dom";
-
-const SelectFrontEnd = () => {
   return (
     <>
       <HeaderDashboard />
@@ -36,9 +23,8 @@ const SelectFrontEnd = () => {
         navigation
         pagination={{ clickable: true }}
         slidesPerView={1}
-
         onSlideChange={(e) => {
-          console.log(e)
+          console.log(e);
           if (location.pathname === "/dashboard/frontEnd") {
             navigate("frontEndIntermediary");
           } else if (
@@ -52,10 +38,9 @@ const SelectFrontEnd = () => {
         <SwiperSlide>{<Outlet />}</SwiperSlide>
         <SwiperSlide>{<Outlet />}</SwiperSlide>
         <SwiperSlide>{<Outlet />}</SwiperSlide>
-      </Swiper> 
+      </Swiper>
 
       <Footer />
-
     </>
   );
 };

@@ -1,13 +1,14 @@
 import CardPosts from "../../components/Dashboard/CardPosts";
 import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
 import Footer from "../../components/Footer";
-import { DivButton, Main, DivUser } from "./style";
+import { Container } from "./style";
+import { DivButton, DivUser } from "./style";
 
 const Forum = () => {
   return (
     <>
       <HeaderDashboard />
-      <Main>
+      <Container>
         <DivUser>
           <img alt="" />
           <div>
@@ -21,7 +22,7 @@ const Forum = () => {
           <form>
             <textarea
               name="post"
-              placeholder="Conte para nós o que está estudando ou mande uma dica para outros devs :)"
+              placeholder="O que temos pra hoje?"
             ></textarea>
             <DivButton>
               <button>Postar</button>
@@ -36,7 +37,7 @@ const Forum = () => {
             <CardPosts />
           </ul>
         </section>
-      </Main>
+      </Container>
       <Footer />
     </>
   );
