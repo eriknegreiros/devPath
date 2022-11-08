@@ -1,11 +1,37 @@
+import { useContext } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 import CardPosts from "../../Components/Dashboard/CardPosts";
 import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
-import { DivButton, Main, DivUser } from "./style";
+import { ForumContext, iPost } from "../../Context/ForumContext";
+import { Container } from "./style";
+import { DivButton, DivUser } from "./style";
 import img from "../../Assets/devs/erik.png";
 import { motion } from "framer-motion";
 
+export interface iPostProps {
+  post: iPost[];
+}
+
 const Forum = () => {
+  const { newPost, post } = useContext(ForumContext);
+
+  const addPost = yup.object().shape({
+    text: yup.string().required("*Campo obrigatório"),
+  });
+
+  const {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    register,
+    handleSubmit,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    formState: { errors },
+  } = useForm<iPost>({
+    resolver: yupResolver(addPost),
+  });
+  console.log(post);
   return (
     <>
       <motion.div
@@ -15,7 +41,7 @@ const Forum = () => {
         transition={{ duration: 1 }}
       >
         <HeaderDashboard />
-        <Main>
+        <Container>
           <DivUser>
             <img src={img} alt="" />
             <div>
@@ -26,25 +52,31 @@ const Forum = () => {
 
           <section>
             <h5>Compartilhe conosco!</h5>
-            <form>
+            <form onSubmit={handleSubmit(newPost)}>
               <textarea
                 name="post"
-                placeholder="Conte para nós o que está estudando ou mande uma dica para outros devs :)"
+                placeholder="O que temos pra hoje?"
               ></textarea>
               <DivButton>
                 <button>Postar</button>
               </DivButton>
             </form>
-
-            {/* 
-        Fazer map dos posts */}
-
             <ul>
-              <CardPosts />
-              <CardPosts />
+              {post.length === 0 && (
+                <li>
+                  <h2>Nada por aqui 😪</h2>
+                </li>
+              )}
+              {post.map((posts, index) => (
+                <CardPosts
+                  key={index}
+                  postsContent={posts.text}
+                  postsUId={posts.userId}
+                />
+              ))}
             </ul>
           </section>
-        </Main>
+        </Container>
         <Footer />
       </motion.div>
     </>

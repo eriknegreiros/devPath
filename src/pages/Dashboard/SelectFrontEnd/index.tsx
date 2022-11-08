@@ -2,15 +2,13 @@ import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../../Components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { motion } from "framer-motion";
-
-import { useLocation } from "react-router-dom";
 
 const SelectFrontEnd = () => {
   const navigate = useNavigate();

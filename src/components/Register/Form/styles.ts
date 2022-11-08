@@ -58,9 +58,10 @@ const FormStyles = styled.form`
 
   .error {
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     line-height: 1rem;
     text-align: left;
+    margin-top: 1px;
 
     color: var(--negative-color);
   }
@@ -131,6 +132,12 @@ const FormStyles = styled.form`
 
     &:hover {
       background: var(--main-color2);
+    }
+
+    &:disabled{
+            cursor: not-allowed;
+            opacity: .4;
+        }
     }
 
     &:active {
