@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { CardTechStyled } from "../../components/Dashboard/CardTechs/style";
 import { ContainerMain } from "../../components/Dashboard/DashboardFrontBasic/style";
 import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
@@ -57,6 +58,9 @@ const DashboardLogicaProgramacao = () => {
 
       <Footer />
       {console.log(modal)}
+      {modal ? <ModalContents /> : <></>}
+
+      <Footer />
       {modal ? <ModalContents /> : <></>}
     </>
   );

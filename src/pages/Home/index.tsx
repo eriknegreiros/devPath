@@ -4,16 +4,16 @@ import CardsStudy from "../../components/Home/CardsStudy";
 import WhyDevPath from "../../components/Home/WhyDevPath";
 import Footer from "../../components/Footer";
 import { Container } from "./style";
+
 const Home = () => {
   return (
     <>
       <HeaderMenu />
-      <Container>
-        <LandWithImage />
-        <CardsStudy />
-        <WhyDevPath />
-        <Footer />
-      </Container>
+
+      <LandWithImage />
+      <CardsStudy />
+      <WhyDevPath />
+      <Footer />
     </>
   );
 };

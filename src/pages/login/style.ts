@@ -91,4 +91,10 @@ export const Button = styled.button`
   font-family: var(--font);
   color: white;
   background-color: var(--main-color);
+
+  &:disabled{
+            cursor: not-allowed;
+            opacity: .4;
+        }
+    
 `;
