@@ -1,15 +1,15 @@
 import { Button, ContainerLogin } from "./style";
 import loginAnimation from "../../Assets/loginAnimation.json";
 import { useForm } from "react-hook-form";
-import PasswordInput from "../../components/Login/passwordVisibilte";
-import EmailInput from "../../components/Login/emailInput";
+import PasswordInput from "../../Components/Login/passwordVisibilte";
+import EmailInput from "../../Components/Login/emailInput";
 import { Link } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Header from "../../components/Register/Header";
+import Header from "../../Components/Register/Header";
 import img from "../../Assets/login.gif";
 import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../Context/UserContext";
 
 export interface iLogin {
   email: string;
