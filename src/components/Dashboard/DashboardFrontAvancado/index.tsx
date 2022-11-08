@@ -77,3 +77,4 @@ const DashboardFrontAvancado = () => {
   );
 };
 export default DashboardFrontAvancado;
+

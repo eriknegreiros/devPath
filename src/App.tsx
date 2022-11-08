@@ -1,7 +1,7 @@
 import RoutesMain from "./routes/index"; 
 import { ToastContainer } from 'react-toastify';
-import { AuthProvider } from "./context/UserContext";
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthProvider } from "./context/UserContext";
 
 const App = () => {
   return (

@@ -1,9 +1,7 @@
-import { AxiosError } from "axios";
 import { createContext, ReactNode, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { iLogin } from "../../pages/Login";
-
 import { instance } from "../../service/api";
 
 interface iAuthProps {
@@ -34,6 +32,8 @@ interface iUserContext {
   registerUser: (data: iUser) => Promise<void>;
   loginUser: (data: iLogin) => Promise<void>;
   loading: boolean;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 
@@ -45,6 +45,7 @@ export const AuthProvider = ({ children }: iAuthProps) => {
   const [token, setToken] = useState(localStorage.getItem('@dev-path:token') || null);
   const [loading, setLoading] = useState(false)
 
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const registerUser = async (data: iUser): Promise<void> => {
@@ -93,7 +94,7 @@ export const AuthProvider = ({ children }: iAuthProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ registerUser, loginUser, loading }}>
+    <UserContext.Provider value={{ registerUser, isOpen, setIsOpen, loginUser, loading }}>
       {children}
     </UserContext.Provider>
   );

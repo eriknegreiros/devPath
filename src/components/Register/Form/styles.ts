@@ -7,7 +7,7 @@ const FormStyles = styled.form`
   flex-direction: column;
 
   height: auto;
-  width: 100%;
+  width: 80%;
 
   font-family: "Inter";
   font-style: normal;
@@ -33,7 +33,7 @@ const FormStyles = styled.form`
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.375rem;
 
     border: none;
@@ -76,8 +76,8 @@ const FormStyles = styled.form`
 
     font-family: "Inter";
     font-style: normal;
-    font-weight: 400;
-    font-size: 1.125rem;
+    font-weight: 500;
+    font-size: 1rem;
     line-height: 1.375rem;
 
     border: solid 0.0625rem var(--main-color5);
@@ -98,7 +98,7 @@ const FormStyles = styled.form`
     width: 100%;
     margin: 0 1rem;
 
-    color: var(--main-color2);
+    color: var(--main-color4);
 
     &:focus {
       box-shadow: 0 0 0 0;
