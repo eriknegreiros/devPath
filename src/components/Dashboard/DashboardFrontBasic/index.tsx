@@ -1,19 +1,8 @@
 import { useState } from "react";
-<<<<<<< HEAD:src/pages/DashboardFrontBasic/index.tsx
-import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
-import TitleTechDashboard from "../../components/Dashboard/TitleTech";
-import { CardTechStyled } from "../../components/Dashboard/CardTechs/style";
-import Footer from "../../components/Footer";
-import ModalContents from "../../components/Dashboard/ModalContents";
-import frontEndBasic from "../../Assets/frontend-line-basic.png";
-=======
-
 import TitleTechDashboard from "../TitleTech";
 import { CardTechStyled } from "../CardTechs/style";
-
 import ModalContents from "../ModalContents";
 import frontEndBasic from "../../../Assets/frontend-line-basic.png";
->>>>>>> 729e92fd9fe8dcd36d8553239a3ca453494e0dc0:src/components/Dashboard/DashboardFrontBasic/index.tsx
 import { ContainerMain } from "./style";
 
 const DashboardFrontBasic = () => {
