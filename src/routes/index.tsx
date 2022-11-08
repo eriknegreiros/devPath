@@ -3,12 +3,13 @@ import Register from "../pages/Register";
 import Home from "../pages/Home";
 import WhoWeAre from "../pages/WhoWeAre";
 import SelectTask from "../pages/Dashboard/SelectTask";
-import Login from "../pages/login";
+import Login from "../pages/Login";
 import Forum from "../pages/DashboardForum";
-import DashboardFrontBasic from "../Components/Dashboard/DashboardFrontBasic";
-import DashboardFrontIntermediario from "../Components/Dashboard/DashboardFrontIntermediario";
-import DashboardFrontAvancado from "../Components/Dashboard/DashboardFrontAvancado";
+import DashboardFrontBasic from "../components/Dashboard/DashboardFrontBasic";
+import DashboardFrontIntermediario from "../components/Dashboard/DashboardFrontIntermediario";
+import DashboardFrontAvancado from "../components/Dashboard/DashboardFrontAvancado";
 import SelectFrontEnd from "../pages/Dashboard/SelectFrontEnd";
+import DashboardLogicaProgramacao from "../pages/DashboardLogicaProgramacao";
 
 const RoutesMain = () => {
   return (
@@ -21,6 +22,7 @@ const RoutesMain = () => {
       <Route path="/dashboard/selectTask" element={<SelectTask />} />
       <Route path="dashboard/Forum" element={<Forum />} />
       
+        <Route path="logicaprogramacao" element={<DashboardLogicaProgramacao />} />
 
       <Route path="dashboard/frontEnd" element={<SelectFrontEnd />}>
 

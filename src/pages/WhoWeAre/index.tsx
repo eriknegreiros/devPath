@@ -1,6 +1,6 @@
-import HeaderMenu from "../../Components/Home/HeaderMenu";
-import CardsDev from "../../Components/WhoWeAre/CardsDev";
-import Footer from "../../Components/Footer";
+import HeaderMenu from "../../components/Home/HeaderMenu";
+import CardsDev from "../../components/WhoWeAre/CardsDev";
+import Footer from "../../components/Footer";
 
 const WhoWeAre = () => {
   return (
@@ -13,3 +13,4 @@ const WhoWeAre = () => {
 };
 
 export default WhoWeAre;
+

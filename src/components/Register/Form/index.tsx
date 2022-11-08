@@ -1,17 +1,20 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { iUser, UserContext } from "../../../Context/UserContext";
+import { iUser, UserContext } from "../../../context/UserContext";
 import { useContext } from "react";
 import { HiUser, HiEye, HiOutlineMail } from "react-icons/hi";
+import {GrImage} from "react-icons/gr"
 
 import FormStyles from "./styles";
 
+
 const Form = () => {
-  const { registerUser } = useContext(UserContext);
+  const { registerUser, loading } = useContext(UserContext);
 
   const formSchema = yup.object().shape({
     name: yup.string().required("*Nome obrigatório"),
+    image:yup.string(),
     email: yup.string().required("*Email obrigatório").email("Email inválido"),
     password: yup
       .string()
@@ -35,6 +38,7 @@ const Form = () => {
   } = useForm<iUser>({
     resolver: yupResolver(formSchema),
   });
+
 
   return (
     <FormStyles onSubmit={handleSubmit(registerUser)}>
@@ -88,6 +92,18 @@ const Form = () => {
       </div>
       <p className="error">{errors.confirmPassword?.message}</p>
 
+    <label htmlFor="image">Imagem</label>
+    <div>
+        <input
+          id="image"
+          placeholder="https://www.google.com/"
+          type="text"
+          {...register("image")}
+        />
+        <GrImage />
+      </div>
+      <p className="error">{errors.name?.message}</p>
+
       <label htmlFor="occupation">Ocupação</label>
       <div className="divSelect">
         <select id="appearanceSelect" {...register("occupation")}>
@@ -105,7 +121,7 @@ const Form = () => {
         </select>
       </div>
 
-      <button type="submit">Enviar</button>
+      <button type="submit" disabled={loading}>{loading ? 'Cadastrando...' : 'Cadastrar'}</button>
     </FormStyles>
   );
 };
