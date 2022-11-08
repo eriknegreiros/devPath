@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { iUser, UserContext } from "../../../Context/UserContext";
 import { useContext } from "react";
 import { HiUser, HiEye, HiOutlineMail } from "react-icons/hi";
-import {GrImage} from "react-icons/gr"
+import {BsImageFill} from 'react-icons/bs'
 
 import FormStyles from "./styles";
 
@@ -100,7 +100,7 @@ const Form = () => {
           type="text"
           {...register("image")}
         />
-        <GrImage />
+        <BsImageFill color="#5c6ca4" />
       </div>
       <p className="error">{errors.name?.message}</p>
 

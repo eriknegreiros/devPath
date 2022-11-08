@@ -13,9 +13,12 @@ const Api = () => {
         </div>
         <div className="contentFont">
           <ul>
-            <li>Documentação</li>
-            <li>Documentação JSON</li>
-            <li>Boas Práticas com API</li>
+         <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Client-side_web_APIs/Introduction" target="_blank"
+              rel="noopener noreferrer">  <li>Documentação</li></a> 
+         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank"
+              rel="noopener noreferrer">  <li>Documentação JSON</li></a> 
+         <a href="https://br.sensedia.com/post/good-practices-apis-and-their-methods" target="_blank"
+              rel="noopener noreferrer">   <li>Boas Práticas com API</li></a> 
           </ul>
         </div>
       </section>
@@ -29,11 +32,14 @@ const Api = () => {
 
         <div className="contentFont">
           <ul>
-            <li>Aprenda Fetch/API - Hora de Codar</li>
-            <li>Curso de API REST - While True</li>
-            <li>
+          <a href="https://www.youtube.com/watch?v=qIGYM4S8x50" target="_blank"
+              rel="noopener noreferrer"> <li>Aprenda Fetch/API - Hora de Codar</li></a> 
+          <a href="https://www.youtube.com/watch?v=5mMuX8AWxxs" target="_blank"
+              rel="noopener noreferrer">  <li>Curso de API REST - While True</li></a> 
+          <a href="https://www.youtube.com/watch?v=37SwqREHRGI" target="_blank"
+              rel="noopener noreferrer">   <li>
               Tudo o que você precisa saber de JS antes do React - Rocketseat
-            </li>
+            </li></a> 
           </ul>
         </div>
       </section>

@@ -5,7 +5,7 @@ width: 100%;
 min-width: 280px;
 img{
     position: absolute;
-    top: 220px;
+    top: 150px;
     left: 47%;
     height: 90vh;
 }

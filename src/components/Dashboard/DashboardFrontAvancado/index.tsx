@@ -57,8 +57,8 @@ const DashboardFrontAvancado = () => {
             className="cardAjuste"
             onClick={() => setTsIsOpen(true)}
           >
-            <h3>TypeScript</h3>
-            <p>
+            <h3 className="typeScriptAdjust">TypeScript</h3>
+            <p className="typeScriptAdjustP">
               Podemos considerar o Typescript como um potencializador da
               linguagem Javascript. Ele permite que grandes sistemas complexos
               sejam construídos.Podemos considerar o Typescript como um
@@ -68,7 +68,7 @@ const DashboardFrontAvancado = () => {
           </CardTechStyled>
 
           <CardTechStyled onClick={() => setCareerIsOpen(true)}>
-            <h3>Carreira</h3>
+            <h3 className="carrerAjustCss">Carreira</h3>
             <p>
               As melhores dicas que vão aumentar as suas chances de conquistar a
               sua primeira vaga como desenvolvedor.

@@ -145,8 +145,8 @@ const FormStyles = styled.form`
   }
 
     @media screen and (min-width: 768px) {
-      height: 3.125rem;
-      margin-top: 1.875rem;
+      height: 4;
+
     }
 `;
 

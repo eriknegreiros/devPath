@@ -13,11 +13,46 @@ const Html5 = () => {
         </div>
         <div className="contentFont">
           <ul>
-            <li>Documentação</li>
-            <li>Elementos HTML5</li>
-            <li>Iniciando com HTML</li>
-            <li>O que é o HTML 5 e como utilizá-lo</li>
-            <li>HTML5 - Qual a vantagem de utilizá-lo</li>
+            <a
+              href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Documentação</li>{" "}
+            </a>
+            <a
+              href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Elementos HTML5</li>
+            </a>
+            <a
+              href="https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Introduction_to_HTML/Getting_started"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Iniciando com HTML</li>
+            </a>
+            <a
+              href="https://www.devmedia.com.br/o-que-e-o-html5/25820"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>O que é o HTML 5 e como utilizá-lo</li>
+            </a>
+            <a
+              href="https://www.digitalhouse.com/br/blog/html5/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>HTML5 - Qual a vantagem de utilizá-lo</li>
+            </a>
           </ul>
         </div>
       </section>
@@ -31,9 +66,30 @@ const Html5 = () => {
 
         <div className="contentFont">
           <ul>
-            <li>Curso em Vídeo - HTML5 - Gustavo Guanabara</li>
-            <li>Curso Completo HTML 5 - Node Treinamentos</li>
-            <li>Curso HTML 5 - Hora de Codar</li>
+            <a
+              href="https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Curso em Vídeo - HTML5 - Gustavo Guanabara</li>{" "}
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=YoDJsSII2Ug&list=PLwXQLZ3FdTVGKl3iPEyEWpFoYkMUxWW5O"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Curso Completo HTML 5 - Node Treinamentos</li>
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=SV7TL0hxmIQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Curso HTML 5 - Hora de Codar</li>
+            </a>
           </ul>
         </div>
       </section>

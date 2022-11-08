@@ -1,5 +1,5 @@
 import sites from "../../../../Assets/sites-icon.svg";
-import videos from "../../../../Assets/videos-icon.svg"
+import videos from "../../../../Assets/videos-icon.svg";
 
 const Ide = () => {
   return (
@@ -13,8 +13,20 @@ const Ide = () => {
         </div>
         <div className="contentFont">
           <ul>
-            <li>Software para Baixar</li>
-            <li>Dicas Visual Studio Code</li>
+            <a
+              href="https://code.visualstudio.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li>Software para Baixar</li>
+            </a>
+            <a
+              href="https://www.maismulheres.tech/courses/dicas-visual-studio-code"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li>Dicas Visual Studio Code</li>
+            </a>
           </ul>
         </div>
       </section>
@@ -28,9 +40,28 @@ const Ide = () => {
 
         <div className="contentFont">
           <ul>
-            <li>Dominando o VS Code - One Bit Code</li>
-            <li>5 Truques do VS Code - Código Fonte</li>
-            <li>5 Extensões para o VS Code - Dev Media</li>
+            <a
+              href="https://www.youtube.com/watch?v=qJ_M4W0u5rI"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li>Dominando o VS Code - One Bit Code</li>
+            </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=Po4d8Q2krcE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li>5 Truques do VS Code - Código Fonte</li>
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=HIxRDyFfnuc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li>5 Extensões para o VS Code - Dev Media</li>
+            </a>
           </ul>
         </div>
       </section>

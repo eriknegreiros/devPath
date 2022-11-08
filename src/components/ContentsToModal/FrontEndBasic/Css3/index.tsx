@@ -13,9 +13,30 @@ const CSS3 = () => {
         </div>
         <div className="contentFont">
           <ul>
-            <li>Documentação</li>
-            <li>O que é o CSS3 e os seus recursos?</li>
-            <li>CSS3 tutoriais - W3 Schools</li>
+            <a
+              href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Documentação</li>{" "}
+            </a>
+            <a
+              href="https://kenzie.com.br/blog/css3/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>O que é o CSS3 e os seus recursos?</li>
+            </a>
+            <a
+              href="https://www.w3schools.com/css/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>CSS3 tutoriais - W3 Schools</li>
+            </a>
           </ul>
         </div>
       </section>
@@ -29,10 +50,37 @@ const CSS3 = () => {
 
         <div className="contentFont">
           <ul>
-            <li>Série CSS para inciantes - Trilha Front</li>
-            <li>Aprenda CSS e crie um projeto - Hora de Codar</li>
-            <li>Curso CSS completo - Programação WEB</li>
-            <li>Curso de HTML e CSS - Chief of Design</li>
+            <a
+              href="https://www.youtube.com/watch?v=nXRTjbwfF2A"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Série CSS para inciantes - Trilha Front</li>
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=vwbegraDXD8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li>Aprenda CSS e crie um projeto - Hora de Codar</li>
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=HtVRRHoASes&list=PL2Fdisxwzt_f5C7Mv0kg1EAHhy2VJLf1c"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Curso CSS completo - Programação WEB</li>
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=EiZbhsVY2Dk&list=PLwgL9IEA0PxUjbhob9UMdpVq12sGrjgU6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <li>Curso de HTML e CSS - Chief of Design</li>
+            </a>
           </ul>
         </div>
       </section>

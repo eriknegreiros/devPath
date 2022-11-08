@@ -23,7 +23,7 @@ const SelectTask = () => {
             <h5>O que quer aprender hoje?</h5>
           </div>
 
-          <Link to="">
+          <Link to="/logicaprogramacao">
             <img src={logic} alt="imagem de lógica" />
             <p>Lógica de programação</p>
           </Link>

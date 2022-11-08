@@ -1,20 +1,7 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  box-sizing: border-box;
-
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  height: 90vh;
-
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.375rem;
-  line-height: 1.5rem;
 
   background: var(--main-color4);
 
@@ -51,7 +38,7 @@ export const Main = styled.main`
       text-align: center;
 
       @media screen and (min-width: 767px) {
-        margin-bottom: 1.56rem;
+        
         margin-top: 20px;
         font-size: 1.5rem;
         line-height: 1.75rem;
