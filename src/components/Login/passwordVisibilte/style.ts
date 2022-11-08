@@ -15,7 +15,8 @@ const DivInput = styled.section`
     width: 100%;
     border: none;
     height: 100%;
-    font-size: var(--text-size3);
+    font-size: 1rem;
+    font-family: var(--font);
     background-color: #c2c9e3;
     outline: none;
     font-family: var(--font);

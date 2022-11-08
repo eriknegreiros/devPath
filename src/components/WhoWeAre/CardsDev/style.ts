@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-
 export const DivText = styled.div`
-h2 {
+  h2 {
     font-size: 1.4rem;
     text-align: center;
     margin: 20px;
@@ -15,7 +14,7 @@ h2 {
       margin-left: 50px;
     }
   }
-`
+`;
 
 export const Main = styled.main`
   display: flex;
@@ -26,10 +25,8 @@ export const Main = styled.main`
   padding-bottom: 10px;
   margin: 10px;
   margin-top: 40px;
-  
 
-
-  @media(min-width:768px){
+  @media (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -78,6 +75,4 @@ export const Main = styled.main`
     flex-direction: row;
     gap: 10px;
   }
-
- 
 `;

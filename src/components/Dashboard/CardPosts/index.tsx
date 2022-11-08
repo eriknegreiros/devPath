@@ -1,6 +1,11 @@
 import { ContainerPost, DivPost } from "./style";
 
-const CardPosts = () => {
+interface IPostProps {
+  postsContent: string;
+  postsUId: string;
+}
+
+const CardPosts = ({ postsContent }: IPostProps) => {
   return (
     <>
       <ContainerPost>
@@ -10,7 +15,7 @@ const CardPosts = () => {
           <span>Ocupação do dev</span>
         </div>
         <DivPost>
-          <p>Post do dev</p>
+          <p>{postsContent}</p>
         </DivPost>
       </ContainerPost>
     </>

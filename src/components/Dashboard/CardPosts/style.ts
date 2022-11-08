@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerPost = styled.li`
   display: flex;
   height: 150px;
-  width: 420px;
+  max-width: 420px;
   margin: 0 auto;
   background: #ffffff;
   border: 5px solid #051866;

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 
 export const Header = styled.header`
-
   width: 100vw;
   height: 60px;
   align-items: center;

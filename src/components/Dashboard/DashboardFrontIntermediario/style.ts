@@ -6,20 +6,18 @@ export const UlStyle = styled.li`
   
   .cardAjuste {
     margin: 90px 0 110px 63%;
-
   }
   
   @media (max-width: 540px){
     .cardAjuste {
       margin: 90px 0 110px 72%;
   }
-
-  @media (max-width: 350px){ {
-    {
+  @media (max-width: 350px){ 
+    
       height: 80vh;
       margin-top: 0px;
   
   }
-  }
-  
+}
+   
 `
