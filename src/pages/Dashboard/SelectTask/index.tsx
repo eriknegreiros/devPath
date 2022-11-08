@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 import HeaderDashboard from "../../../components/Dashboard/HeaderDashboard";
 import Footer from "../../../components/Footer";
+=======
+import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
+import Footer from "../../../Components/Footer";
+>>>>>>> 6b920ad4911e602145d421dda591200b1ec73259
 import { Main } from "./style";
 import { Link } from "react-router-dom";
 import logic from "../../../Assets/logic.png";
 import front from "../../../Assets/front.png";
 import back from "../../../Assets/back.png";
+
 
 const SelectTask = () => {
   return (

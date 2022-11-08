@@ -11,6 +11,7 @@ import { DivButton, DivUser } from "./style";
 export interface iPostProps {
   post: iPost[];
 }
+import img from "../../Assets/devs/erik.png";
 
 const Forum = () => {
   const { newPost, post } = useContext(ForumContext);
@@ -34,7 +35,7 @@ const Forum = () => {
       <HeaderDashboard />
       <Container>
         <DivUser>
-          <img alt="" />
+          <img src={img} alt="" />
           <div>
             <h4>Nome do Dev</h4>
             <h5>Ocupação do dev</h5>

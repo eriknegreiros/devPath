@@ -1,20 +1,18 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--main-color2);
-
-  height: 90.9vh;
-
   height: 90vh;
+  
 
   @media (min-width: 767px) {
     flex-direction: row-reverse;
     justify-content: space-between;
+    height: 90.1vh;
   }
 
   img {
@@ -24,7 +22,11 @@ export const Section = styled.section`
 
   @media (min-width: 500px) {
     div {
+<<<<<<< HEAD
       width: 100%;
+=======
+      width: 80%;
+>>>>>>> 6b920ad4911e602145d421dda591200b1ec73259
     }
   }
 
@@ -83,7 +85,11 @@ export const Section = styled.section`
       align-items: flex-start;
       margin-left: 1.4vw;
       gap: 40px;
+<<<<<<< HEAD
       margin-left: 4.5vw;
+=======
+      margin-left: 5vw;
+>>>>>>> 6b920ad4911e602145d421dda591200b1ec73259
     }
 
     h2 {

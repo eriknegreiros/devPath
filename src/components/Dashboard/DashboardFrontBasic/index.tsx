@@ -14,6 +14,8 @@ const DashboardFrontBasic = () => {
   }
   return (
     <>
+
+
       <ContainerMain>
         <TitleTechDashboard>
           <h2>Front-End</h2>
@@ -69,6 +71,7 @@ const DashboardFrontBasic = () => {
         <img src={frontEndBasic} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
+      
       {modal ? <ModalContents /> : <></>}
     </>
   );
