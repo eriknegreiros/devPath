@@ -5,7 +5,7 @@ export const Section = styled.section`
   border-bottom: 1px solid var(--main-color2);
 
   @media (min-width: 767px) {
-    max-height: 180vh;
+   height: 97vh;
   }
 `;
 
@@ -29,20 +29,22 @@ export const DivText = styled.div`
 
 export const Card = styled.div`
   display: flex;
+  height: 78vh;
   align-items: center;
   overflow-x: scroll;
   gap: 40px;
   margin: 30px;
 
   @media (min-width: 767px) {
-    justify-content: center;
+    justify-content: center;  
     flex-wrap: wrap;
   }
 
   div {
     background-color: #c2c9e32b;
-    width: 380px;
-    height: 220px;
+    max-width: 35vw;
+    width: 35vw;
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,7 +55,8 @@ export const Card = styled.div`
 
   @media (min-width: 767px) {
     div {
-      max-width: 25vw;      
+      max-width: 22vw;
+    width: 22vw;
     }
   }
 

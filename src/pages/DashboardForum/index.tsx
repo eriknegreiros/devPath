@@ -2,6 +2,7 @@ import CardPosts from "../../Components/Dashboard/CardPosts";
 import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
 import { DivButton, Main, DivUser } from "./style";
+import img from '../../Assets/devs/erik.png'
 
 const Forum = () => {
   return (
@@ -9,7 +10,7 @@ const Forum = () => {
       <HeaderDashboard />
       <Main>
         <DivUser>
-          <img alt="" />
+          <img src={img} alt="" />
           <div>
             <h4>Nome do Dev</h4>
             <h5>Ocupação do dev</h5>
