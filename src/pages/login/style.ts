@@ -1,15 +1,11 @@
 import styled from "styled-components";
 
 export const ContainerLogin = styled.div`
-
   width: 100vw;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
   flex-direction: column;
-
- 
-
 
   main {
     width: 100%;
@@ -18,17 +14,15 @@ export const ContainerLogin = styled.div`
     align-items: center;
   }
 
- 
   .container {
     margin-left: 10vw;
     margin-top: 50px;
   }
 
-  .img{
-   width:500px;
-   height: 500px;
-   
- }
+  .img {
+    width: 500px;
+    height: 500px;
+  }
 
   form {
     width: 25%;

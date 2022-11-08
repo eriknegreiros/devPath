@@ -134,20 +134,19 @@ const FormStyles = styled.form`
       background: var(--main-color2);
     }
 
-    &:disabled{
-            cursor: not-allowed;
-            opacity: .4;
-        }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
     }
+  }
 
-    &:active {
-      background: var(--main-color6);
-    }
+  &:active {
+    background: var(--main-color6);
+  }
 
-    @media screen and (min-width: 768px) {
-      height: 3.125rem;
-      margin-top: 1.875rem;
-    }
+  @media screen and (min-width: 768px) {
+    height: 3.125rem;
+    margin-top: 1.875rem;
   }
 `;
 

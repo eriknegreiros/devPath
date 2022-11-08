@@ -14,7 +14,7 @@ export const roadMapFrontEnd = [
       },
       {
         id: 2,
-        title: "Documentação",
+        title: "Importancia da Documentação",
         sites: [
           "Como a documentação pode ajudar no aprendizado!",
           "A importância da documentação",
@@ -72,7 +72,7 @@ export const roadMapFrontEnd = [
         ],
         videos: [
           "Manipulação de DOM com JavaScript, do zero, na prática - Rocketseat",
-          "JavaScript do Básico ao avançado - Atekkita ",
+          "JavaScript do Básico ao avançado - Atekkita",
           "Curso de JavaSciprit - Curso em Vídeo",
           "Curso de JavaScript - Node Treinamentos",
           "Curso de JavaScript - Programação Web",

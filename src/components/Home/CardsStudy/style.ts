@@ -55,12 +55,7 @@ export const Card = styled.div`
 
   @media (min-width: 767px) {
     div {
-<<<<<<< HEAD
       max-width: 25vw;
-=======
-      max-width: 22vw;
-    width: 22vw;
->>>>>>> 6b920ad4911e602145d421dda591200b1ec73259
     }
   }
 

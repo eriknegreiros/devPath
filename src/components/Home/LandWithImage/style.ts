@@ -22,11 +22,7 @@ export const Section = styled.section`
 
   @media (min-width: 500px) {
     div {
-<<<<<<< HEAD
       width: 100%;
-=======
-      width: 80%;
->>>>>>> 6b920ad4911e602145d421dda591200b1ec73259
     }
   }
 
@@ -85,11 +81,7 @@ export const Section = styled.section`
       align-items: flex-start;
       margin-left: 1.4vw;
       gap: 40px;
-<<<<<<< HEAD
       margin-left: 4.5vw;
-=======
-      margin-left: 5vw;
->>>>>>> 6b920ad4911e602145d421dda591200b1ec73259
     }
 
     h2 {
