@@ -1,9 +1,15 @@
-import RoutesMain from "./Routes/index";
+import RoutesMain from "./routes/index"; 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthProvider } from "./context/UserContext";
 
 const App = () => {
   return (
     <>
-      <RoutesMain />
+      <ToastContainer autoClose={1500} theme="dark"/>
+      <AuthProvider>
+       <RoutesMain />
+      </AuthProvider>
     </>
   );
 };

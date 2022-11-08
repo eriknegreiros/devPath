@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  width: 100vw;
   justify-content: center;
-  align-items: center;
+  
   text-align: center;
   gap: 30px;
   padding: 15px;

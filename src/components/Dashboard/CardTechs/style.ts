@@ -2,9 +2,6 @@ import styled from "styled-components"
 
 export const CardTechStyled = styled.li`
 
-
-
-
 &:nth-child(odd){
         display: flex;
         flex-direction: column;
@@ -15,7 +12,7 @@ export const CardTechStyled = styled.li`
         min-width: 105px;
         max-width: 350px;
 
-        margin: 0px 0 0 58%;
+        margin: 4% 0 3% 60%;
 
         cursor: pointer;
 
@@ -31,6 +28,7 @@ export const CardTechStyled = styled.li`
             }
 
             p {
+                
                 font-style: normal;
                 font-weight: 400;
                 font-size: 0.8rem;
@@ -80,6 +78,7 @@ export const CardTechStyled = styled.li`
     }
     
     @media (max-width: 540px) {
+        
 
         &:nth-child(even){
             margin: 0px 0 0 5%;
@@ -88,7 +87,7 @@ export const CardTechStyled = styled.li`
     @media (max-width: 540px) {
 
         &:nth-child(odd){
-            margin: 10px 0 10px 60%;
+            margin: 30px 0 40px 65%;
         }
 
         &:nth-child(even){
