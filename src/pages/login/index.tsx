@@ -1,7 +1,7 @@
 import { Button, ContainerLogin } from "./style";
 import loginAnimation from "../../Assets/loginAnimation.json";
 import { useForm } from "react-hook-form";
-import PasswordInput from "../../Components/Login/passwordVisibilte";
+import PasswordInput from "../../Components/Login/emailInput/index";
 import EmailInput from "../../Components/Login/emailInput";
 import { Link } from "react-router-dom";
 import Lottie from "react-lottie";

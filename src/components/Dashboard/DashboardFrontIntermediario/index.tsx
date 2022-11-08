@@ -1,12 +1,12 @@
 import { useState } from "react";
-import HeaderDashboard from "../../Dashboard/HeaderDashboard";
-import TitleTechDashboard from "../../Dashboard/TitleTech";
-import Footer from "../../Footer";
+
+import TitleTechDashboard from "../TitleTech";
 import frontEndIntermediario from "../../../Assets/frontend-line-intermediario.png";
-import { CardTechStyled } from "../../Dashboard/CardTechs/style";
+import { CardTechStyled } from "../CardTechs/style";
 import { UlStyle } from "./style";
 import { ContainerMain } from "../DashboardFrontBasic/style";
-import ModalContents from "../../Dashboard/ModalContents";
+import ModalContents from "../ModalContents";
+
 
 const DashboardFrontIntermediario = () => {
   const [modal, setModal] = useState<boolean>(false);
@@ -16,8 +16,8 @@ const DashboardFrontIntermediario = () => {
     setModal(true);
   }
   return (
-    <> 
-      <HeaderDashboard />
+    <>
+      
 
       <ContainerMain>
         <TitleTechDashboard>
@@ -56,8 +56,7 @@ const DashboardFrontIntermediario = () => {
         <img src={frontEndIntermediario} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
-      <Footer />     
-
+     
       {modal ? <ModalContents /> : <></>}
     </>
   );
