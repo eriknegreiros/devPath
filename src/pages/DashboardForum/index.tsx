@@ -1,10 +1,34 @@
+import { useContext } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 import CardPosts from "../../components/Dashboard/CardPosts";
 import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
 import Footer from "../../components/Footer";
+import { ForumContext, iPost } from "../../context/ForumContext";
 import { Container } from "./style";
 import { DivButton, DivUser } from "./style";
+export interface iPostProps {
+  post: iPost[];
+}
 
 const Forum = () => {
+  const { newPost, post } = useContext(ForumContext);
+
+  const addPost = yup.object().shape({
+    text: yup.string().required("*Campo obrigatório"),
+  });
+
+  const {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    register,
+    handleSubmit,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    formState: { errors },
+  } = useForm<iPost>({
+    resolver: yupResolver(addPost),
+  });
+  console.log(post);
   return (
     <>
       <HeaderDashboard />
@@ -19,7 +43,7 @@ const Forum = () => {
 
         <section>
           <h5>Compartilhe conosco!</h5>
-          <form>
+          <form onSubmit={handleSubmit(newPost)}>
             <textarea
               name="post"
               placeholder="O que temos pra hoje?"
@@ -28,13 +52,19 @@ const Forum = () => {
               <button>Postar</button>
             </DivButton>
           </form>
-
-          {/* 
-        Fazer map dos posts */}
-
           <ul>
-            <CardPosts />
-            <CardPosts />
+            {post.length === 0 && (
+              <li>
+                <h2>Nada por aqui 😪</h2>
+              </li>
+            )}
+            {post.map((posts, index) => (
+              <CardPosts
+                key={index}
+                postsContent={posts.text}
+                postsUId={posts.userId}
+              />
+            ))}
           </ul>
         </section>
       </Container>

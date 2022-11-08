@@ -29,7 +29,7 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
         const token = localStorage.getItem("@DevPath:token");
         instance.defaults.headers.authorization = `Bearer ${token}`;
 
-        const user = await instance.get("profile");
+        const user = await instance.get("users");
 
         setPost(user.data.posts);
       } catch (error) {
