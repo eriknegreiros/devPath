@@ -5,10 +5,11 @@ import WhoWeAre from "../pages/WhoWeAre";
 import SelectTask from "../pages/Dashboard/SelectTask";
 import Login from "../pages/login";
 import Forum from "../pages/DashboardForum";
-import DashboardFrontBasic from "../components/Dashboard/DashboardFrontBasic";
-import DashboardFrontIntermediario from "../components/Dashboard/DashboardFrontIntermediario";
-import DashboardFrontAvancado from "../components/Dashboard/DashboardFrontAvancado";
+import DashboardFrontBasic from "../Components/Dashboard/DashboardFrontBasic";
+import DashboardFrontIntermediario from "../Components/Dashboard/DashboardFrontIntermediario";
+import DashboardFrontAvancado from "../Components/Dashboard/DashboardFrontAvancado";
 import SelectFrontEnd from "../pages/Dashboard/SelectFrontEnd";
+import DashboardLogicaProgramacao from "../pages/DashboardLogicaProgramacao";
 
 const RoutesMain = () => {
   return (
@@ -22,6 +23,10 @@ const RoutesMain = () => {
       <Route path="/dashboard/selectTask" element={<SelectTask />} />
       <Route path="dashboard/Forum" element={<Forum />} />
       <Route path="/dashboard/frontEnd" element={<SelectFrontEnd />} />
+      <Route
+        path="dashboard/selectTask/logicadeprogramacao"
+        element={<DashboardLogicaProgramacao />}
+      />
       <Route
         path="dashboard/selectTask/frontendbasic"
         element={<DashboardFrontBasic />}
