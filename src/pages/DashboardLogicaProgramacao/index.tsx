@@ -52,8 +52,7 @@ const DashboardLogicaProgramacao = () => {
 
       </ContainerMain>
 
-    <Footer />{
-console.log(modal)}
+    <Footer />
     {modal ? <ModalContents /> : <></>}
     </>
   );
