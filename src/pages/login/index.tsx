@@ -1,21 +1,25 @@
 import { Button, ContainerLogin } from "./style";
 import loginAnimation from "../../Assets/loginAnimation.json";
 import { useForm } from "react-hook-form";
-import PasswordInput from "../../Components/Login/emailInput/index";
-import EmailInput from "../../Components/Login/emailInput";
+import PasswordInput from "../../components/Login/passwordVisibilte";
+import EmailInput from "../../components/Login/emailInput";
 import { Link } from "react-router-dom";
-import Lottie from "react-lottie";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Header from "../../Components/Register/Header";
+import Header from "../../components/Register/Header";
 import img from "../../Assets/login.gif";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
-interface iLogin {
+export interface iLogin {
   email: string;
   password: string;
 }
 
 const Login = () => {
+  
+  const { loginUser, loading } = useContext(UserContext);
+
   const Schema = yup.object().shape({
     email: yup.string().required("Email obrigatorio!!").email(),
     password: yup.string().required("Senha obrigatorio!"),
@@ -39,6 +43,8 @@ const Login = () => {
     },
   };
 
+  
+
   return (
     <ContainerLogin>
       <Header />
@@ -48,7 +54,7 @@ const Login = () => {
           <img className="img" src={img} alt="" />
         </section>
 
-        <form>
+        <form onSubmit={handleSubmit(loginUser)}>
           <div>
             <h1>Login</h1>
           </div>
@@ -61,7 +67,7 @@ const Login = () => {
           <PasswordInput register={register} />
           <p>{errors.password?.message}</p>
 
-          <Button>Entrar</Button>
+          <Button disabled={loading}>{loading ? 'Entrando...' : 'Entrar'}</Button>
           <section>
             <Link to="/register" className="toRegister">
               Ou crie uma conta aqui

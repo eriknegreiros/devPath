@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import DivInput from "./style";
-import React from "react";
 
-import { FieldValues, UseFormRegister } from "react-hook-form";
+
+import {FieldValues, UseFormRegister} from "react-hook-form";
 
 interface IProps {
   register: UseFormRegister<FieldValues> | any;
@@ -16,7 +16,11 @@ const PasswordInput = ({ register }: IProps) => {
   };
   return (
     <DivInput>
-      <input placeholder="senha" {...register(`password`)} />
+      <input
+        type={visibility ? "text" : "password"}
+        placeholder='Senha'
+        {...register(`password`)}
+      />
       <button className="eye" type="button" onClick={toggleBtn}>
         {visibility ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
       </button>
