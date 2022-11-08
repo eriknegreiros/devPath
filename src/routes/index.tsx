@@ -14,23 +14,26 @@ const RoutesMain = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="*" element={<Navigate to={"/"} />} />
+      <Route path="*" element={<Navigate to={'/'}/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />
       <Route path="/dashboard/selectTask" element={<SelectTask />} />
       <Route path="dashboard/Forum" element={<Forum />} />
+      
 
       <Route path="dashboard/frontEnd" element={<SelectFrontEnd />}>
+
         <Route index element={<DashboardFrontBasic />} />
+    
+        <Route path="frontEndIntermediary" element={<DashboardFrontIntermediario />} />
 
-        <Route
-          path="frontEndIntermediary"
-          element={<DashboardFrontIntermediario />}
-        />
-
-        <Route path="frontEndAdvanced" element={<DashboardFrontAvancado />} />
+        <Route path="frontEndAdvanced"element={ <DashboardFrontAvancado />} />
+     
       </Route>
+  
+  
+  
     </Routes>
   );
 };
