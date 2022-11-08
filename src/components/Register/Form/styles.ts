@@ -148,7 +148,6 @@ const FormStyles = styled.form`
       height: 3.125rem;
       margin-top: 1.875rem;
     }
-  }
 `;
 
 export default FormStyles;
