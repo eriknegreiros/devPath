@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Header from "../../Components/Register/Header";
 import img from "../../Assets/login.gif";
+import { motion } from "framer-motion";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 
@@ -17,7 +18,6 @@ export interface iLogin {
 }
 
 const Login = () => {
-  
   const { loginUser, loading } = useContext(UserContext);
 
   const Schema = yup.object().shape({
@@ -43,39 +43,45 @@ const Login = () => {
     },
   };
 
-  
-
   return (
-    <ContainerLogin>
-      <Header />
-
-      <main>
-        <section className="container">
-          <img className="img" src={img} alt="" />
-        </section>
-
-        <form onSubmit={handleSubmit(loginUser)}>
-          <div>
-            <h1>Login</h1>
-          </div>
-          <label>Email</label>
-
-          <EmailInput register={register} />
-          <p>{errors.email?.message}</p>
-
-          <label>Senha</label>
-          <PasswordInput register={register} />
-          <p>{errors.password?.message}</p>
-
-          <Button disabled={loading}>{loading ? 'Entrando...' : 'Entrar'}</Button>
-          <section>
-            <Link to="/register" className="toRegister">
-              Ou crie uma conta aqui
-            </Link>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <ContainerLogin>
+        <Header />
+        <main>
+          <section className="container">
+            <img className="img" src={img} alt="" />
           </section>
-        </form>
-      </main>
-    </ContainerLogin>
+
+          <form onSubmit={handleSubmit(loginUser)}>
+            <div>
+              <h1>Login</h1>
+            </div>
+            <label>Email</label>
+
+            <EmailInput register={register} />
+            <p>{errors.email?.message}</p>
+
+            <label>Senha</label>
+            <PasswordInput register={register} />
+            <p>{errors.password?.message}</p>
+
+            <Button disabled={loading}>
+              {loading ? "Entrando..." : "Entrar"}
+            </Button>
+            <section>
+              <Link to="/register" className="toRegister">
+                Ou crie uma conta aqui
+              </Link>
+            </section>
+          </form>
+        </main>
+      </ContainerLogin>
+    </motion.div>
   );
 };
 export default Login;
