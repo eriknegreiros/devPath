@@ -3,7 +3,7 @@ import Register from "../pages/Register";
 import Home from "../pages/Home";
 import WhoWeAre from "../pages/WhoWeAre";
 import SelectTask from "../pages/Dashboard/SelectTask";
-import Login from "../pages/login";
+import Login from "../pages/Login";
 import Forum from "../pages/DashboardForum";
 import DashboardFrontBasic from "../components/Dashboard/DashboardFrontBasic";
 import DashboardFrontIntermediario from "../components/Dashboard/DashboardFrontIntermediario";
@@ -15,7 +15,6 @@ const RoutesMain = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="*" element={<Home />} />
-      <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />

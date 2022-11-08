@@ -18,6 +18,7 @@ const DivInput = styled.section`
     font-size: var(--text-size3);
     background-color: #c2c9e3;
     outline: none;
+    font-family: var(--font);
   }
   button {
     display: flex;

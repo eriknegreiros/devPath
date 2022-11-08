@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import DivInput from "./style";
-import React from 'react'
+
 
 import {
   FieldValues,
@@ -23,7 +23,7 @@ const PasswordInput = ({ register } : IProps ) => {
     <DivInput>
       <input
         type={visibility ? "text" : "password"}
-        placeholder='senha'
+        placeholder='Senha'
         {...register(`password`)}
       />
       <button className="eye" type="button" onClick={toggleBtn}>
