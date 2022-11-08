@@ -9,10 +9,11 @@ import Footer from "../../Components/Footer";
 import { ForumContext, iPost } from "../../Context/ForumContext";
 import { Container } from "./style";
 import { DivButton, DivUser } from "./style";
+import img from "../../Assets/devs/erik.png";
+
 export interface iPostProps {
   post: iPost[];
 }
-import img from "../../Assets/devs/erik.png";
 
 
 const Forum = () => {

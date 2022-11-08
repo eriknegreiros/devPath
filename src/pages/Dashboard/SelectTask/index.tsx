@@ -1,7 +1,5 @@
 import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../../Components/Footer";
-import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
-import Footer from "../../../Components/Footer";
 import { Main } from "./style";
 import { Link } from "react-router-dom";
 import logic from "../../../Assets/logic.png";
