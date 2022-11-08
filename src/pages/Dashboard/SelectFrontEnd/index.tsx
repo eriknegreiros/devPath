@@ -1,54 +1,52 @@
-import HeaderDashboard from "../../../components/Dashboard/HeaderDashboard"
+import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
+import Footer from "../../../Components/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Outlet, useNavigate } from "react-router-dom";
 
-import Footer from "../../../components/Footer"
-import DashboardFrontBasic from "../../../components/Dashboard/DashboardFrontBasic"
-import DashboardFrontIntermediario from "../../../components/Dashboard/DashboardFrontIntermediario"
-import DashboardFrontAvancado from "../../../components/Dashboard/DashboardFrontAvancado"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import { Outlet } from "react-router-dom"
-
-
+import { useLocation } from "react-router-dom";
 
 const SelectFrontEnd = () => {
- 
+  const navigate = useNavigate();
 
-  return (
-    <>
-        <HeaderDashboard/>
-          
+  let location = useLocation();
+
+  
+    return (
+      <>
+        <HeaderDashboard />
+
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           navigation
           pagination={{ clickable: true }}
-        
           slidesPerView={1}
-          onSlideChange={() => console.log('slide change')}
+          onSlideChange={(e) => {
+            console.log(e);
+            if (location.pathname === "/dashboard/frontEnd") {
+              navigate("frontEndIntermediary");
+            } else if (
+              location.pathname === "/dashboard/frontEnd/frontEndIntermediary"
+            ) {
+              navigate("frontEndAdvanced");
+            }
+          }}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide>{<DashboardFrontBasic/>}</SwiperSlide>
-          <SwiperSlide>{<DashboardFrontIntermediario/>}</SwiperSlide>
-          <SwiperSlide>{<DashboardFrontAvancado/>}</SwiperSlide>
-          
+          <SwiperSlide>{<Outlet />}</SwiperSlide>
+          <SwiperSlide>{<Outlet />}</SwiperSlide>
+          <SwiperSlide>{<Outlet />}</SwiperSlide>
         </Swiper>
-        
-          
-          
-          
 
-          <Footer/>
-
-          <Outlet/>
+        <Footer />
       </>
-  ) 
+    );
+  };
 
-}
-
-
-export default SelectFrontEnd
+export default SelectFrontEnd;
