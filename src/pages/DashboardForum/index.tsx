@@ -2,7 +2,7 @@ import CardPosts from "../../components/Dashboard/CardPosts";
 import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
 import Footer from "../../components/Footer";
 import { DivButton, Main, DivUser } from "./style";
-import img from '../../Assets/devs/erik.png'
+import img from "../../Assets/devs/erik.png";
 
 const Forum = () => {
   return (

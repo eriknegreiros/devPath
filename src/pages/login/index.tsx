@@ -1,13 +1,13 @@
 import { Button, ContainerLogin } from "./style";
 import loginAnimation from "../../Assets/loginAnimation.json";
 import { useForm } from "react-hook-form";
-import PasswordInput from "../../Components/Login/emailInput/index";
-import EmailInput from "../../Components/Login/emailInput";
+import PasswordInput from "../../components/Login/emailInput/index";
+import EmailInput from "../../components/Login/emailInput";
 import { Link } from "react-router-dom";
 import Lottie from "react-lottie";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Header from "../../Components/Register/Header";
+import Header from "../../components/Register/Header";
 import img from "../../Assets/login.gif";
 
 interface iLogin {
