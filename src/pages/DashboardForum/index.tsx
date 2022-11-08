@@ -6,8 +6,7 @@ import CardPosts from "../../Components/Dashboard/CardPosts";
 import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
 import { ForumContext, iPost } from "../../Context/ForumContext";
-import { Container } from "./style";
-import { DivButton, DivUser } from "./style";
+import { DivButton, DivUser, Container } from "./style";
 import img from "../../Assets/devs/erik.png";
 import { motion } from "framer-motion";
 
