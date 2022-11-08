@@ -9,6 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Header from "../../Components/Register/Header";
 import img from "../../Assets/login.gif";
+import { motion } from "framer-motion";
 
 interface iLogin {
   email: string;
@@ -40,36 +41,43 @@ const Login = () => {
   };
 
   return (
-    <ContainerLogin>
-      <Header />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <ContainerLogin>
+        <Header />
 
-      <main>
-        <section className="container">
-          <img className="img" src={img} alt="" />
-        </section>
-
-        <form>
-          <div>
-            <h1>Login</h1>
-          </div>
-          <label>Email</label>
-
-          <EmailInput register={register} />
-          <p>{errors.email?.message}</p>
-
-          <label>Senha</label>
-          <PasswordInput register={register} />
-          <p>{errors.password?.message}</p>
-
-          <Button>Entrar</Button>
-          <section>
-            <Link to="/register" className="toRegister">
-              Ou crie uma conta aqui
-            </Link>
+        <main>
+          <section className="container">
+            <img className="img" src={img} alt="" />
           </section>
-        </form>
-      </main>
-    </ContainerLogin>
+
+          <form>
+            <div>
+              <h1>Login</h1>
+            </div>
+            <label>Email</label>
+
+            <EmailInput register={register} />
+            <p>{errors.email?.message}</p>
+
+            <label>Senha</label>
+            <PasswordInput register={register} />
+            <p>{errors.password?.message}</p>
+
+            <Button>Entrar</Button>
+            <section>
+              <Link to="/register" className="toRegister">
+                Ou crie uma conta aqui
+              </Link>
+            </section>
+          </form>
+        </main>
+      </ContainerLogin>
+    </motion.div>
   );
 };
 export default Login;
