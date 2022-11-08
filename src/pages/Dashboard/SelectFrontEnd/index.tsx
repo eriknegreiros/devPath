@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { motion } from "framer-motion";
 
 import { useLocation } from "react-router-dom";
 
@@ -18,32 +19,39 @@ const SelectFrontEnd = () => {
 
   return (
     <>
-      <HeaderDashboard />
-
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
-        navigation
-        pagination={{ clickable: true }}
-        slidesPerView={1}
-        onSlideChange={(e) => {
-          console.log(e);
-          if (location.pathname === "/dashboard/frontEnd") {
-            navigate("frontEndIntermediary");
-          } else if (
-            location.pathname === "/dashboard/frontEnd/frontEndIntermediary"
-          ) {
-            navigate("frontEndAdvanced");
-          }
-        }}
-        onSwiper={(swiper) => console.log(swiper)}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
       >
-        <SwiperSlide>{<Outlet />}</SwiperSlide>
-        <SwiperSlide>{<Outlet />}</SwiperSlide>
-        <SwiperSlide>{<Outlet />}</SwiperSlide>
-      </Swiper>
+        <HeaderDashboard />
 
-      <Footer />
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
+          navigation
+          pagination={{ clickable: true }}
+          slidesPerView={1}
+          onSlideChange={(e) => {
+            console.log(e);
+            if (location.pathname === "/dashboard/frontEnd") {
+              navigate("frontEndIntermediary");
+            } else if (
+              location.pathname === "/dashboard/frontEnd/frontEndIntermediary"
+            ) {
+              navigate("frontEndAdvanced");
+            }
+          }}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>{<Outlet />}</SwiperSlide>
+          <SwiperSlide>{<Outlet />}</SwiperSlide>
+          <SwiperSlide>{<Outlet />}</SwiperSlide>
+        </Swiper>
+
+        <Footer />
+      </motion.div>
     </>
   );
 };
