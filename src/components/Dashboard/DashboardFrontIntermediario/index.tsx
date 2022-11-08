@@ -1,21 +1,12 @@
 import { useState } from "react";
-<<<<<<< HEAD:src/pages/DashboardFrontIntermediario/index.tsx
-import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
-import TitleTechDashboard from "../../components/Dashboard/TitleTech";
-import Footer from "../../components/Footer";
-import frontEndIntermediario from "../../Assets/frontend-line-intermediario.png";
-import { CardTechStyled } from "../../components/Dashboard/CardTechs/style";
-import { UlStyle } from "../../pages/DashboardFrontIntermediario/style";
-import { ContainerMain } from "../DashboardFrontBasic/style";
-import ModalContents from "../../components/Dashboard/ModalContents";
-=======
+import HeaderDashboard from "../HeaderDashboard";
 import TitleTechDashboard from "../TitleTech";
+import Footer from "../../Footer";
 import frontEndIntermediario from "../../../Assets/frontend-line-intermediario.png";
 import { CardTechStyled } from "../CardTechs/style";
-import { UlStyle } from "./style";
+import { UlStyle } from "../DashboardFrontIntermediario/style";
 import { ContainerMain } from "../DashboardFrontBasic/style";
 import ModalContents from "../ModalContents";
->>>>>>> 729e92fd9fe8dcd36d8553239a3ca453494e0dc0:src/components/Dashboard/DashboardFrontIntermediario/index.tsx
 
 const DashboardFrontIntermediario = () => {
   const [modal, setModal] = useState<boolean>(false);
@@ -26,8 +17,6 @@ const DashboardFrontIntermediario = () => {
   }
   return (
     <>
-      
-
       <ContainerMain>
         <TitleTechDashboard>
           <h2>Front-End</h2>
@@ -65,7 +54,6 @@ const DashboardFrontIntermediario = () => {
         <img src={frontEndIntermediario} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
-     
       {modal ? <ModalContents /> : <></>}
     </>
   );
