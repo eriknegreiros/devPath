@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { CardTechStyled } from "../CardTechs/style";
 
 import TitleTech from "../TitleTech";
