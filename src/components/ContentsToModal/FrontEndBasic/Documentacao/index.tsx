@@ -1,6 +1,5 @@
 import sites from "../../../../Assets/sites-icon.svg";
 import videos from "../../../../Assets/videos-icon.svg";
-import challenges from "../../../../Assets/challenges-icon.svg";
 
 const Documentacao = () => {
   return (

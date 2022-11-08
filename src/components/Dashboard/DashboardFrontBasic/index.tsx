@@ -1,11 +1,7 @@
-import { useContext, useState } from "react";
-import HeaderDashboard from "../../Dashboard/HeaderDashboard";
-import TitleTechDashboard from "../../Dashboard/TitleTech";
-import { CardTechStyled } from "../../Dashboard/CardTechs/style";
-import Footer from "../../Footer";
-import ModalContents from "../../Dashboard/ModalContents";
+import { useState } from "react";
+import TitleTechDashboard from "../TitleTech";
+import { CardTechStyled } from "../CardTechs/style";
 import frontEndBasic from "../../../Assets/frontend-line-basic.png";
-
 import { ContainerMain } from "./style";
 import GlobalModal from "../../Modal";
 import Css3 from "../../ContentsToModal/FrontEndBasic/Css3";
@@ -23,6 +19,8 @@ const DashboardFrontBasic = () => {
 
   return (
     <>
+
+
       <ContainerMain>
         <TitleTechDashboard>
           <h2>Front-End</h2>

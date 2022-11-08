@@ -16,7 +16,7 @@ const InputContainer = styled.div`
     border: none;
     height: 100%;
     background-color: #c2c9e3;
-    font-size: var(--text-size3);
+    font-size: 1rem;
     outline: none;
     font-family: var(--font);
   }
@@ -27,6 +27,5 @@ const InputContainer = styled.div`
     background-color: none;
     background-color: transparent;
   }
-
 `;
 export default InputContainer;

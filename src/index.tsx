@@ -4,7 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./Styles/global";
 import { BrowserRouter } from "react-router-dom";
-
+import { DashboardForum } from "./Context/ForumContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,8 +12,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalStyle />
-      <App />
+      <DashboardForum>
+        <GlobalStyle />
+        <App />
+      </DashboardForum>
     </BrowserRouter>
   </React.StrictMode>
 );

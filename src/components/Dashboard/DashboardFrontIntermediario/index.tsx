@@ -1,12 +1,9 @@
 import { useState } from "react";
-import HeaderDashboard from "../HeaderDashboard";
 import TitleTechDashboard from "../TitleTech";
-import Footer from "../../Footer";
 import frontEndIntermediario from "../../../Assets/frontend-line-intermediario.png";
 import { CardTechStyled } from "../CardTechs/style";
-import { UlStyle } from "../DashboardFrontIntermediario/style";
+import { UlStyle } from "./style";
 import { ContainerMain } from "../DashboardFrontBasic/style";
-import ModalContents from "../ModalContents";
 
 import GlobalModal from "../../Modal";
 import Array from "../../ContentsToModal/FrontEndIntermediary/Array";
@@ -20,6 +17,8 @@ const DashboardFrontIntermediario = () => {
 
   return (
     <>
+      
+
       <ContainerMain>
         <TitleTechDashboard>
           <h2>Front-End</h2>

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { CardTechStyled } from "../CardTechs/style";
-import HeaderDashboard from "../HeaderDashboard";
+
 import TitleTech from "../TitleTech";
 import { ContainerMain } from "../DashboardFrontBasic/style";
 import { UlStyledAvancado } from "./style";
 import frontEndAvancado from "../../../Assets/frontend-line-avancado.png";
-import Footer from "../../Footer";
+
 import ModalContents from "../ModalContents";
 
 import GlobalModal from "../../Modal";
@@ -109,3 +109,4 @@ const DashboardFrontAvancado = () => {
   );
 };
 export default DashboardFrontAvancado;
+

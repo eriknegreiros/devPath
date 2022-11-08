@@ -18,20 +18,18 @@ export const Main = styled.main`
 
   background: var(--main-color4);
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 767px) {
     justify-content: space-evenly;
   }
 
   img {
     display: none;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 850px) {
       width: 500px;
       display: inline;
       margin-top: 5vh;
     }
-
-   
   }
 
   .formSection {
@@ -43,21 +41,19 @@ export const Main = styled.main`
 
     color: var(--white);
 
-    @media screen and (min-width: 768px) {
-      width: 30vw;
-    }
+    max-width: 500px;
 
     .title {
       margin-bottom: 0.625rem;
       margin-top: 5vh;
-      font-size: 1.38rem;
+      font-size: 1.2rem;
       line-height: 1.5rem;
       text-align: center;
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 767px) {
         margin-bottom: 1.56rem;
         margin-top: 20px;
-        font-size: 1.63rem;
+        font-size: 1.5rem;
         line-height: 1.75rem;
       }
     }
@@ -68,7 +64,7 @@ export const Main = styled.main`
       text-align: center;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 767px) {
       font-size: 0.875rem;
       line-height: 1rem;
     }
