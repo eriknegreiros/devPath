@@ -36,7 +36,7 @@ export const Card = styled.div`
   margin: 30px;
 
   @media (min-width: 767px) {
-    justify-content: center;
+    justify-content: center;  
     flex-wrap: wrap;
   }
 

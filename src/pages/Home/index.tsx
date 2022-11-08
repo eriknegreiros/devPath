@@ -8,10 +8,12 @@ const Home = () => {
   return (
     <>
       <HeaderMenu />
-      <LandWithImage />
-      <CardsStudy />
-      <WhyDevPath />
-      <Footer />
+      <Container>
+        <LandWithImage />
+        <CardsStudy />
+        <WhyDevPath />
+        <Footer />
+      </Container>
     </>
   );
 };
