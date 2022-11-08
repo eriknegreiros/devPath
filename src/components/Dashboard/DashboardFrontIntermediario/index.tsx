@@ -8,24 +8,30 @@ import { UlStyle } from "../DashboardFrontIntermediario/style";
 import { ContainerMain } from "../DashboardFrontBasic/style";
 import ModalContents from "../ModalContents";
 
-const DashboardFrontIntermediario = () => {
-  const [modal, setModal] = useState<boolean>(false);
+import GlobalModal from "../../Modal";
+import Array from "../../ContentsToModal/FrontEndIntermediary/Array";
+import Function from "../../ContentsToModal/FrontEndIntermediary/Function";
+import Api from "../../ContentsToModal/FrontEndIntermediary/Api";
 
-  function modalContents(e: any) {
-    e.preventDefault();
-    setModal(true);
-  }
+const DashboardFrontIntermediario = () => {
+  const [arrayIsOpen, setArrayIsOpen] = useState<boolean>(false);
+  const [functionIsOpen, setFunctionIsOpen] = useState<boolean>(false);
+  const [apiIsOpen, setApiIsOpen] = useState<boolean>(false);
+
   return (
     <>
       <ContainerMain>
         <TitleTechDashboard>
           <h2>Front-End</h2>
-          <p>Nivél Intermediário</p>
+          <p>Nível Intermediário</p>
           <span>Início</span>
         </TitleTechDashboard>
 
         <UlStyle>
-          <CardTechStyled className="cardAjuste" onClick={modalContents}>
+          <CardTechStyled
+            className="cardAjuste"
+            onClick={() => setArrayIsOpen(true)}
+          >
             <h3>Métodos de array </h3>
             <p>
               Os métodos são as principais ferramentas para manipulação e
@@ -33,7 +39,7 @@ const DashboardFrontIntermediario = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled onClick={modalContents}>
+          <CardTechStyled onClick={() => setFunctionIsOpen(true)}>
             <h3>Funções Assíncronas</h3>
             <p>
               funções assíncronas são uma espécie de Promise, pois condicionam a
@@ -42,7 +48,10 @@ const DashboardFrontIntermediario = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled className="cardAjuste" onClick={modalContents}>
+          <CardTechStyled
+            className="cardAjuste"
+            onClick={() => setApiIsOpen(true)}
+          >
             <h3>API</h3>
             <p>
               As APIs são um tipo de “ponte” que conectam aplicações, podendo
@@ -54,7 +63,29 @@ const DashboardFrontIntermediario = () => {
         <img src={frontEndIntermediario} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
-      {modal ? <ModalContents /> : <></>}
+      {arrayIsOpen ? (
+        <GlobalModal
+          title="Métodos de array"
+          onClose={() => setArrayIsOpen(false)}
+        >
+          <Array />
+        </GlobalModal>
+      ) : null}
+
+      {functionIsOpen ? (
+        <GlobalModal
+          title="Funções Assíncronas"
+          onClose={() => setFunctionIsOpen(false)}
+        >
+          <Function />
+        </GlobalModal>
+      ) : null}
+
+      {apiIsOpen ? (
+        <GlobalModal title="API" onClose={() => setApiIsOpen(false)}>
+          <Api />
+        </GlobalModal>
+      ) : null}
     </>
   );
 };

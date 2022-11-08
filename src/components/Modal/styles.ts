@@ -57,7 +57,7 @@ export const Header = styled.header`
     border: solid 1px #22ca47;
     border-radius: 8px;
 
-    color: #ffffff;
+    color: var(--white);
     background: #22ca47;
   }
 
@@ -68,7 +68,7 @@ export const Header = styled.header`
 
     border: none;
 
-    color: #ffffff;
+    color: var(--white);
     background: transparent;
   }
 `;
