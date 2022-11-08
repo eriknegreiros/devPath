@@ -9,6 +9,7 @@ import DashboardFrontBasic from "../components/Dashboard/DashboardFrontBasic";
 import DashboardFrontIntermediario from "../components/Dashboard/DashboardFrontIntermediario";
 import DashboardFrontAvancado from "../components/Dashboard/DashboardFrontAvancado";
 import SelectFrontEnd from "../pages/Dashboard/SelectFrontEnd";
+import DashboardLogicaProgramacao from "../pages/DashboardLogicaProgramacao";
 
 const RoutesMain = () => {
   return (
@@ -21,6 +22,7 @@ const RoutesMain = () => {
       <Route path="/dashboard/selectTask" element={<SelectTask />} />
       <Route path="dashboard/Forum" element={<Forum />} />
       
+        <Route path="logicaprogramacao" element={<DashboardLogicaProgramacao />} />
 
       <Route path="dashboard/frontEnd" element={<SelectFrontEnd />}>
 
