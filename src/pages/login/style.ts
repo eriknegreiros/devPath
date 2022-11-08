@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 export const ContainerLogin = styled.div`
+
   width: 100vw;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
   flex-direction: column;
+
+ 
+
 
   main {
     width: 100%;
@@ -14,15 +18,17 @@ export const ContainerLogin = styled.div`
     align-items: center;
   }
 
+ 
   .container {
     margin-left: 10vw;
     margin-top: 50px;
   }
 
-  .img {
-    width: 500px;
-    height: 500px;
-  }
+  .img{
+   width:500px;
+   height: 500px;
+   
+ }
 
   form {
     width: 25%;
@@ -38,35 +44,29 @@ export const ContainerLogin = styled.div`
       text-align: center;
     }
     h1 {
-      margin: 20px 0;
-      font-size: 1.5rem;
+      margin: 40px 0;
     }
 
     label {
       font-size: var(--text-size3);
       padding: 5px 0;
     }
-    .redirect {
-      width: 10rem;
-      align-self: center;
+    section {
+      width: 100%;
+      height: 40px;
+
+      text-align: center;
 
       .toRegister {
+        align-items: center;
         font-size: var(--text-size4);
-        color: var(--white);
+        color: white;
         text-decoration: none;
         font-family: var(--font);
 
-        &:hover::after {
-          transform: scaleX(1);
+        &:hover {
+          color: var(--main-color2);
         }
-      }
-
-      .toRegister::after {
-        display: block;
-        content: "";
-        border-bottom: solid 1px var(--white);
-        transform: scaleX(0);
-        transition: transform 250ms ease-in-out;
       }
     }
   }
@@ -88,17 +88,12 @@ export const ContainerLogin = styled.div`
   }
 `;
 export const Button = styled.button`
-  width: auto;
-  height: 2.875rem;
+  width: 100%;
+  height: 40px;
 
   border: solid 1px white;
   border-radius: 4px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.375rem;
-  text-align: center;
-  color: var(--text-color5);
-  background: var(--main-color);
+  font-family: var(--font);
+  color: white;
+  background-color: var(--main-color);
 `;

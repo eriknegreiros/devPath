@@ -1,17 +1,19 @@
+
 import { useContext } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import CardPosts from "../../components/Dashboard/CardPosts";
-import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
-import Footer from "../../components/Footer";
-import { ForumContext, iPost } from "../../context/ForumContext";
+import CardPosts from "../../Components/Dashboard/CardPosts";
+import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
+import Footer from "../../Components/Footer";
+import { ForumContext, iPost } from "../../Context/ForumContext";
 import { Container } from "./style";
 import { DivButton, DivUser } from "./style";
 export interface iPostProps {
   post: iPost[];
 }
 import img from "../../Assets/devs/erik.png";
+
 
 const Forum = () => {
   const { newPost, post } = useContext(ForumContext);

@@ -134,6 +134,12 @@ const FormStyles = styled.form`
       background: var(--main-color2);
     }
 
+    &:disabled{
+            cursor: not-allowed;
+            opacity: .4;
+        }
+    }
+
     &:active {
       background: var(--main-color6);
     }

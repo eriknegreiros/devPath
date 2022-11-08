@@ -1,6 +1,6 @@
 import { HiOutlineMail } from "react-icons/hi";
 import InputContainer from "./style";
-import React from "react";
+
 import {
   FieldValues,
   UseFormRegister,
@@ -14,7 +14,7 @@ interface IProps {
 const EmailInput = ({ register }: IProps) => {
   return (
     <InputContainer>
-      <input placeholder="Email" {...register(`email`)} />
+      <input type="text" placeholder="Email" {...register(`email`)} />
       <button type="button">
         <HiOutlineMail color="#5c6ca4" />
       </button>
