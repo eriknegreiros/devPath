@@ -10,6 +10,11 @@ export const Main = styled.main`
   gap: 30px;
   padding: 15px;
 
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
   @media (min-width: 768px) {
     flex-direction: row;
   }

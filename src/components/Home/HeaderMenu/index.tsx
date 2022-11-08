@@ -56,6 +56,12 @@ const HeaderMenu = () => {
                     {" "}
                     <p>Cadastro</p>
                   </Link>
+                  </li>
+                  <li>
+                  <Link to="/dashboard/forum">
+                    {" "}
+                    <p>Forum</p>
+                  </Link>
                 </li>
               </NavMenu>
             </nav>

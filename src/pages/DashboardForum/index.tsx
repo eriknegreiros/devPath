@@ -3,6 +3,7 @@ import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
 import { DivButton, Main, DivUser } from "./style";
 import img from '../../Assets/devs/erik.png'
+import { Link } from "react-router-dom";
 
 const Forum = () => {
   return (
@@ -18,6 +19,9 @@ const Forum = () => {
         </DivUser>
 
         <section>
+          <Link to="/">
+            <p>Home</p>
+          </Link>
           <h5>Compartilhe conosco!</h5>
           <form>
             <textarea

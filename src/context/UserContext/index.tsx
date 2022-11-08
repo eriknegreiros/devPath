@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { iLogin } from "../../pages/Login";
+import { iLogin } from "../../pages/login";
 import { instance } from "../../service/api";
 
 interface iAuthProps {
