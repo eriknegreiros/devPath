@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import api from "../services/api";
 
@@ -17,11 +17,14 @@ export interface iUser {
 
 interface iUserContext {
   registerUser: (data: iUser) => void;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const UserContext = createContext({} as iUserContext);
 
 export const AuthProvider = ({ children }: iAuthProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const registerUser = async (data: iUser) => {
@@ -38,7 +41,7 @@ export const AuthProvider = ({ children }: iAuthProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ registerUser }}>
+    <UserContext.Provider value={{ registerUser, isOpen, setIsOpen }}>
       {children}
     </UserContext.Provider>
   );

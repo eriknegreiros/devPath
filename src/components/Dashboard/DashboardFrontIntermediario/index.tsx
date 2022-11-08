@@ -2,10 +2,9 @@ import { useState } from "react";
 import TitleTechDashboard from "../TitleTech";
 import frontEndIntermediario from "../../../Assets/frontend-line-intermediario.png";
 import { CardTechStyled } from "../CardTechs/style";
-import { UlStyle } from "./style";
+import { UlStyle } from "../DashboardFrontIntermediario/style";
 import { ContainerMain } from "../DashboardFrontBasic/style";
 import ModalContents from "../ModalContents";
-
 
 
 const DashboardFrontIntermediario = () => {
@@ -17,8 +16,6 @@ const DashboardFrontIntermediario = () => {
   }
   return (
     <>
-      
-
       <ContainerMain>
         <TitleTechDashboard>
           <h2>Front-End</h2>
@@ -56,7 +53,6 @@ const DashboardFrontIntermediario = () => {
         <img src={frontEndIntermediario} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
-     
       {modal ? <ModalContents /> : <></>}
     </>
   );
