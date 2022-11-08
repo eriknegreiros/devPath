@@ -8,12 +8,12 @@ const Home = () => {
   return (
     <>
       <HeaderMenu />
-      <Container>
+     
         <LandWithImage />
         <CardsStudy />
         <WhyDevPath />
         <Footer />
-      </Container>
+      
     </>
   );
 };
