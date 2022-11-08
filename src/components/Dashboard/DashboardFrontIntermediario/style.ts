@@ -19,5 +19,4 @@ export const UlStyle = styled.li`
   
   }
 }
-   
 `

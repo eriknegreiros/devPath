@@ -8,15 +8,14 @@ export const UlStyledAvancado = styled.ul`
     margin: 80px 0 50px 60%;
   }
 
-  @media (max-width: 540px){
+  @media (max-width: 540px) {
     .cardAjuste {
       margin: 50px 0 70px 72%;
+    }
   }
 
-  @media (max-width: 350px){ {
-    {
-      height: 80vh;
-      margin-top: 0px;
-  
+  @media (max-width: 350px) {
+    height: 80vh;
+    margin-top: 0px;
   }
 `;
