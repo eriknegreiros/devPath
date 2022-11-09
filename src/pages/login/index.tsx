@@ -1,16 +1,16 @@
 import { Button, ContainerLogin } from "./style";
 import loginAnimation from "../../Assets/loginAnimation.json";
 import { useForm } from "react-hook-form";
-import PasswordInput from "../../Components/Login/passwordVisibilte";
-import EmailInput from "../../Components/Login/emailInput";
+import PasswordInput from "../../components/Login/passwordVisibilte";
+import EmailInput from "../../components/Login/emailInput";
 import { Link } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Header from "../../Components/Register/Header";
+import Header from "../../components/Register/Header";
 import img from "../../Assets/login.gif";
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "../../context/UserContext";
 
 export interface iLogin {
   email: string;
@@ -33,7 +33,6 @@ const Login = () => {
     resolver: yupResolver(Schema),
   });
 
-  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -42,7 +41,7 @@ const Login = () => {
       transition={{ duration: 1 }}
     >
       <ContainerLogin>
-        <Header name='Login' />
+        <Header name="Login" />
         <main>
           <section className="container">
             <img className="img" src={img} alt="" />

@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { instance } from "../../Service/api";
+import { instance } from "../../service/api";
 // import { toast } from "react-toastify";
 
 export interface iDefaultContextProps {

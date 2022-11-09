@@ -1,5 +1,5 @@
-import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
-import Footer from "../../../Components/Footer";
+import HeaderDashboard from "../../../components/Dashboard/HeaderDashboard";
+import Footer from "../../../components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";

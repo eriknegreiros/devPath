@@ -1,15 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Register from "../Pages/Register";
-import Home from "../Pages/Home";
-import WhoWeAre from "../Pages/WhoWeAre";
-import SelectTask from "../Pages/Dashboard/SelectTask";
-import Login from "../Pages/login";
-import Forum from "../Pages/DashboardForum";
-import DashboardFrontBasic from "../Components/Dashboard/DashboardFrontBasic";
-import DashboardFrontIntermediario from "../Components/Dashboard/DashboardFrontIntermediario";
-import DashboardFrontAvancado from "../Components/Dashboard/DashboardFrontAvancado";
-import SelectFrontEnd from "../Pages/Dashboard/SelectFrontEnd";
-import DashboardLogicaProgramacao from "../Pages/DashboardLogicaProgramacao";
+import Register from "../pages/Register";
+import Home from "../pages/Home";
+import WhoWeAre from "../pages/WhoWeAre";
+import SelectTask from "../pages/Dashboard/SelectTask";
+import Login from "../pages/login";
+import Forum from "../pages/DashboardForum";
+import DashboardFrontBasic from "../components/Dashboard/DashboardFrontBasic";
+import DashboardFrontIntermediario from "../components/Dashboard/DashboardFrontIntermediario";
+import DashboardFrontAvancado from "../components/Dashboard/DashboardFrontAvancado";
+import SelectFrontEnd from "../pages/Dashboard/SelectFrontEnd";
+import DashboardLogicaProgramacao from "../pages/DashboardLogicaProgramacao";
 
 const RoutesMain = () => {
   return (

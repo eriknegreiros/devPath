@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { CardTechStyled } from "../../Components/Dashboard/CardTechs/style";
-import { ContainerMain } from "../../Components/Dashboard/DashboardFrontBasic/style";
-import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
-import TitleTechDashboard from "../../Components/Dashboard/TitleTech";
+import { CardTechStyled } from "../../components/Dashboard/CardTechs/style";
+import { ContainerMain } from "../../components/Dashboard/DashboardFrontBasic/style";
+import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
+import TitleTechDashboard from "../../components/Dashboard/TitleTech";
 import logicaProgramacao from "../../Assets/line-logicaProgramacao.png";
-import Footer from "../../Components/Footer";
+import Footer from "../../components/Footer";
 import { UlLogicaProgramacao } from "./style";
-import ModalContents from "../../Components/Dashboard/ModalContents";
+import ModalContents from "../../components/Dashboard/ModalContents";
 import { motion } from "framer-motion";
 
 const DashboardLogicaProgramacao = () => {
