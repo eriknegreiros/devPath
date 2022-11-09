@@ -5,7 +5,7 @@ export const Container = styled.main`
   flex-direction: column;
   width: 100vw;
   justify-content: center;
-  
+
   text-align: center;
   gap: 30px;
   max-width: 1600px;
@@ -88,6 +88,7 @@ export const DivUser = styled.div`
   align-items: center;
   margin: 0 auto;
   padding: 15px;
+  text-align: center;
 
   @media (min-width: 767px) {
     width: 250px;
@@ -95,6 +96,10 @@ export const DivUser = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     margin: 0 20px;
+    text-align: center;
+  }
+  div {
+    width: 100%;
   }
 `;
 

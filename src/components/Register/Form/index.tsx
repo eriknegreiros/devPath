@@ -2,9 +2,10 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { iUser, UserContext } from "../../../Context/UserContext";
-import { useContext } from "react";
-import { HiUser, HiEye, HiOutlineMail } from "react-icons/hi";
-import { BsImageFill } from "react-icons/bs";
+import { useContext, useState } from "react";
+import { HiUser, HiOutlineMail } from "react-icons/hi";
+import {BsImageFill} from 'react-icons/bs'
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 import FormStyles from "./styles";
 
@@ -38,6 +39,17 @@ const Form = () => {
     resolver: yupResolver(formSchema),
   });
 
+
+  const [visibility, setVisibility] = useState(false)
+  const toggleBtn = () => {
+    setVisibility((prevState) => !prevState);
+  };
+
+  const [visibilityConfirm, setVisibilityConfirm] = useState(false)
+  const toggleBtnConfirm = () => {
+    setVisibilityConfirm((prevState) => !prevState);
+  };
+
   return (
     <FormStyles onSubmit={handleSubmit(registerUser)}>
       <label htmlFor="name">Nome</label>
@@ -67,13 +79,15 @@ const Form = () => {
       <label htmlFor="password">Senha</label>
       <div>
         <input
-          id="password"
-          placeholder="********"
-          type="password"
+          type={visibility ? "text" : "password"}
+          placeholder='Senha'
           autoComplete="on"
           {...register("password")}
         />
-        <HiEye />
+         <span className="eye"  onClick={toggleBtn}>
+        {visibility ? <AiOutlineEyeInvisible color="#5c6ca4" /> : <AiOutlineEye color="#5c6ca4" />}
+      </span>
+        
       </div>
       <p className="error">{errors.password?.message}</p>
 
@@ -81,12 +95,15 @@ const Form = () => {
       <div>
         <input
           id="confirm-password"
-          placeholder="********"
-          type="password"
+          placeholder="Confirme a Senha"
+          type={visibilityConfirm ? "text" : "password"}
           autoComplete="on"
           {...register("confirmPassword")}
         />
-        <HiEye />
+         <span className="eye"  onClick={toggleBtnConfirm}>
+        {visibilityConfirm ? <AiOutlineEyeInvisible color="#5c6ca4" /> : <AiOutlineEye color="#5c6ca4" />}
+      </span>
+       
       </div>
       <p className="error">{errors.confirmPassword?.message}</p>
 

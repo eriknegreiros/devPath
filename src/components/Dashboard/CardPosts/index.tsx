@@ -1,5 +1,7 @@
 import { ContainerPost, EditPost, SectionPost } from "./style";
-import erik from "../../../Assets/devs/erik.png";
+
+import { useContext } from "react";
+import { UserContext } from "../../../Context/UserContext";
 
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { useState } from "react";
@@ -24,6 +26,8 @@ const CardPosts = ({ postsContent }: IPostProps) => {
       setEditModal(false);
     }
   };
+  const { profile } = useContext(UserContext);
+  console.log(profile);
 
   return (
     <>
@@ -31,17 +35,12 @@ const CardPosts = ({ postsContent }: IPostProps) => {
 
       <ContainerPost>
         <main>
-          <img src={erik} alt="img" />
+          <img src={profile?.image} alt="foto do usuário" />
           <div>
-            <h6>Nome do usuario</h6>
-            <span>dev</span>
+            <h6>{profile?.name}</h6>
+            <span>{profile?.occupation}</span>
             <SectionPost>
-              <p>
-                dvdfvfvdhvhh rhv vhrhv hrv fv hvhk kh kvjkv fv
-                vdvdjvnvndvdjvbjdvbd ccb gfebhcsd bc sac asbc sac
-                csbchscbhscsahcbhaca shcashbcs dvhbdhbvdbhvhbdvbhdvjacbascbas
-                cashcsabhcbhascb
-              </p>
+              <p>{postsContent}</p>
             </SectionPost>
           </div>
         </main>

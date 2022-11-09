@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { Navigate, Outlet } from "react-router-dom";
-import { UserContext } from "../../Context/UserContext";
+import { useContext } from 'react'
+import { Navigate, Outlet } from 'react-router-dom';
+import { UserContext } from '../../Context/UserContext';
 
 const ProtectedRoutes = () => {
   const { profile } = useContext(UserContext);
@@ -13,3 +13,4 @@ const ProtectedRoutes = () => {
 };
 
 export default ProtectedRoutes;
+
