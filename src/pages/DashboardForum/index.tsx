@@ -54,7 +54,7 @@ const Forum = () => {
             <form onSubmit={handleSubmit(newPost)}>
               <textarea
                 name="post"
-                placeholder="O que temos pra hoje?"
+                placeholder="Fale um pouco sobre o que está estudando ou compartilhe alguma dica de estudo"
               ></textarea>
               <DivButton>
                 <button>Postar</button>
