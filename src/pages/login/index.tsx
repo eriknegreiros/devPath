@@ -9,7 +9,7 @@ import Header from "../../Components/Register/Header";
 import img from "../../Assets/login.gif";
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../Context/UserContext";
 
 export interface iLogin {
   email: string;
@@ -64,7 +64,7 @@ const Login = () => {
               {loading ? "Entrando..." : "Entrar"}
             </Button>
             <section>
-             {`Ou crie uma conta `}
+              {`Ou crie uma conta `}
               <Link to="/signUp" className="toRegister">
               aqui
               </Link>
