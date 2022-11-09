@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
         --main-color7: #A6A8AA;
 
         --positive-color: #3FE864;
-        --negative-color: #E83F5B;
+        --negative-color: #ff000096;
 
         --white: #FFFFFF;
 
@@ -65,6 +65,15 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  a{
+    text-decoration: none;
+    color: #F8F9FA;
+  }
+
+  a:hover{
+    color: #5259FF;
   }
 
   /* width */

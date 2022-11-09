@@ -10,7 +10,7 @@ export const FooterEnd = styled.footer`
   margin-top: 40px;
 
   @media (min-width: 768px) {
-    margin-top: 0px;
+    margin-top: 30px;
   }
 
   h4 {

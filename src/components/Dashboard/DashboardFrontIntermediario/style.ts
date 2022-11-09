@@ -1,9 +1,22 @@
 import styled from "styled-components";
 
 export const UlStyle = styled.li`
-  margin-top: 80px;
+  margin-top: 70px;
+  height:85vh;
+  
   
   .cardAjuste {
-    margin: 50px 0 30px 60%;
+    margin: 90px 0 110px 63%;
   }
+  
+  @media (max-width: 540px){
+    .cardAjuste {
+      margin: 90px 0 110px 72%;
+  }
+  @media (max-width: 350px){ 
+      height: 80vh;
+      margin-top: 0px;
+  
+  }
+}
 `

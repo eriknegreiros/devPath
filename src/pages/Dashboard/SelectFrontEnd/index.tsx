@@ -1,55 +1,57 @@
-import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard"
+import HeaderDashboard from "../../../Components/Dashboard/HeaderDashboard";
+import Footer from "../../../Components/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 
-import Footer from "../../../Components/Footer"
-import DashboardFrontBasic from "../../../Components/Dashboard/DashboardFrontBasic"
-import DashboardFrontIntermediario from "../../../Components/Dashboard/DashboardFrontIntermediario"
-import DashboardFrontAvancado from "../../../Components/Dashboard/DashboardFrontAvancado"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
-
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import { Outlet } from "react-router-dom"
-
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { motion } from "framer-motion";
 
 const SelectFrontEnd = () => {
+  const navigate = useNavigate();
 
-    return(
-        <>
-        <HeaderDashboard/>
-        
-      <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      navigation
-      pagination={{ clickable: true }}
-     
-      slidesPerView={1}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide>{<DashboardFrontBasic/>}</SwiperSlide>
-      <SwiperSlide>{<DashboardFrontIntermediario/>}</SwiperSlide>
-      <SwiperSlide>{<DashboardFrontAvancado/>}</SwiperSlide>
-      
-      ...
-    </Swiper>
-       
-        
-        
-        
+  let location = useLocation();
 
-        <Footer/>
+  return (
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <HeaderDashboard />
 
-        <Outlet/>
-        </>
-    )
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
+          navigation
+          pagination={{ clickable: true }}
+          slidesPerView={1}
+          onSlideChange={(e) => {
+            console.log(e);
+            if (location.pathname === "/dashboard/frontEnd") {
+              navigate("frontEndIntermediary");
+            } else if (
+              location.pathname === "/dashboard/frontEnd/frontEndIntermediary"
+            ) {
+              navigate("frontEndAdvanced");
+            }
+          }}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>{<Outlet />}</SwiperSlide>
+          <SwiperSlide>{<Outlet />}</SwiperSlide>
+          <SwiperSlide>{<Outlet />}</SwiperSlide>
+        </Swiper>
 
-}
+        <Footer />
+      </motion.div>
+    </>
+  );
+};
 
-
-export default SelectFrontEnd
+export default SelectFrontEnd;

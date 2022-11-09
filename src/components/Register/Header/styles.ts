@@ -17,12 +17,8 @@ export const HeaderStyles = styled.header`
     padding: 1.875rem 6.25rem;
   }
 
-  img {
-    width: 6.25rem;
-
-    @media screen and (min-width: 768px) {
-      width: 9.375rem;
-    }
+  h1 {
+    font-size: 1.5rem;
   }
 
   .buttonsHeader {
@@ -40,12 +36,12 @@ export const HeaderStyles = styled.header`
     .link,
     .namePage {
       width: min-content;
-      padding: 1vh 2vw ;
+      padding: 1vh 2vw;
 
       font-family: "Inter";
       font-style: normal;
-      font-weight: 700;
-      font-size: 1rem;
+      font-weight: 500;
+      font-size: 0.8rem;
       line-height: 1.125rem;
       text-align: center;
 
@@ -54,11 +50,11 @@ export const HeaderStyles = styled.header`
       border-radius: 0.5rem;
 
       color: var(--white);
-      background: var(--main-color2);
+      background: var(--main-color);
 
       &:hover {
         border: 0.0625rem solid var(--white);
-
+        transition: 1s;
         cursor: pointer;
       }
     }

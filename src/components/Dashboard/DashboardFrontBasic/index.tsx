@@ -1,28 +1,22 @@
 import { useState } from "react";
-<<<<<<< HEAD:src/pages/DashboardFrontBasic/index.tsx
-import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
-import TitleTechDashboard from "../../components/Dashboard/TitleTech";
-import { CardTechStyled } from "../../components/Dashboard/CardTechs/style";
-import Footer from "../../components/Footer";
-import ModalContents from "../../components/Dashboard/ModalContents";
-import frontEndBasic from "../../Assets/frontend-line-basic.png";
-=======
-
 import TitleTechDashboard from "../TitleTech";
 import { CardTechStyled } from "../CardTechs/style";
-
-import ModalContents from "../ModalContents";
 import frontEndBasic from "../../../Assets/frontend-line-basic.png";
->>>>>>> 729e92fd9fe8dcd36d8553239a3ca453494e0dc0:src/components/Dashboard/DashboardFrontBasic/index.tsx
 import { ContainerMain } from "./style";
+import GlobalModal from "../../Modal";
+import Css3 from "../../ContentsToModal/FrontEndBasic/Css3";
+import Ide from "../../ContentsToModal/FrontEndBasic/Ide";
+import Documentacao from "../../ContentsToModal/FrontEndBasic/Documentacao";
+import IntroJavaScript from "../../ContentsToModal/FrontEndBasic/IntroJavaScript";
+import Html5 from "../../ContentsToModal/FrontEndBasic/Html5";
 
 const DashboardFrontBasic = () => {
-  const [modal, setModal] = useState<boolean>(false);
+  const [ideIsOpen, setIdeIsOpen] = useState<boolean>(false);
+  const [docIsOpen, setDocIsOpen] = useState<boolean>(false);
+  const [htmlIsOpen, setHtmlIsOpen] = useState<boolean>(false);
+  const [cssIsOpen, setCssIsOpen] = useState<boolean>(false);
+  const [jsIsOpen, setJsIsOpen] = useState<boolean>(false);
 
-  function modalContents(e: any) {
-    e.preventDefault();
-    setModal(true);
-  }
   return (
     <>
 
@@ -30,19 +24,19 @@ const DashboardFrontBasic = () => {
       <ContainerMain>
         <TitleTechDashboard>
           <h2>Front-End</h2>
-          <p>Nivél Básico</p>
+          <p>Nível Básico</p>
           <span>Início</span>
         </TitleTechDashboard>
 
         <ul>
-          <CardTechStyled onClick={modalContents}>
+          <CardTechStyled id="1" onClick={() => setIdeIsOpen(true)}>
             <h3>Introdução ao IDE</h3>
             <p>
               Introdução ao ambiente de desenvolvimento (Visual Studio Code)
             </p>
           </CardTechStyled>
 
-          <CardTechStyled onClick={modalContents}>
+          <CardTechStyled id="2" onClick={() => setDocIsOpen(true)}>
             <h3>Importancia da Documentação</h3>
             <p>
               Antes de qualquer coisa, precisamos entender a importancia da
@@ -52,7 +46,7 @@ const DashboardFrontBasic = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled onClick={modalContents}>
+          <CardTechStyled id="3" onClick={() => setHtmlIsOpen(true)}>
             <h3>HTML5</h3>
             <p>
               Os desenvolvedores usam códigos HTML para projetar como um
@@ -61,7 +55,7 @@ const DashboardFrontBasic = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled onClick={modalContents}>
+          <CardTechStyled id="4" onClick={() => setCssIsOpen(true)}>
             <h3>CSS3</h3>
             <p>
               O CSS separa o conteúdo da representação visual do site. Pense na
@@ -69,7 +63,7 @@ const DashboardFrontBasic = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled onClick={modalContents}>
+          <CardTechStyled id="5" onClick={() => setJsIsOpen(true)}>
             <h3>Introdução ao JavaScript</h3>
             <p>
               Antes de qualquer coisa, precisamos entender a importancia da
@@ -82,8 +76,44 @@ const DashboardFrontBasic = () => {
         <img src={frontEndBasic} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
-      
-      {modal ? <ModalContents /> : <></>}
+      {ideIsOpen ? (
+        <GlobalModal
+          title="Introdução ao IDE"
+          onClose={() => setIdeIsOpen(false)}
+        >
+          <Ide />
+        </GlobalModal>
+      ) : null}
+
+      {docIsOpen ? (
+        <GlobalModal
+          title="Importancia da Documentação"
+          onClose={() => setDocIsOpen(false)}
+        >
+          <Documentacao />
+        </GlobalModal>
+      ) : null}
+
+      {htmlIsOpen ? (
+        <GlobalModal title="HTML5" onClose={() => setHtmlIsOpen(false)}>
+          <Html5 />
+        </GlobalModal>
+      ) : null}
+
+      {cssIsOpen ? (
+        <GlobalModal title="CSS3" onClose={() => setCssIsOpen(false)}>
+          <Css3 />
+        </GlobalModal>
+      ) : null}
+
+      {jsIsOpen ? (
+        <GlobalModal
+          title="Introdução ao JavaScript"
+          onClose={() => setJsIsOpen(false)}
+        >
+          <IntroJavaScript />
+        </GlobalModal>
+      ) : null}
     </>
   );
 };

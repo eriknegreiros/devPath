@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
-export const Main = styled.main`
+export const Container = styled.main`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  width: 100vw;
   justify-content: center;
-  align-items: center;
+  
   text-align: center;
   gap: 30px;
-  padding: 15px;
+  max-width: 1600px;
+  min-height: 100vh;
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     flex-direction: row;
   }
 
@@ -40,37 +41,37 @@ export const Main = styled.main`
   form {
     display: flex;
     height: 150px;
-    width: 420px;
+    max-width: 420px;
     margin: 0 auto;
     background: #ffffff;
     border: 5px solid #051866;
     border-radius: 8px;
     padding: 8px;
+    position: relative;
   }
 
   textarea {
     font-family: "Inter";
-    width: 390px;
+    width: 24rem;
     border: transparent;
     font-style: normal;
+    height: 6rem;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 24px;
     color: #a2a2a2;
     padding: 10px;
+    resize: none;
   }
 
   button {
     font-family: "Inter";
-    float: bottom;
-    font-size: 20px;
+    font-size: 1rem;
     border: transparent;
-    background: #22ca47;
+    background: var(--main-color3);
     border-radius: 10px;
-    color: #ffffff;
+    color: var(--white);
     padding: 5px;
-    align-items: center;
-    height: 30px;
   }
 
   ul {
@@ -88,7 +89,7 @@ export const DivUser = styled.div`
   margin: 0 auto;
   padding: 15px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     width: 250px;
     height: 200px;
     justify-content: flex-start;
@@ -98,7 +99,7 @@ export const DivUser = styled.div`
 `;
 
 export const DivButton = styled.div`
-  display: flex;
-  border: transparent;
-  align-items: flex-end;
+  position: absolute;
+  bottom: 1px;
+  right: 10px;
 `;

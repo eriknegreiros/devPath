@@ -1,14 +1,4 @@
 import { useState } from "react";
-<<<<<<< HEAD:src/pages/DashboardFrontAvancado/index.tsx
-import { CardTechStyled } from "../../components/Dashboard/CardTechs/style";
-import HeaderDashboard from "../../components/Dashboard/HeaderDashboard";
-import TitleTech from "../../components/Dashboard/TitleTech";
-import { ContainerMain } from "../DashboardFrontBasic/style";
-import { UlStyledAvancado } from "./style";
-import frontEndAvancado from "../../Assets/frontend-line-avancado.png";
-import Footer from "../../components/Footer";
-import ModalContents from "../../components/Dashboard/ModalContents";
-=======
 import { CardTechStyled } from "../CardTechs/style";
 
 import TitleTech from "../TitleTech";
@@ -17,28 +7,33 @@ import { UlStyledAvancado } from "./style";
 import frontEndAvancado from "../../../Assets/frontend-line-avancado.png";
 
 import ModalContents from "../ModalContents";
->>>>>>> 729e92fd9fe8dcd36d8553239a3ca453494e0dc0:src/components/Dashboard/DashboardFrontAvancado/index.tsx
+
+import GlobalModal from "../../Modal";
+import React from "../../ContentsToModal/FrontEndAdvanced/React";
+import Career from "../../ContentsToModal/FrontEndAdvanced/Career";
+import TypeScript from "../../ContentsToModal/FrontEndAdvanced/TypeScript";
+import Libs from "../../ContentsToModal/FrontEndAdvanced/Libs";
 
 const DashboardFrontAvancado = () => {
-  const [modal, setModal] = useState<boolean>(false);
+  const [reactIsOpen, setReactIsOpen] = useState<boolean>(false);
+  const [libsIsOpen, setLibsIsOpen] = useState<boolean>(false);
+  const [tsIsOpen, setTsIsOpen] = useState<boolean>(false);
+  const [careerIsOpen, setCareerIsOpen] = useState<boolean>(false);
 
-  function modalContents(e: any) {
-    e.preventDefault();
-    setModal(true);
-  }
   return (
     <>
-      
-
       <ContainerMain>
         <TitleTech>
           <h2>Front-End</h2>
-          <p>Nivél Avançado</p>
+          <p>Nível Avançado</p>
           <span>Início</span>
         </TitleTech>
 
         <UlStyledAvancado>
-          <CardTechStyled className="cardAjuste" onClick={modalContents}>
+          <CardTechStyled
+            className="cardAjuste"
+            onClick={() => setReactIsOpen(true)}
+          >
             <h3>React</h3>
             <p>
               O React é uma biblioteca front-end JavaScript de código aberto com
@@ -48,7 +43,7 @@ const DashboardFrontAvancado = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled onClick={modalContents}>
+          <CardTechStyled onClick={() => setLibsIsOpen(true)}>
             <h3>Bibliotecas (React)</h3>
             <p>
               O React tem algumas bibliotecas que facilitam o desenvolvimento
@@ -58,9 +53,12 @@ const DashboardFrontAvancado = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled className="cardAjuste" onClick={modalContents}>
-            <h3>TypeScript</h3>
-            <p>
+          <CardTechStyled
+            className="cardAjuste"
+            onClick={() => setTsIsOpen(true)}
+          >
+            <h3 className="typeScriptAdjust">TypeScript</h3>
+            <p className="typeScriptAdjustP">
               Podemos considerar o Typescript como um potencializador da
               linguagem Javascript. Ele permite que grandes sistemas complexos
               sejam construídos.Podemos considerar o Typescript como um
@@ -69,8 +67,8 @@ const DashboardFrontAvancado = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled onClick={modalContents}>
-            <h3>Carreira</h3>
+          <CardTechStyled onClick={() => setCareerIsOpen(true)}>
+            <h3 className="carrerAjustCss">Carreira</h3>
             <p>
               As melhores dicas que vão aumentar as suas chances de conquistar a
               sua primeira vaga como desenvolvedor.
@@ -81,10 +79,34 @@ const DashboardFrontAvancado = () => {
         <img src={frontEndAvancado} alt="Linha do Tempo tecnologias" />
       </ContainerMain>
 
+      {reactIsOpen ? (
+        <GlobalModal title="React" onClose={() => setReactIsOpen(false)}>
+          <React />
+        </GlobalModal>
+      ) : null}
 
+      {libsIsOpen ? (
+        <GlobalModal
+          title="Bibliotecas (React)"
+          onClose={() => setLibsIsOpen(false)}
+        >
+          <Libs />
+        </GlobalModal>
+      ) : null}
 
-      {modal ? <ModalContents /> : <></>}
+      {tsIsOpen ? (
+        <GlobalModal title="TypeScript" onClose={() => setTsIsOpen(false)}>
+          <TypeScript />
+        </GlobalModal>
+      ) : null}
+
+      {careerIsOpen ? (
+        <GlobalModal title="Carreira" onClose={() => setCareerIsOpen(false)}>
+          <Career />
+        </GlobalModal>
+      ) : null}
     </>
   );
 };
 export default DashboardFrontAvancado;
+

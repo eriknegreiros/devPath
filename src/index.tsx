@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import GlobalStyle from "./styles/global";
+import GlobalStyle from "./Styles/global";
 import { BrowserRouter } from "react-router-dom";
-
+import { DashboardForum } from "./context/ForumContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,8 +12,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalStyle />
-      <App />
+      <DashboardForum>
+        <GlobalStyle />
+        <App />
+      </DashboardForum>
     </BrowserRouter>
   </React.StrictMode>
 );
