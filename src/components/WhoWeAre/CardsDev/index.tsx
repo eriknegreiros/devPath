@@ -1,5 +1,11 @@
 import { Main, DivText } from "./style";
 import erik from "../../../Assets/devs/erik.png";
+import Elipse2 from "../../../Assets/devs/Ellipse 2.png";
+import Elipse3 from "../../../Assets/devs/Ellipse 3.png";
+import Elipse4 from "../../../Assets/devs/Ellipse 4.png";
+import Elipse5 from "../../../Assets/devs/Ellipse 5.png";
+import Elipse6 from "../../../Assets/devs/Ellipse 6.png";
+import Elipse7 from "../../../Assets/devs/Ellipse 7.png";
 import linkedin from "../../../Assets/linkedin.png";
 import github from "../../../Assets/github.png";
 
@@ -25,12 +31,12 @@ const CardsDev = () => {
         </div>
 
         <div>
-          <img className="user" src={erik} alt="" />
+          <img className="user" src={Elipse2} alt="" />
           <h3>Rikelly Mendes</h3>
           <p>Scrum Master</p>
           <div className="linkedin">
             <img src={linkedin} alt="" />
-            <p>eriknegreiros</p>
+            <p>rikellyh</p>
           </div>
           <div className="github">
             <img src={github} alt="" />
@@ -39,12 +45,12 @@ const CardsDev = () => {
         </div>
 
         <div>
-          <img className="user" src={erik} alt="" />
+          <img className="user" src={Elipse3} alt="" />
           <h3>Petrus Lobato</h3>
           <p>Product Owner</p>
           <div className="linkedin">
             <img src={linkedin} alt="" />
-            <p>eriknegreiros</p>
+            <p>petruslobato</p>
           </div>
           <div className="github">
             <img src={github} alt="" />
@@ -53,12 +59,12 @@ const CardsDev = () => {
         </div>
 
         <div>
-          <img className="user" src={erik} alt="" />
+          <img className="user" src={Elipse4} alt="" />
           <h3>Larissa Schmillevitch</h3>
           <p>Quality Assurance</p>
           <div className="linkedin">
             <img src={linkedin} alt="" />
-            <p>eriknegreiros</p>
+            <p>larissa-schmillevitch</p>
           </div>
           <div className="github">
             <img src={github} alt="" />
@@ -67,12 +73,12 @@ const CardsDev = () => {
         </div>
 
         <div>
-          <img className="user" src={erik} alt="" />
+          <img className="user" src={Elipse5} alt="" />
           <h3>Daniel Lobato</h3>
           <p>Quality Assurance</p>
           <div className="linkedin">
             <img src={linkedin} alt="" />
-            <p>eriknegreiros</p>
+            <p>simplesmentedan</p>
           </div>
           <div className="github">
             <img src={github} alt="" />
@@ -81,12 +87,12 @@ const CardsDev = () => {
         </div>
 
         <div>
-          <img className="user" src={erik} alt="" />
+          <img className="user" src={Elipse7} alt="" />
           <h3>Cauê Santos</h3>
           <p>Quality Assurance</p>
           <div className="linkedin">
             <img src={linkedin} alt="" />
-            <p>eriknegreiros</p>
+            <p>cauedossantos</p>
           </div>
           <div className="github">
             <img src={github} alt="" />
@@ -95,12 +101,12 @@ const CardsDev = () => {
         </div>
 
         <div>
-          <img className="user" src={erik} alt="" />
+          <img className="user" src={Elipse6} alt="" />
           <h3>Pedro Cruz</h3>
           <p>Quality Assurance</p>
           <div className="linkedin">
             <img src={linkedin} alt="" />
-            <p>eriknegreiros</p>
+            <p>pedro-cruz-0b114922a</p>
           </div>
           <div className="github">
             <img src={github} alt="" />
