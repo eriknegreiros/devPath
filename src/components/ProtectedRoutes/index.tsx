@@ -13,5 +13,3 @@ const ProtectedRoutes = () => {
 };
 
 export default ProtectedRoutes;
-
-//coment

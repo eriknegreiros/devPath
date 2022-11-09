@@ -39,6 +39,7 @@ const Form = () => {
   });
 
   const [visibility, setVisibility] = useState(false);
+
   const toggleBtn = () => {
     setVisibility((prevState) => !prevState);
   };

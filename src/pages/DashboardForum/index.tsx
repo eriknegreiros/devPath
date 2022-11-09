@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -23,7 +23,6 @@ const Forum = () => {
   });
 
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     register,
     handleSubmit,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -31,9 +30,6 @@ const Forum = () => {
   } = useForm<iPost>({
     resolver: yupResolver(addPost),
   });
-  console.log(post);
-
-  console.log(profile);
   return (
     <>
       <motion.div
@@ -56,20 +52,21 @@ const Forum = () => {
             <h5>Compartilhe conosco!</h5>
             <form onSubmit={handleSubmit(newPost)}>
               <textarea
-                name="post"
+                {...register("text")}
                 placeholder="Fale um pouco sobre o que está estudando ou compartilhe alguma dica de estudo"
               ></textarea>
               <DivButton>
-                <button>Postar</button>
+                <button type="submit">Postar</button>
               </DivButton>
             </form>
             <ul>
-              {post.length === 0 && (
+              {/* {JSON.stringify(post, null, 2)} */}
+              {post?.length === 0 && (
                 <li>
                   <h2>Nada por aqui 😪</h2>
                 </li>
               )}
-              {post.map((posts, index) => (
+              {post?.map((posts, index) => (
                 <CardPosts
                   key={index}
                   postsContent={posts.text}
