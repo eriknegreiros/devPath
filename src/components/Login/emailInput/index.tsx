@@ -16,7 +16,7 @@ const EmailInput = ({ register }: IProps) => {
     <InputContainer>
       <input type="text" placeholder="Email" {...register(`email`)} />
       <button type="button">
-        <HiOutlineMail color="#5c6ca4" />
+        <HiOutlineMail  color="#5c6ca4" />
       </button>
     </InputContainer>
   );

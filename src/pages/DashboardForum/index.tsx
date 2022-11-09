@@ -18,6 +18,7 @@ const Forum = () => {
   const { newPost, post } = useContext(ForumContext);
   const { profile } = useContext(UserContext);
 
+
   const addPost = yup.object().shape({
     text: yup.string().required("*Campo obrigatório"),
   });
@@ -71,7 +72,10 @@ const Forum = () => {
                   key={index}
                   postsContent={posts.text}
                   postsUId={posts.userId}
-                />
+                  postsImage={posts.image}
+                  postsName={posts.name}
+                  postsOccupation={posts.occupation}
+                  />
               ))}
             </ul>
           </section>
@@ -81,5 +85,8 @@ const Forum = () => {
     </>
   );
 };
+
+
+
 
 export default Forum;
