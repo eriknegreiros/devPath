@@ -17,6 +17,13 @@ const FormStyles = styled.form`
 
   color: var(--white);
 
+  .eye{
+    background-color: transparent;
+    
+    border: none;
+    display: flex;
+  }
+
   label {
     font-weight: 600;
     font-size: 0.875rem;
