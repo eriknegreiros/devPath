@@ -7,8 +7,8 @@ import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
 import { ForumContext, iPost } from "../../Context/ForumContext";
 import { DivButton, DivUser, Container } from "./style";
-import img from "../../Assets/devs/erik.png";
 import { motion } from "framer-motion";
+import { UserContext } from "../../Context/UserContext";
 
 export interface iPostProps {
   post: iPost[];
@@ -16,6 +16,7 @@ export interface iPostProps {
 
 const Forum = () => {
   const { newPost, post } = useContext(ForumContext);
+  const { profile } = useContext(UserContext);
 
   const addPost = yup.object().shape({
     text: yup.string().required("*Campo obrigatório"),
@@ -31,6 +32,8 @@ const Forum = () => {
     resolver: yupResolver(addPost),
   });
   console.log(post);
+
+  console.log(profile);
   return (
     <>
       <motion.div
@@ -42,10 +45,10 @@ const Forum = () => {
         <HeaderDashboard />
         <Container>
           <DivUser>
-            <img src={img} alt="" />
+            <img src={profile?.image} alt="foto do usuário" />
             <div>
-              <h4>Nome do Dev</h4>
-              <h5>Ocupação do dev</h5>
+              <h4>{profile?.name}</h4>
+              <h5>{profile?.occupation}</h5>
             </div>
           </DivUser>
 
