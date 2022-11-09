@@ -2,22 +2,40 @@ import styled from "styled-components";
 
 export const ContainerPost = styled.li`
   display: flex;
-  height: 150px;
-  max-width: 420px;
+  flex-direction: column;
+
+  min-height: max-content;
+  height: 200px;
+  width: 34%;
+  min-width: 400px;
   margin: 0 auto;
   background: #ffffff;
   border: 5px solid #051866;
   border-radius: 8px;
   padding: 8px;
   color: rgba(0, 0, 0, 1);
-  gap: 25px;
+  gap: 5px;
 
-  div {
+  main {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
     padding: 5px;
+    width: 90%;
+    height: 100%;
+    gap: 15px;
+    margin: 0 auto;
+
+    img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 80px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+    }
   }
 
   h6 {
@@ -26,7 +44,7 @@ export const ContainerPost = styled.li`
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
+    text-align: start;
   }
 
   span {
@@ -35,19 +53,42 @@ export const ContainerPost = styled.li`
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
-    text-align: center;
+    text-align: start;
   }
 
-  p {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 21px;
-    text-align: center;
+  @media (max-width: 500px) {
+    min-width: 80%;
   }
 `;
 
-export const DivPost = styled.div`
-  width: 215px;
+export const SectionPost = styled.section`
+  width: 100%;
+  height: 90%;
+  align-items: flex-start;
+
+  p {
+    text-align: start;
+    font-size: var(--text-size4);
+  }
+`;
+
+export const EditPost = styled.div`
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 10px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: 0.5s;
+
+    &:hover {
+      transition: 0.5s;
+      transform: scale(1.2);
+    }
+  }
 `;
