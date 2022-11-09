@@ -10,6 +10,7 @@ import DashboardFrontIntermediario from "../Components/Dashboard/DashboardFrontI
 import DashboardFrontAvancado from "../Components/Dashboard/DashboardFrontAvancado";
 import SelectFrontEnd from "../Pages/Dashboard/SelectFrontEnd";
 import DashboardLogicaProgramacao from "../Pages/DashboardLogicaProgramacao";
+import ProtectedRoutes from "../Components/ProtectedRoutes";
 
 const RoutesMain = () => {
   return (
@@ -27,15 +28,26 @@ const RoutesMain = () => {
         element={<DashboardLogicaProgramacao />}
       />
 
-      <Route path="dashboard/frontEnd" element={<SelectFrontEnd />}>
-        <Route element={<DashboardFrontBasic />} />
+      <Route path="dashboard/frontEnd" element={<SelectFrontEnd />} />
+      <Route element={<DashboardFrontBasic />} />
 
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/dashboard/selectTask" element={<SelectTask />} />
+        <Route path="dashboard/Forum" element={<Forum />} />
         <Route
-          path="frontEndIntermediary"
-          element={<DashboardFrontIntermediario />}
+          path="logicaprogramacao"
+          element={<DashboardLogicaProgramacao />}
         />
+        <Route path="dashboard/frontEnd" element={<SelectFrontEnd />}>
+          <Route index element={<DashboardFrontBasic />} />
 
-        <Route path="frontEndAdvanced" element={<DashboardFrontAvancado />} />
+          <Route
+            path="frontEndIntermediary"
+            element={<DashboardFrontIntermediario />}
+          />
+
+          <Route path="frontEndAdvanced" element={<DashboardFrontAvancado />} />
+        </Route>
       </Route>
     </Routes>
   );

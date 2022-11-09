@@ -1,5 +1,4 @@
 import { Button, ContainerLogin } from "./style";
-import loginAnimation from "../../Assets/loginAnimation.json";
 import { useForm } from "react-hook-form";
 import PasswordInput from "../../Components/Login/passwordVisibilte";
 import EmailInput from "../../Components/Login/emailInput";
@@ -33,7 +32,6 @@ const Login = () => {
     resolver: yupResolver(Schema),
   });
 
-  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -42,7 +40,7 @@ const Login = () => {
       transition={{ duration: 1 }}
     >
       <ContainerLogin>
-        <Header name='Login' />
+        <Header name="Login" />
         <main>
           <section className="container">
             <img className="img" src={img} alt="" />
@@ -65,8 +63,9 @@ const Login = () => {
               {loading ? "Entrando..." : "Entrar"}
             </Button>
             <section>
-              <Link to="/register" className="toRegister">
-                Ou crie uma conta aqui
+              {`Ou crie uma conta `}
+              <Link to="/signUp" className="toRegister">
+                aqui
               </Link>
             </section>
           </form>

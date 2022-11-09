@@ -7,10 +7,8 @@ import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
 import { ForumContext, iPost } from "../../Context/ForumContext";
 import { DivButton, DivUser, Container } from "./style";
-import img from "../../Assets/devs/erik.png";
 import { motion } from "framer-motion";
-import { resolveObjectURL } from "buffer";
-import { indigo } from "@mui/material/colors";
+import { UserContext } from "../../Context/UserContext";
 
 export interface iPostProps {
   post: iPost[];
@@ -18,6 +16,7 @@ export interface iPostProps {
 
 const Forum = () => {
   const { newPost, post } = useContext(ForumContext);
+  const { profile } = useContext(UserContext);
 
   const addPost = yup.object().shape({
     text: yup.string().required("*Campo obrigatório"),
@@ -31,7 +30,6 @@ const Forum = () => {
   } = useForm<iPost>({
     resolver: yupResolver(addPost),
   });
-
   return (
     <>
       <motion.div
@@ -43,10 +41,10 @@ const Forum = () => {
         <HeaderDashboard />
         <Container>
           <DivUser>
-            <img src={img} alt="" />
+            <img src={profile?.image} alt="foto do usuário" />
             <div>
-              <h4>Nome do Dev</h4>
-              <h5>Ocupação do dev</h5>
+              <h4>{profile?.name}</h4>
+              <h5>{profile?.occupation}</h5>
             </div>
           </DivUser>
 
@@ -54,8 +52,8 @@ const Forum = () => {
             <h5>Compartilhe conosco!</h5>
             <form onSubmit={handleSubmit(newPost)}>
               <textarea
-                placeholder="O que temos pra hoje?"
                 {...register("text")}
+                placeholder="Fale um pouco sobre o que está estudando ou compartilhe alguma dica de estudo"
               ></textarea>
               <DivButton>
                 <button type="submit">Postar</button>
@@ -63,19 +61,18 @@ const Forum = () => {
             </form>
             <ul>
               {/* {JSON.stringify(post, null, 2)} */}
-              {post?.length === 0 ? (
+              {post?.length === 0 && (
                 <li>
                   <h2>Nada por aqui 😪</h2>
                 </li>
-              ) : (
-                post?.map((posts, index) => (
-                  <CardPosts
-                    key={index}
-                    postsContent={posts.text}
-                    postsUId={posts.userId}
-                  />
-                ))
               )}
+              {post?.map((posts, index) => (
+                <CardPosts
+                  key={index}
+                  postsContent={posts.text}
+                  postsUId={posts.userId}
+                />
+              ))}
             </ul>
           </section>
         </Container>
