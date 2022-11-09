@@ -1,7 +1,4 @@
 import axios from "axios";
-import { useContext } from "react";
-
-// const {token} = useContext(UserContext)
 
 const token = localStorage.getItem('@dev-path:token');
 

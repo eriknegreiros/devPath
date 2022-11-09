@@ -44,6 +44,8 @@ interface iUserContext {
 export const UserContext = createContext({} as iUserContext);
 
 export const AuthProvider = ({ children }: iAuthProps) => {
+
+  const [refreshing, setRefreshing] = useState(true);
   const [profile, setProfile] = useState<iProfile | null>(null);
   const [token, setToken] = useState(localStorage.getItem('@dev-path:token') || null);
   const [loading, setLoading] = useState(false)
@@ -80,7 +82,6 @@ export const AuthProvider = ({ children }: iAuthProps) => {
 
   const loginUser = async (data: iLogin): Promise<void> => {
     
-
     try {
 
       setLoading(true);
@@ -116,6 +117,8 @@ export const AuthProvider = ({ children }: iAuthProps) => {
     }
 
   };
+
+
 
   return (
     <UserContext.Provider value={{ registerUser, profile, isOpen, setIsOpen, loginUser, loading, token }}>

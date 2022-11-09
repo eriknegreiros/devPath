@@ -4,7 +4,7 @@ import { UserContext } from '../../context/UserContext';
 
 const ProtectedRoutes = () => {
 
-  const { profile } = useContext(UserContext);
+  const { profile} = useContext(UserContext);
   
 
   
