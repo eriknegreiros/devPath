@@ -5,7 +5,7 @@ import * as yup from "yup";
 import CardPosts from "../../Components/Dashboard/CardPosts";
 import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
-import { ForumContext, iPost } from "../../context/ForumContext";
+import { ForumContext, iPost } from "../../Context/ForumContext";
 import { DivButton, DivUser, Container } from "./style";
 import img from "../../Assets/devs/erik.png";
 import { motion } from "framer-motion";
