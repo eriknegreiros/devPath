@@ -11,6 +11,10 @@ export const Container = styled.main`
   max-width: 1600px;
   min-height: 100vh;
 
+  img {
+    width: 100%;
+  }
+
   @media (min-width: 767px) {
     flex-direction: row;
   }
