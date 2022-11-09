@@ -13,9 +13,12 @@ export interface iPropsModal {
 interface IPostProps {
   postsContent: string;
   postsUId: string;
+  postsName: string;
+  postsImage: string ;
+  postsOccupation: string; 
 }
 
-const CardPosts = ({ postsContent }: IPostProps) => {
+const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation }: IPostProps) => {
   const [editModal, setEditModal] = useState<boolean>(false);
 
   const handleModalUpdate = () => {
@@ -27,6 +30,7 @@ const CardPosts = ({ postsContent }: IPostProps) => {
     }
   };
   const { profile } = useContext(UserContext);
+  
 
   return (
     <>
@@ -34,10 +38,10 @@ const CardPosts = ({ postsContent }: IPostProps) => {
 
       <ContainerPost>
         <main>
-          <img src={profile?.image} alt="foto do usuário" />
+          <img src={postsImage} alt="foto do usuário" />
           <div>
-            <h6>{profile?.name}</h6>
-            <span>{profile?.occupation}</span>
+            <h6>{postsName}</h6>
+            <span>{postsOccupation}</span>
             <SectionPost>
               <p>{postsContent}</p>
             </SectionPost>
