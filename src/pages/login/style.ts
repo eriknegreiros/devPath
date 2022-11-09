@@ -50,16 +50,17 @@ export const ContainerLogin = styled.div`
       height: 40px;
 
       text-align: center;
+      font-size: var(--text-size4);
 
       .toRegister {
         align-items: center;
         font-size: var(--text-size4);
-        color: white;
+        color: green;
         text-decoration: none;
         font-family: var(--font);
 
         &:hover {
-          color: var(--main-color2);
+          text-decoration: underline;
         }
       }
     }
@@ -90,4 +91,9 @@ export const Button = styled.button`
   font-family: var(--font);
   color: white;
   background-color: var(--main-color);
+
+  &:disabled{
+    cursor: not-allowed;
+    opacity: 0.4;   
+  }
 `;

@@ -21,6 +21,16 @@ export const Header = styled.header`
     font-family: var(--font);
   }
 
-  a {
+  .forum{
+    font-size: 1.5rem;
+    font-family: var(--font);
+    font-weight: bold;
+    
+    .iconForum{
+      height: 20px;
+      margin-left: 5px;
+    }
+    
   }
+  
 `;

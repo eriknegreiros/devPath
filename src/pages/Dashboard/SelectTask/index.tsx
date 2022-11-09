@@ -6,8 +6,14 @@ import logic from "../../../Assets/logic.png";
 import front from "../../../Assets/front.png";
 import back from "../../../Assets/back.png";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { UserContext } from "../../../context/UserContext";
 
 const SelectTask = () => {
+
+  const { profile } = useContext(UserContext);
+  
+
   return (
     <>
       <motion.div
@@ -19,7 +25,7 @@ const SelectTask = () => {
         <HeaderDashboard />
         <Main>
           <div>
-            <h5>Bem vindo, nomedoDev!</h5>
+            <h5>Bem vindo, {profile?.name}!</h5>
             <h5>O que quer aprender hoje?</h5>
           </div>
 

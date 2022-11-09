@@ -1,5 +1,4 @@
 import { Button, ContainerLogin } from "./style";
-import loginAnimation from "../../Assets/loginAnimation.json";
 import { useForm } from "react-hook-form";
 import PasswordInput from "../../Components/Login/passwordVisibilte";
 import EmailInput from "../../Components/Login/emailInput";
@@ -10,7 +9,7 @@ import Header from "../../Components/Register/Header";
 import img from "../../Assets/login.gif";
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "../../context/UserContext";
 
 export interface iLogin {
   email: string;
@@ -65,8 +64,9 @@ const Login = () => {
               {loading ? "Entrando..." : "Entrar"}
             </Button>
             <section>
-              <Link to="/register" className="toRegister">
-                Ou crie uma conta aqui
+             {`Ou crie uma conta `}
+              <Link to="/signUp" className="toRegister">
+              aqui
               </Link>
             </section>
           </form>

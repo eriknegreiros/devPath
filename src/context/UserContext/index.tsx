@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { iLogin } from "../../Pages/login";
+import { iLogin } from "../../Pages/Login";
 import { instance } from "../../Service/api";
 
 interface iAuthProps {
@@ -19,13 +19,14 @@ export interface iUser {
 
 interface iResponse {
   accessToken: string;
-  user: {
-    name: string;
-    email: string;
-    id: number;
-    occupation: string;
-    image?:string
-  };
+  user: iProfile
+}
+interface iProfile{
+  name: string;
+  email: string;
+  id: number;
+  occupation: string;
+  image?:string
 }
 
 interface iUserContext {
@@ -34,6 +35,8 @@ interface iUserContext {
   loading: boolean;
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  profile: iProfile | null;
+  token: string | null;
 }
 
 
@@ -41,7 +44,7 @@ interface iUserContext {
 export const UserContext = createContext({} as iUserContext);
 
 export const AuthProvider = ({ children }: iAuthProps) => {
-  const [user, setUser] = useState<iUser | null>(null);
+  const [profile, setProfile] = useState<iProfile | null>(null);
   const [token, setToken] = useState(localStorage.getItem('@dev-path:token') || null);
   const [loading, setLoading] = useState(false)
 
@@ -86,9 +89,11 @@ export const AuthProvider = ({ children }: iAuthProps) => {
       
       window.localStorage.clear();
 
-      const { accessToken } = response.data;
+      const { accessToken, user } = response.data;
 
       localStorage.setItem('@dev-path:token', accessToken);
+
+      setProfile(user)
 
       toast.success('Logado com Sucesso', {
         position: "top-right",
@@ -113,7 +118,7 @@ export const AuthProvider = ({ children }: iAuthProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ registerUser, isOpen, setIsOpen, loginUser, loading }}>
+    <UserContext.Provider value={{ registerUser, profile, isOpen, setIsOpen, loginUser, loading, token }}>
       {children}
     </UserContext.Provider>
   );
