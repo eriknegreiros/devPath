@@ -6,8 +6,6 @@ import { ContainerMain } from "../DashboardFrontBasic/style";
 import { UlStyledAvancado } from "./style";
 import frontEndAvancado from "../../../Assets/frontend-line-avancado.png";
 
-import ModalContents from "../ModalContents";
-
 import GlobalModal from "../../Modal";
 import React from "../../ContentsToModal/FrontEndAdvanced/React";
 import Career from "../../ContentsToModal/FrontEndAdvanced/Career";
@@ -31,7 +29,7 @@ const DashboardFrontAvancado = () => {
 
         <UlStyledAvancado>
           <CardTechStyled
-            className="cardAjuste"
+            className="cardAdvanced"
             onClick={() => setReactIsOpen(true)}
           >
             <h3>React</h3>
@@ -54,7 +52,7 @@ const DashboardFrontAvancado = () => {
           </CardTechStyled>
 
           <CardTechStyled
-            className="cardAjuste"
+            className="cardAdvanced"
             onClick={() => setTsIsOpen(true)}
           >
             <h3 className="typeScriptAdjust">TypeScript</h3>

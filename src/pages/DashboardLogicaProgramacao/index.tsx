@@ -34,7 +34,7 @@ const DashboardLogicaProgramacao = () => {
           </TitleTechDashboard>
 
           <UlLogicaProgramacao>
-            <CardTechStyled className="cardAjuste" onClick={modalContents}>
+            <CardTechStyled className="cardLogica" onClick={modalContents}>
               <h3>Blogs</h3>
               <p>
                 Os melhores conteúdos que irão te introduzir o assunto de lógica
@@ -50,7 +50,7 @@ const DashboardLogicaProgramacao = () => {
               </p>
             </CardTechStyled>
 
-            <CardTechStyled className="cardAjuste " onClick={modalContents}>
+            <CardTechStyled className="cardLogica " onClick={modalContents}>
               <h3>Desafios</h3>
               <p>
                 Separamos algumas plataformas que irão te levar a outro nivel
@@ -58,7 +58,7 @@ const DashboardLogicaProgramacao = () => {
               </p>
             </CardTechStyled>
 
-            <img src={logicaProgramacao} alt="Linha do Tempo tecnologias" />
+            <img className="imgLogicaProgramacao" src={logicaProgramacao} alt="Linha do Tempo tecnologias" />
           </UlLogicaProgramacao>
         </ContainerMain>
 
