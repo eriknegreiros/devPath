@@ -14,7 +14,7 @@ import DashboardLogicaProgramacao from "../Pages/DashboardLogicaProgramacao";
 const RoutesMain = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route index element={<Home />} />
       <Route path="*" element={<Navigate to={"/"} />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signUp" element={<Register />} />
@@ -28,7 +28,7 @@ const RoutesMain = () => {
       />
 
       <Route path="dashboard/frontEnd" element={<SelectFrontEnd />}>
-        <Route index element={<DashboardFrontBasic />} />
+        <Route element={<DashboardFrontBasic />} />
 
         <Route
           path="frontEndIntermediary"

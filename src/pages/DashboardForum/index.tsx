@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -9,6 +9,8 @@ import { ForumContext, iPost } from "../../Context/ForumContext";
 import { DivButton, DivUser, Container } from "./style";
 import img from "../../Assets/devs/erik.png";
 import { motion } from "framer-motion";
+import { resolveObjectURL } from "buffer";
+import { indigo } from "@mui/material/colors";
 
 export interface iPostProps {
   post: iPost[];
@@ -22,7 +24,6 @@ const Forum = () => {
   });
 
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     register,
     handleSubmit,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -30,7 +31,7 @@ const Forum = () => {
   } = useForm<iPost>({
     resolver: yupResolver(addPost),
   });
-  console.log(post);
+
   return (
     <>
       <motion.div
@@ -53,26 +54,28 @@ const Forum = () => {
             <h5>Compartilhe conosco!</h5>
             <form onSubmit={handleSubmit(newPost)}>
               <textarea
-                name="post"
                 placeholder="O que temos pra hoje?"
+                {...register("text")}
               ></textarea>
               <DivButton>
-                <button>Postar</button>
+                <button type="submit">Postar</button>
               </DivButton>
             </form>
             <ul>
-              {post.length === 0 && (
+              {/* {JSON.stringify(post, null, 2)} */}
+              {post?.length === 0 ? (
                 <li>
                   <h2>Nada por aqui 😪</h2>
                 </li>
+              ) : (
+                post?.map((posts, index) => (
+                  <CardPosts
+                    key={index}
+                    postsContent={posts.text}
+                    postsUId={posts.userId}
+                  />
+                ))
               )}
-              {post.map((posts, index) => (
-                <CardPosts
-                  key={index}
-                  postsContent={posts.text}
-                  postsUId={posts.userId}
-                />
-              ))}
             </ul>
           </section>
         </Container>

@@ -26,10 +26,11 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
   useEffect(() => {
     (async () => {
       try {
-        const token = localStorage.getItem("@DevPath:token");
+        const token = localStorage.getItem("@dev-path:token");
         instance.defaults.headers.authorization = `Bearer ${token}`;
 
-        const user = await instance.get("users");
+        const user = await instance.get("/posts");
+        console.log(user);
 
         setPost(user.data.posts);
       } catch (error) {
@@ -42,7 +43,7 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
     console.log(data);
 
     try {
-      const response = await instance.post("posts", data);
+      const response = await instance.post("/posts", data);
 
       console.log(response);
 
