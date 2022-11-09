@@ -27,7 +27,6 @@ const CardPosts = ({ postsContent }: IPostProps) => {
     }
   };
   const { profile } = useContext(UserContext);
-  console.log(profile);
 
   return (
     <>

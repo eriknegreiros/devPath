@@ -24,12 +24,10 @@ const RoutesMain = () => {
       <Route element={<ProtectedRoutes />}>
         <Route path="/dashboard/selectTask" element={<SelectTask />} />
         <Route path="dashboard/Forum" element={<Forum />} />
-
         <Route
           path="logicaprogramacao"
           element={<DashboardLogicaProgramacao />}
         />
-
         <Route path="dashboard/frontEnd" element={<SelectFrontEnd />}>
           <Route index element={<DashboardFrontBasic />} />
 
