@@ -13,16 +13,15 @@ export interface iPost {
   name: string;
   image: string;
   occupation: string;
-  id:number;
+  id: number;
 }
 
-
-
 interface IDashboardContext {
-  post: iPost[] ;
+  post: iPost[];
   newPost: (data: iPost) => void;
-  handleDelete: (postidCard: number) => Promise <void>;
-  
+  handleDelete: (postidCard: number) => Promise<void>;
+  setPost: any;
+  getPosts: any;
 }
 
 export const ForumContext = createContext<IDashboardContext>(
@@ -31,7 +30,7 @@ export const ForumContext = createContext<IDashboardContext>(
 
 export const DashboardForum = ({ children }: iDefaultContextProps) => {
   const [post, setPost] = useState([] as iPost[]);
-  const [state, setState] = useState(false); 
+  const [state, setState] = useState(false);
   const { profile } = useContext(UserContext);
   
   
@@ -40,36 +39,27 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
     getPosts();
   }, []);
 
-  
-
   const getPosts = async () => {
     try {
       const token = localStorage.getItem("@dev-path:token");
       instance.defaults.headers.authorization = `Bearer ${token}`;
 
       const user = await instance.get("/posts");
-      setPost([...user.data.splice(0, 10)]);
-      
-    
-      console.log(user)      
+      setPost([...user.data.reverse().splice(0, 10)]);
 
+      console.log(user);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handleDelete = async (postidCard: number): Promise <void> => {
-
-    await instanceHeaders.delete(`/posts/${postidCard}`)
+  const handleDelete = async (postidCard: number): Promise<void> => {
+    await instanceHeaders.delete(`/posts/${postidCard}`);
 
     getPosts();
-  }
-
-
-
+  };
 
   const newPost = async (data: iPost) => {
-    
     const newData = {
       ...data,
       userId: profile?.id,
@@ -84,12 +74,10 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
 
       const resRequest = await instance.post("/posts", newData);
 
-      
       setPost([resRequest.data, ...post]);
 
-      console.log(post)
+      console.log(post);
 
-      
       //toast.success("Aeee! Publicado com sucesso! 👩‍💻");
     } catch (error) {
       console.log(error);
@@ -101,9 +89,10 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
     <ForumContext.Provider
       value={{
         newPost,
-        post, 
-        handleDelete
-      
+        post,
+        handleDelete,
+        setPost,
+        getPosts,
       }}
     >
       {children}

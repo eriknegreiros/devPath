@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const UlStyledAvancado = styled.ul`
-  margin-top: 150px;
   height: 90vh;
 
-  .cardAjuste {
-    margin: 80px 0 50px 60%;
+  .cardAdvanced {
+    width:33%;
+    margin: 95px 0 55px 60%;
   }
 
   @media (max-width: 540px) {
-    .cardAjuste {
+    .cardAdvanced {
       margin: 50px 0 70px 72%;
     }
   }
