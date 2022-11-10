@@ -47,7 +47,6 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
       const user = await instance.get("/posts");
       setPost([...user.data.reverse().splice(0, 10)]);
 
-      console.log(user);
     } catch (error) {
       console.log(error);
     }

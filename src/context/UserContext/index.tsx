@@ -1,8 +1,9 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { toast } from "react-toastify";
 import { iLogin } from "../../Pages/Login";
-import { instance, instanceHeaders } from "../../Service/api";
+import { instance} from "../../Service/api";
 
 interface iAuthProps {
   children: ReactNode;
@@ -38,21 +39,23 @@ interface iUserContext {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   profile: iProfile | null;
   token: string | null;
-  
+  refreshing:boolean;
 }
+
 
 export const UserContext = createContext({} as iUserContext);
 
 export const AuthProvider = ({ children }: iAuthProps) => {
 
-  // const [refreshing, setRefreshing] = useState(true);
+  const [refreshing, setRefreshing] = useState(true);
   const [profile, setProfile] = useState<iProfile | null>(null);
   const [token, setToken] = useState(localStorage.getItem("@dev-path:token") || null);
   const [loading, setLoading] = useState(false);
-  // const [idUser, setIdUser] = useState(null)
+  const [idUser, setIdUser] = useState(localStorage.getItem("@dev-path:id" ) || null);
+  const navigate = useNavigate();
  
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const navigate = useNavigate();
+ 
 
   const registerUser = async (data: iUser): Promise<void> => {
     try {
@@ -91,9 +94,10 @@ export const AuthProvider = ({ children }: iAuthProps) => {
       const { accessToken, user } = response.data;
 
       localStorage.setItem("@dev-path:token", accessToken);
+      localStorage.setItem("@dev-path:id", user.id);
      
       setProfile(user);
-      // setIdUser(user.id)
+      
 
       toast.success("Logado com Sucesso", {
         position: "top-right",
@@ -116,36 +120,38 @@ export const AuthProvider = ({ children }: iAuthProps) => {
   };
 
 
+  useEffect(() => {
+   
 
-//   useEffect(() => {
+    async function loadUser(){
 
-//     async function loadUser(){
-//       const token = localStorage.getItem("@dev-path:token");
+      const token = localStorage.getItem("@dev-path:token");
 
   
-//       if(token){
-//         try {
+      if(token){
+        try {
           
-//           instance.defaults.headers.authorization = `Bearer ${token}`;
+          instance.defaults.headers.authorization = `Bearer ${token}`;
 
-//           const {data}= await instance.get(`/users/${1}`);
+          const {data}= await instance.get(`/users/${idUser}`);
          
-//           setProfile(data)
+          setProfile(data)
 
-//         } catch (error) {
-//             console.error(error)
-//         } finally {
-//             setRefreshing(false);
-//         }
+        } catch (error) {
+            console.error(error);
+            
+        } finally {
+            setRefreshing(false);
+        }
 
-//       }
+      }
 
-//     }
+    }
 
-//     loadUser();
+    loadUser();
 
-// // eslint-disable-next-line react-hooks/exhaustive-deps
-// },[])
+// eslint-disable-next-line react-hooks/exhaustive-deps
+},[])
 
 
 
@@ -160,6 +166,7 @@ export const AuthProvider = ({ children }: iAuthProps) => {
         loginUser,
         loading,
         token,
+        refreshing
         
       }}
     >
