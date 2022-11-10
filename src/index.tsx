@@ -2,15 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import GlobalStyle from "./styles/global";
+import GlobalStyle from "./Styles/global";
+import { BrowserRouter } from "react-router-dom";
+import { DashboardForum } from "./Context/ForumContext";
+import { AuthProvider } from "./Context/UserContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <BrowserRouter>
+      <AuthProvider>
+        <DashboardForum>
+          <GlobalStyle />
+          <App />
+        </DashboardForum>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

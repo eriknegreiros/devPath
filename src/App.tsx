@@ -1,9 +1,14 @@
+import RoutesMain from "./Routes/index";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const App = () => {
   return (
-    <div>
-      <p>testeee</p>
-    </div>
+    <>
+      <ToastContainer autoClose={1500} theme="dark" />
+
+      <RoutesMain />
+    </>
   );
 };
-
 export default App;
