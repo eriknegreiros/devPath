@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { instance, instanceHeaders } from "../../Service/api";
 import { UserContext } from "../UserContext";
-
 // import { toast } from "react-toastify";
 
 export interface iDefaultContextProps {
@@ -36,7 +35,6 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
   const { profile } = useContext(UserContext);
   
   
-
 
   useEffect(() => {
     getPosts();
