@@ -81,7 +81,6 @@ export const AuthProvider = ({ children }: iAuthProps) => {
   };
 
   const loginUser = async (data: iLogin): Promise<void> => {
-    
     try {
       setLoading(true);
 

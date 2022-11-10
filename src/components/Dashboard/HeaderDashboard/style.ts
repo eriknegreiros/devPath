@@ -10,7 +10,7 @@ export const Header = styled.header`
   border-bottom: 1px solid var(--main-color2);
   padding: 30px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
@@ -21,16 +21,14 @@ export const Header = styled.header`
     font-family: var(--font);
   }
 
-  .forum{
+  .forum {
     font-size: 1.5rem;
     font-family: var(--font);
     font-weight: bold;
-    
-    .iconForum{
+
+    .iconForum {
       height: 20px;
       margin-left: 5px;
     }
-    
   }
-  
 `;

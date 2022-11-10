@@ -4,27 +4,39 @@ import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { useState } from "react";
 import ModalEdit from "../ModalEditPost";
 
-import { ForumContext } from "../../../Context/ForumContext";
+import { ForumContext, iPost } from "../../../Context/ForumContext";
+import { UserContext } from "../../../Context/UserContext";
 
 export interface iPropsModal {
   handleModalUpdate: () => void;
+  postsContent: string;
+  postidCard: number;
 }
 interface IPostProps {
   postsContent: string;
   postsUId: number;
   postsName: string;
-  postsImage: string ;
+  postsImage: string;
   postsOccupation: string;
-  postidCard:number
-   
+  postidCard: number;
+  id: string | number;
 }
 
-
-
-const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation, postidCard, postsUId }: IPostProps) => {
-  const [editModal, setEditModal] = useState<boolean>(false);
-  const {handleDelete, post} = useContext(ForumContext);
+const CardPosts = ({
+  postsContent,
+  postsName,
+  postsImage,
+  postsOccupation,
+  postidCard,
+  postsUId,
   
+}: IPostProps) => {
+  const [editModal, setEditModal] = useState<boolean>(false);
+  const { handleDelete } = useContext(ForumContext);
+  const [post, setPost] = useState([] as iPost[]);
+  const { profile } = useContext(UserContext);
+
+
 
   const handleModalUpdate = () => {
     if (editModal === false) {
@@ -39,9 +51,15 @@ const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation, posti
 
   return (
     <>
-      {editModal && <ModalEdit handleModalUpdate={handleModalUpdate} />}
+      {editModal && (
+        <ModalEdit
+          handleModalUpdate={handleModalUpdate}
+          postidCard={postidCard}
+          postsContent={postsContent}
+        />
+      )}
 
-      <ContainerPost>
+      <ContainerPost key={postsUId}>
         <main>
           <img src={postsImage} alt="foto do usuário" />
           <div>
@@ -53,16 +71,12 @@ const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation, posti
           </div>
         </main>
 
-      { post.filter((elem) => elem.id === postsUId) ? (
-        <EditPost   >
-          <AiOutlineEdit onClick={() => handleModalUpdate()} />
-          <AiOutlineDelete onClick={() => handleDelete(postidCard)} />
-        </EditPost>) 
-        :
-        null
-      }
-
-        
+        {postsUId === profile?.id ? (
+          <EditPost>
+            <AiOutlineEdit onClick={() => handleModalUpdate()} />
+            <AiOutlineDelete onClick={() => handleDelete(postidCard)} />
+          </EditPost>
+        ) : null}
       </ContainerPost>
     </>
   );

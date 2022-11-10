@@ -11,8 +11,9 @@ const HeaderDashboard = () => {
       <Header>
         <h1>DevPath</h1>
         <div className="forum">
-          <Link to="/dashboard/Forum">Forum
-          <BsChatLeftText className="iconForum"/>
+          <Link to="/dashboard/Forum">
+            Forum
+            <BsChatLeftText className="iconForum" />
           </Link>
         </div>
         
