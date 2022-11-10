@@ -54,7 +54,11 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
   };
 
   const handleDelete = async (postidCard: number): Promise<void> => {
-    await instanceHeaders.delete(`/posts/${postidCard}`);
+
+      const token = localStorage.getItem("@dev-path:token");
+      instance.defaults.headers.authorization = `Bearer ${token}`;
+   
+      await instanceHeaders.delete(`/posts/${postidCard}`);
 
     getPosts();
   };
