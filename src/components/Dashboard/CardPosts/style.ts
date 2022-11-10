@@ -65,6 +65,10 @@ export const SectionPost = styled.section`
   width: 100%;
   height: 90%;
   align-items: flex-start;
+  padding: 2px 5px;
+
+  border: 2px solid var(--main-color5);
+  border-radius: 0px 10px 10px 10px;
 
   p {
     text-align: start;
@@ -74,21 +78,36 @@ export const SectionPost = styled.section`
 
 export const EditPost = styled.div`
   width: 100%;
-  height: 10%;
+  height: 12%;
 
   display: flex;
   justify-content: center;
   margin: 0 auto;
   gap: 10px;
 
-  svg {
-    width: 20px;
-    height: 20px;
+  span {
+    width: auto;
+    height: auto;
     transition: 0.5s;
+
+    border-radius: 5px;
 
     &:hover {
       transition: 0.5s;
       transform: scale(1.2);
     }
+  }
+
+  .editPost {
+    background: #fac817;
+  }
+
+  .deletePost {
+    background: #ea2444;
+  }
+  
+  svg {
+    width: 20px;
+    height: 20px;
   }
 `;
