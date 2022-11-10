@@ -7,6 +7,7 @@ import { useState } from "react";
 import ModalEdit from "../ModalEditPost";
 
 import { ForumContext, iPost } from "../../../Context/ForumContext";
+import { UserContext } from "../../../Context/UserContext";
 
 export interface iPropsModal {
   handleModalUpdate: () => void;
@@ -20,6 +21,7 @@ interface IPostProps {
   postsImage: string;
   postsOccupation: string;
   postidCard: number;
+  id: string | number;
 }
 
 const CardPosts = ({
@@ -29,12 +31,15 @@ const CardPosts = ({
   postsOccupation,
   postidCard,
   postsUId,
+  id,
 }: IPostProps) => {
   const [editModal, setEditModal] = useState<boolean>(false);
   const { handleDelete } = useContext(ForumContext);
   const [post, setPost] = useState([] as iPost[]);
+  const { profile } = useContext(UserContext);
 
-  console.log(post);
+  console.log(postsUId);
+  console.log(profile);
 
   const handleModalUpdate = () => {
     if (editModal === false) {
@@ -55,7 +60,7 @@ const CardPosts = ({
         />
       )}
 
-      <ContainerPost>
+      <ContainerPost key={postsUId}>
         <main>
           <img src={postsImage} alt="foto do usuário" />
           <div>
@@ -67,7 +72,7 @@ const CardPosts = ({
           </div>
         </main>
 
-        {post.filter((elem) => elem.id === postsUId) ? (
+        {postsUId === profile?.id ? (
           <EditPost>
             <AiOutlineEdit onClick={() => handleModalUpdate()} />
             <AiOutlineDelete onClick={() => handleDelete(postidCard)} />
