@@ -41,15 +41,18 @@ const Forum = () => {
         <HeaderDashboardForum />
         <Container>
           <DivUser>
-            <img src={profile?.image} alt="foto do usuário" />
+            <span className="circleImage">
+              <img src={profile?.image} alt="foto do usuário" />
+            </span>
             <div>
               <h2>{profile?.name}</h2>
               <h3>{profile?.occupation}</h3>
             </div>
           </DivUser>
 
-          <section>
-            <span>Compartilhe conosco!</span>
+          <section className="sectionPosts">
+            <h5>Compartilhe conosco!</h5>
+
             <form onSubmit={handleSubmit(newPost)}>
               <textarea
                 {...register("text")}
@@ -59,6 +62,7 @@ const Forum = () => {
                 <button type="submit">Postar</button>
               </DivButton>
             </form>
+
             <ul>
               {/* {JSON.stringify(post, null, 2)} */}
               {post?.length === 0 && (
