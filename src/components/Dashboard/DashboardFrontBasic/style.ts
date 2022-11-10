@@ -3,6 +3,13 @@ import styled from "styled-components";
 export const ContainerMain = styled.div`
 width: 100%;
 min-width: 280px;
+
+.imgLogicaProgramacao{
+    position: absolute;
+    top: 180px;
+    left: 46%;
+    height: 80vh;
+}
 img{
     position: absolute;
     top: 150px;
@@ -11,13 +18,24 @@ img{
 }
 ul{
     height: 90vh;
-    margin-top: 40px;
+    margin-top: 80px;
 }
+
 @media (max-width: 718px){
     img {
         left: 44%;
     }
+    .imgLogicaProgramacao{
+        left: 43%
+    }
 }
+
+@media (max-width: 465px){
+    .imgLogicaProgramacao{
+        top: 230px;
+    }
+}
+
 @media (max-width: 350px){
     display: flex;
     flex-direction: column;
@@ -30,6 +48,10 @@ ul{
         height: 80vh;
         margin-top: 0px;
     
+        .imgLogicaProgramacao{
+            left: 43%
+            top: 210px;
+        }
     }
 }
 `

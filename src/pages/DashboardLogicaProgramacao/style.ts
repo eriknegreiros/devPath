@@ -1,22 +1,23 @@
 import styled from "styled-components";
 
 export const UlLogicaProgramacao = styled.ul`
-  margin: 100px 0;
+  
   height: 90vh;
 
-  .cardAjuste {
-    margin: 120px 0 150px 65%;
+  .cardLogica {
+    width: 33%;
+    margin: 95px 0 105px 62%;
   }
 
   @media (max-width: 540px) {
     margin: 0px 0;
-    .cardAjuste {
-      margin: 125px 0 140px 75%;
+    .cardLogica {
+      margin: 95px 0 120px 70%;
     }
 
     @media (max-width: 465px) {
-      .cardAjuste {
-        margin: 90px 0 160px 75%;
+      .cardLogica {
+        margin: 105px 0 100px 73%;
       }
     }
 
