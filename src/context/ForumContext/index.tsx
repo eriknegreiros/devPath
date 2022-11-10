@@ -1,5 +1,7 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import { instance } from "../../Service/api";
+import { UserContext } from "../UserContext";
+import { AxiosResponse } from "axios";
 // import { toast } from "react-toastify";
 
 export interface iDefaultContextProps {
@@ -9,11 +11,17 @@ export interface iDefaultContextProps {
 export interface iPost {
   userId: string;
   text: string;
+  name: string;
+  image: string;
+  occupation: string;
 }
 
+
+
 interface IDashboardContext {
-  post: iPost[];
+  post: iPost[] ;
   newPost: (data: iPost) => void;
+  
 }
 
 export const ForumContext = createContext<IDashboardContext>(
@@ -22,33 +30,60 @@ export const ForumContext = createContext<IDashboardContext>(
 
 export const DashboardForum = ({ children }: iDefaultContextProps) => {
   const [post, setPost] = useState([] as iPost[]);
+  const [state, setState] = useState(false); 
+  const { profile } = useContext(UserContext);
+  
 
   useEffect(() => {
-    (async () => {
-      try {
-        const token = localStorage.getItem("@DevPath:token");
-        instance.defaults.headers.authorization = `Bearer ${token}`;
-
-        const user = await instance.get("users");
-
-        setPost(user.data.posts);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
+    getPosts();
   }, []);
 
+  
+
+  const getPosts = async () => {
+    try {
+      const token = localStorage.getItem("@dev-path:token");
+      instance.defaults.headers.authorization = `Bearer ${token}`;
+
+      const user = await instance.get("/posts");
+      setPost([...user.data.splice(0, 10)]);
+      
+    
+      console.log(user)
+
+      
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+
+
   const newPost = async (data: iPost) => {
-    console.log(data);
+    
+    const newData = {
+      ...data,
+      userId: profile?.id,
+      name: profile?.name,
+      image: profile?.image,
+      occupation: profile?.occupation,
+    };
 
     try {
-      const response = await instance.post("posts", data);
+      const token = localStorage.getItem("@dev-path:token");
+      instance.defaults.headers.authorization = `Bearer ${token}`;
 
-      console.log(response);
+      const resRequest = await instance.post("/posts", newData);
 
-      // toast.success("Aeee! Publicado com sucesso! 👩‍💻");
+      
+      setPost([resRequest.data, ...post]);
 
-      setPost([...post, response.data]);
+      console.log(post)
+
+      
+      //toast.success("Aeee! Publicado com sucesso! 👩‍💻");
     } catch (error) {
       console.log(error);
       // toast.error("Opa! Algo deu errado 👀");
@@ -59,7 +94,8 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
     <ForumContext.Provider
       value={{
         newPost,
-        post,
+        post, 
+      
       }}
     >
       {children}
