@@ -29,14 +29,14 @@ const DashboardFrontBasic = () => {
         </TitleTechDashboard>
 
         <ul>
-          <CardTechStyled id="1" onClick={() => setIdeIsOpen(true)}>
+          <CardTechStyled className="frontEndBasic" id="1" onClick={() => setIdeIsOpen(true)}>
             <h3>Introdução ao IDE</h3>
             <p>
               Introdução ao ambiente de desenvolvimento (Visual Studio Code)
             </p>
           </CardTechStyled>
 
-          <CardTechStyled id="2" onClick={() => setDocIsOpen(true)}>
+          <CardTechStyled className="frontEndBasic2" id="2" onClick={() => setDocIsOpen(true)}>
             <h3>Importancia da Documentação</h3>
             <p>
               Antes de qualquer coisa, precisamos entender a importancia da
@@ -46,7 +46,7 @@ const DashboardFrontBasic = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled id="3" onClick={() => setHtmlIsOpen(true)}>
+          <CardTechStyled className="frontEndBasic" id="3" onClick={() => setHtmlIsOpen(true)}>
             <h3>HTML5</h3>
             <p>
               Os desenvolvedores usam códigos HTML para projetar como um
@@ -55,7 +55,7 @@ const DashboardFrontBasic = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled id="4" onClick={() => setCssIsOpen(true)}>
+          <CardTechStyled className="frontEndBasic2" id="4" onClick={() => setCssIsOpen(true)}>
             <h3>CSS3</h3>
             <p>
               O CSS separa o conteúdo da representação visual do site. Pense na
@@ -63,7 +63,7 @@ const DashboardFrontBasic = () => {
             </p>
           </CardTechStyled>
 
-          <CardTechStyled id="5" onClick={() => setJsIsOpen(true)}>
+          <CardTechStyled className="frontEndBasic" id="5" onClick={() => setJsIsOpen(true)}>
             <h3>Introdução ao JavaScript</h3>
             <p>
               Antes de qualquer coisa, precisamos entender a importancia da

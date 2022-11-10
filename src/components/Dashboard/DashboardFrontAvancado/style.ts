@@ -5,7 +5,7 @@ export const UlStyledAvancado = styled.ul`
 
   .cardAdvanced {
     width:33%;
-    margin: 95px 0 55px 60%;
+    margin: -20px 0 55px 60%;
   }
 
   @media (max-width: 540px) {
@@ -18,4 +18,8 @@ export const UlStyledAvancado = styled.ul`
     height: 80vh;
     margin-top: 0px;
   }
+
+
+  
+
 `;

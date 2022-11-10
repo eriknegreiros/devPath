@@ -4,9 +4,32 @@ export const ContainerMain = styled.div`
 width: 100%;
 min-width: 280px;
 
+.frontEndBasic {
+    
+    margin: -40px 0 55px 58%;
+  }
+
+  @media (max-width: 540px) {
+    .frontEndBasic {
+      margin: 50px 0 70px 50%;
+    }
+  }
+
+  
+.frontEndBasic2 {
+    
+    margin: -45px 0 55px 15%;
+  }
+
+  @media (max-width: 540px) {
+    .frontEndBasic2 {
+      margin: 0px 0 70px 15%;
+    }
+  }
+
 .imgLogicaProgramacao{
     position: absolute;
-    top: 180px;
+    top: 270px;
     left: 46%;
     height: 80vh;
 }
@@ -49,7 +72,7 @@ ul{
         margin-top: 0px;
     
         .imgLogicaProgramacao{
-            left: 43%
+            left: 43%;
             top: 210px;
         }
     }

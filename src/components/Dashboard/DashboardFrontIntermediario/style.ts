@@ -7,12 +7,12 @@ export const UlStyle = styled.li`
   
   .cardIntermediary {
     width:33%;
-    margin: 125px 0 110px 63%;
+    margin: 20px 0 110px 58%;
   }
   
   @media (max-width: 540px){
     .cardIntermediary {
-      margin: 120px 0 120px 72%;
+      margin: -50px 0 120px 72%;
   }
   @media (max-width: 350px){ 
       height: 80vh;
