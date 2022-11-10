@@ -17,8 +17,6 @@ const DashboardFrontIntermediario = () => {
 
   return (
     <>
-      
-
       <ContainerMain>
         <TitleTechDashboard>
           <h2>Front-End</h2>

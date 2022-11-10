@@ -6,16 +6,17 @@ import TitleTechDashboard from "../../Components/Dashboard/TitleTech";
 import logicaProgramacao from "../../Assets/line-logicaProgramacao.png";
 import Footer from "../../Components/Footer";
 import { UlLogicaProgramacao } from "./style";
-import ModalContents from "../../Components/Dashboard/ModalContents";
 import { motion } from "framer-motion";
 
-const DashboardLogicaProgramacao = () => {
-  const [modal, setModal] = useState<boolean>(false);
+import GlobalModal from "../../Components/Modal";
+import Challenges from "../../Components/ContentsToModal/LogicaProgramacao/Challenges";
+import Courses from "../../Components/ContentsToModal/LogicaProgramacao/Courses";
+import Blogs from "../../Components/ContentsToModal/LogicaProgramacao/Blogs";
 
-  function modalContents(e: any) {
-    e.preventDefault();
-    setModal(true);
-  }
+const DashboardLogicaProgramacao = () => {
+  const [blogsIsOpen, setBlogsIsOpen] = useState<boolean>(false);
+  const [coursesIsOpen, setCoursesIsOpen] = useState<boolean>(false);
+  const [challengesIsOpen, setChallengesIsOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -34,7 +35,10 @@ const DashboardLogicaProgramacao = () => {
           </TitleTechDashboard>
 
           <UlLogicaProgramacao>
-            <CardTechStyled className="cardLogica" onClick={modalContents}>
+            <CardTechStyled
+              className="cardLogica"
+              onClick={() => setBlogsIsOpen(true)}
+            >
               <h3>Blogs</h3>
               <p>
                 Os melhores conteúdos que irão te introduzir o assunto de lógica
@@ -42,7 +46,7 @@ const DashboardLogicaProgramacao = () => {
               </p>
             </CardTechStyled>
 
-            <CardTechStyled onClick={modalContents}>
+            <CardTechStyled onClick={() => setCoursesIsOpen(true)}>
               <h3>Cursos e vídeos</h3>
               <p>
                 Selecionamos alguns cursos e vídeos que vão direto ao ponto e te
@@ -50,7 +54,10 @@ const DashboardLogicaProgramacao = () => {
               </p>
             </CardTechStyled>
 
-            <CardTechStyled className="cardLogica " onClick={modalContents}>
+            <CardTechStyled
+              className="cardLogica "
+              onClick={() => setChallengesIsOpen(true)}
+            >
               <h3>Desafios</h3>
               <p>
                 Separamos algumas plataformas que irão te levar a outro nivel
@@ -63,7 +70,30 @@ const DashboardLogicaProgramacao = () => {
         </ContainerMain>
 
         <Footer />
-        {modal ? <ModalContents /> : <></>}
+
+        {blogsIsOpen ? (
+          <GlobalModal title="Blogs" onClose={() => setBlogsIsOpen(false)}>
+            <Blogs />
+          </GlobalModal>
+        ) : null}
+
+        {coursesIsOpen ? (
+          <GlobalModal
+            title="Cursos e vídeos"
+            onClose={() => setCoursesIsOpen(false)}
+          >
+            <Courses />
+          </GlobalModal>
+        ) : null}
+
+        {challengesIsOpen ? (
+          <GlobalModal
+            title="Desafios"
+            onClose={() => setChallengesIsOpen(false)}
+          >
+            <Challenges />
+          </GlobalModal>
+        ) : null}
       </motion.div>
     </>
   );

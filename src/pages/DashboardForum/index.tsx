@@ -30,6 +30,9 @@ const Forum = () => {
   } = useForm<iPost>({
     resolver: yupResolver(addPost),
   });
+  console.log(post);
+
+  console.log(profile);
   return (
     <>
       <motion.div
@@ -71,7 +74,11 @@ const Forum = () => {
                   key={index}
                   postsContent={posts.text}
                   postsUId={posts.userId}
-                />
+                  postsImage={posts.image}
+                  postsName={posts.name}
+                  postsOccupation={posts.occupation}
+                  postidCard={posts.id}
+                  />
               ))}
             </ul>
           </section>
@@ -81,5 +88,8 @@ const Forum = () => {
     </>
   );
 };
+
+
+
 
 export default Forum;
