@@ -7,7 +7,6 @@ export const Modal = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  
 
   font-family: "Inter";
   font-style: normal;
@@ -15,8 +14,8 @@ export const Modal = styled.div`
   font-size: 18px;
   line-height: 22px;
 
-  color: #fff;
-  background: #000610;
+  color: var(--white);
+  background: var(--main-color4);
 `;
 
 export const Header = styled.header`
@@ -27,14 +26,26 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  height: 8vh;
+  height: 10vh;
   padding: 10px 30px;
 
   font-weight: 800;
   font-size: 22px;
   line-height: 26px;
 
-  span{
+  border-bottom: solid 1px var(--main-color2);
+
+  h2 {
+    font-size: 30px;
+    line-height: 30px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  span {
     cursor: pointer;
   }
 
@@ -47,7 +58,7 @@ export const Header = styled.header`
     min-width: 20vw;
   }
 
-  .done {
+  /* .done {
     box-sizing: border-box;
 
     padding: 7px 2px;
@@ -64,7 +75,7 @@ export const Header = styled.header`
 
     color: var(--white);
     background: #22ca47;
-  }
+  } */
 
   .close {
     box-sizing: border-box;
@@ -86,11 +97,10 @@ export const Main = styled.main`
   align-items: center;
   justify-content: start;
 
-  height: 92vh;
+  height: 90vh;
   width: 100%;
-  padding: 10px 0px;
-  gap: 30px;
-  
+  /*padding: 10px 0px;
+  gap: 30px; */
 
   section {
     box-sizing: border-box;
@@ -101,9 +111,12 @@ export const Main = styled.main`
     justify-content: space-around;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
-    border-bottom: solid 1px #051866;
-    
+    /* margin-bottom: 20px; */
+    border-bottom: solid 1px var(--main-color2);
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .contentType {
@@ -111,12 +124,23 @@ export const Main = styled.main`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 2vw;
+
     width: 140px;
     padding: 5px 0px;
-    h2{
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+
+      width: 100vw;
+    }
+
+    h2 {
       font-size: 22px;
-      
+
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -126,5 +150,29 @@ export const Main = styled.main`
 
   .contentFont {
     width: 40vw;
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+      width: 70vw;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+
+      padding: 15px 0px;
+
+      @media screen and (max-width: 768px) {
+        align-items: center;
+
+        padding-top: 0px;
+      }
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
 `;
