@@ -1,8 +1,8 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { iLogin } from "../../Pages/Login/index";
-import { instance } from "../../Service/api";
+import { iLogin } from "../../Pages/Login";
+import { instance, instanceHeaders } from "../../Service/api";
 
 interface iAuthProps {
   children: ReactNode;
@@ -17,14 +17,15 @@ export interface iUser {
   image?: string;
 }
 
-interface iResponse {
+export interface iResponse {
   accessToken: string;
   user: iProfile;
 }
-interface iProfile {
+
+export interface iProfile {
   name: string;
   email: string;
-  id: number;
+  id: number | any;
   occupation: string;
   image?: string;
 }
@@ -37,18 +38,19 @@ interface iUserContext {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   profile: iProfile | null;
   token: string | null;
+  
 }
 
 export const UserContext = createContext({} as iUserContext);
 
 export const AuthProvider = ({ children }: iAuthProps) => {
-  const [refreshing, setRefreshing] = useState(true);
-  const [profile, setProfile] = useState<iProfile | null>(null);
-  const [token, setToken] = useState(
-    localStorage.getItem("@dev-path:token") || null
-  );
-  const [loading, setLoading] = useState(false);
 
+  // const [refreshing, setRefreshing] = useState(true);
+  const [profile, setProfile] = useState<iProfile | null>(null);
+  const [token, setToken] = useState(localStorage.getItem("@dev-path:token") || null);
+  const [loading, setLoading] = useState(false);
+  // const [idUser, setIdUser] = useState(null)
+ 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const navigate = useNavigate();
 
@@ -89,8 +91,9 @@ export const AuthProvider = ({ children }: iAuthProps) => {
       const { accessToken, user } = response.data;
 
       localStorage.setItem("@dev-path:token", accessToken);
-
+     
       setProfile(user);
+      // setIdUser(user.id)
 
       toast.success("Logado com Sucesso", {
         position: "top-right",
@@ -112,6 +115,41 @@ export const AuthProvider = ({ children }: iAuthProps) => {
     }
   };
 
+
+
+//   useEffect(() => {
+
+//     async function loadUser(){
+//       const token = localStorage.getItem("@dev-path:token");
+
+  
+//       if(token){
+//         try {
+          
+//           instance.defaults.headers.authorization = `Bearer ${token}`;
+
+//           const {data}= await instance.get(`/users/${1}`);
+         
+//           setProfile(data)
+
+//         } catch (error) {
+//             console.error(error)
+//         } finally {
+//             setRefreshing(false);
+//         }
+
+//       }
+
+//     }
+
+//     loadUser();
+
+// // eslint-disable-next-line react-hooks/exhaustive-deps
+// },[])
+
+
+
+
   return (
     <UserContext.Provider
       value={{
@@ -122,6 +160,7 @@ export const AuthProvider = ({ children }: iAuthProps) => {
         loginUser,
         loading,
         token,
+        
       }}
     >
       {children}

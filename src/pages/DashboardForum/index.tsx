@@ -30,6 +30,7 @@ const Forum = () => {
   } = useForm<iPost>({
     resolver: yupResolver(addPost),
   });
+ 
   return (
     <>
       <motion.div

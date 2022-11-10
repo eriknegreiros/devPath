@@ -1,7 +1,5 @@
 import { ContainerPost, EditPost, SectionPost } from "./style";
-
 import { useContext } from "react";
-
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { useState } from "react";
 import ModalEdit from "../ModalEditPost";
@@ -31,15 +29,14 @@ const CardPosts = ({
   postsOccupation,
   postidCard,
   postsUId,
-  id,
+  
 }: IPostProps) => {
   const [editModal, setEditModal] = useState<boolean>(false);
   const { handleDelete } = useContext(ForumContext);
   const [post, setPost] = useState([] as iPost[]);
   const { profile } = useContext(UserContext);
 
-  console.log(postsUId);
-  console.log(profile);
+
 
   const handleModalUpdate = () => {
     if (editModal === false) {
@@ -49,6 +46,8 @@ const CardPosts = ({
       setEditModal(false);
     }
   };
+ 
+
 
   return (
     <>

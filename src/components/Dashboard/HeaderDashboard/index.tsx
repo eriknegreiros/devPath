@@ -1,10 +1,11 @@
 import { Header } from "./style";
-import { Link, useNavigate } from "react-router-dom";
-import { BsChatLeftText, BsBoxArrowRight } from "react-icons/bs";
+import { Link} from "react-router-dom";
+import logout from "../../../Assets/logout.png";
+import  { BsChatLeftText } from "react-icons/bs"
 
 const HeaderDashboard = () => {
-  const navigate = useNavigate();
-
+ 
+  
   return (
     <>
       <Header>
@@ -15,9 +16,9 @@ const HeaderDashboard = () => {
             <BsChatLeftText className="iconForum" />
           </Link>
         </div>
-
-        <Link to="/">
-          <BsBoxArrowRight />
+        
+        <Link to="/" onClick={()=> window.localStorage.clear() }>
+          <img src={logout} alt="deslogar" />
         </Link>
       </Header>
     </>
