@@ -14,11 +14,16 @@ interface IPostProps {
   postsContent: string;
   postsUId: string;
   postsName: string;
-  postsImage: string ;
-  postsOccupation: string; 
+  postsImage: string;
+  postsOccupation: string;
 }
 
-const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation }: IPostProps) => {
+const CardPosts = ({
+  postsContent,
+  postsName,
+  postsImage,
+  postsOccupation,
+}: IPostProps) => {
   const [editModal, setEditModal] = useState<boolean>(false);
 
   const handleModalUpdate = () => {
@@ -30,7 +35,6 @@ const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation }: IPo
     }
   };
   const { profile } = useContext(UserContext);
-  
 
   return (
     <>
@@ -49,8 +53,10 @@ const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation }: IPo
         </main>
 
         <EditPost>
-          <AiOutlineEdit onClick={() => handleModalUpdate()} />
-          <AiOutlineDelete />
+          <span className="editPost">
+            <AiOutlineEdit onClick={() => handleModalUpdate()} />
+          </span>
+          <span className="deletePost"><AiOutlineDelete /></span>
         </EditPost>
       </ContainerPost>
     </>

@@ -7,7 +7,7 @@ export const Container = styled.main`
   justify-content: center;
 
   text-align: center;
-  gap: 30px;
+  gap: 20px;
   max-width: 1600px;
   min-height: 100vh;
 
@@ -15,17 +15,18 @@ export const Container = styled.main`
     width: 100%;
   }
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     flex-direction: row;
   }
 
-  section {
+  .sectionPosts {
     gap: 30px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 75vw;
   }
 
   h4 {
@@ -41,17 +42,21 @@ export const Container = styled.main`
     font-size: 24px;
     line-height: 29px;
   }
-
+  
   form {
     display: flex;
     height: 150px;
-    max-width: 420px;
+    width: 100%;
     margin: 0 auto;
-    background: #ffffff;
-    border: 5px solid #051866;
+    background: var(--white);
+    border: 5px solid var(--main-color2);
     border-radius: 8px;
     padding: 8px;
     position: relative;
+
+    @media (min-width: 768px) {
+      max-width: 420px;
+    }
   }
 
   textarea {
@@ -63,7 +68,7 @@ export const Container = styled.main`
     font-weight: 400;
     font-size: 1rem;
     line-height: 24px;
-    color: #a2a2a2;
+    color: var(--main-color2);
     padding: 10px;
     resize: none;
   }
@@ -82,6 +87,15 @@ export const Container = styled.main`
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    width: 100vw;
+
+    @media (min-width: 768px) {
+      width: 100%;
+    }
+
+    li {
+    }
   }
 `;
 
@@ -94,14 +108,32 @@ export const DivUser = styled.div`
   padding: 15px;
   text-align: center;
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     width: 250px;
-    height: 200px;
+    height: auto;
     justify-content: flex-start;
     align-items: flex-start;
     margin: 0 20px;
     text-align: center;
   }
+
+  .circleImage {
+    display: inline-block;
+
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
   div {
     width: 100%;
   }

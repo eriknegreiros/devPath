@@ -44,15 +44,18 @@ const Forum = () => {
         <HeaderDashboard />
         <Container>
           <DivUser>
-            <img src={profile?.image} alt="foto do usuário" />
+            <span className="circleImage">
+              <img src={profile?.image} alt="foto do usuário" />
+            </span>
             <div>
               <h4>{profile?.name}</h4>
               <h5>{profile?.occupation}</h5>
             </div>
           </DivUser>
 
-          <section>
+          <section className="sectionPosts">
             <h5>Compartilhe conosco!</h5>
+
             <form onSubmit={handleSubmit(newPost)}>
               <textarea
                 {...register("text")}
@@ -62,6 +65,7 @@ const Forum = () => {
                 <button type="submit">Postar</button>
               </DivButton>
             </form>
+
             <ul>
               {/* {JSON.stringify(post, null, 2)} */}
               {post?.length === 0 && (
@@ -77,7 +81,7 @@ const Forum = () => {
                   postsImage={posts.image}
                   postsName={posts.name}
                   postsOccupation={posts.occupation}
-                  />
+                />
               ))}
             </ul>
           </section>
@@ -87,8 +91,5 @@ const Forum = () => {
     </>
   );
 };
-
-
-
 
 export default Forum;
