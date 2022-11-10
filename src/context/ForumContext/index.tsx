@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { instance, instanceHeaders } from "../../Service/api";
 import { UserContext } from "../UserContext";
-
 // import { toast } from "react-toastify";
 
 export interface iDefaultContextProps {
@@ -33,6 +32,8 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
   const [post, setPost] = useState([] as iPost[]);
   const [state, setState] = useState(false);
   const { profile } = useContext(UserContext);
+  
+  
 
   useEffect(() => {
     getPosts();
@@ -44,7 +45,7 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
       instance.defaults.headers.authorization = `Bearer ${token}`;
 
       const user = await instance.get("/posts");
-      setPost([...user.data.splice(0, 10)]);
+      setPost([...user.data.reverse().splice(0, 10)]);
 
       console.log(user);
     } catch (error) {
