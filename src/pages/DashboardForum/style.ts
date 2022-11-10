@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
-  width: 100vw;
   justify-content: center;
 
   text-align: center;
@@ -12,7 +12,12 @@ export const Container = styled.main`
   min-height: 100vh;
 
   img {
+    max-width: 12.5rem;
     width: 100%;
+    height: 9.688rem;
+
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   @media (min-width: 768px) {
@@ -29,18 +34,19 @@ export const Container = styled.main`
     width: 75vw;
   }
 
-  h4 {
-    font-style: normal;
+  h2 {
     font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 1.25rem;
   }
 
-  h5 {
-    font-style: normal;
+  h3 {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 1rem;
+  }
+
+  span {
+    font-size: 1rem;
+    font-weight: 700;
   }
   
   form {
@@ -104,9 +110,8 @@ export const DivUser = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  padding: 15px;
   text-align: center;
+  gap: 1rem;
 
   @media (min-width: 768px) {
     width: 250px;

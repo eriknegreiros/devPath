@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Header, Bars, NavMenu } from "./style";
 import { motion } from "framer-motion";
-// import { DashboardContext } from "../../../context/NavBar";
+// import { DashboardContext } from "../../../Context/NavBar";
 
 const HeaderMenu = () => {
   const [isNavExpanded, setIsNavExpanded] = useState<boolean>(false);

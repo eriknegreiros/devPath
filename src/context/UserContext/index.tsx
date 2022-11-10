@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { iLogin } from "../../Pages/Login";
+import { iLogin } from "../../Pages/Login/index";
 import { instance } from "../../Service/api";
 
 interface iAuthProps {
@@ -42,6 +42,7 @@ interface iUserContext {
 export const UserContext = createContext({} as iUserContext);
 
 export const AuthProvider = ({ children }: iAuthProps) => {
+  const [refreshing, setRefreshing] = useState(true);
   const [profile, setProfile] = useState<iProfile | null>(null);
   const [token, setToken] = useState(
     localStorage.getItem("@dev-path:token") || null

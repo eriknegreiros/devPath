@@ -1,14 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import CardPosts from "../../Components/Dashboard/CardPosts";
-import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
 import { ForumContext, iPost } from "../../Context/ForumContext";
 import { DivButton, DivUser, Container } from "./style";
 import { motion } from "framer-motion";
 import { UserContext } from "../../Context/UserContext";
+import HeaderDashboardForum from "../../Components/Dashboard/HeaderDashboard/HeaderForum";
 
 export interface iPostProps {
   post: iPost[];
@@ -30,9 +30,6 @@ const Forum = () => {
   } = useForm<iPost>({
     resolver: yupResolver(addPost),
   });
-  console.log(post);
-
-  console.log(profile);
   return (
     <>
       <motion.div
@@ -41,15 +38,15 @@ const Forum = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
-        <HeaderDashboard />
+        <HeaderDashboardForum />
         <Container>
           <DivUser>
             <span className="circleImage">
               <img src={profile?.image} alt="foto do usuário" />
             </span>
             <div>
-              <h4>{profile?.name}</h4>
-              <h5>{profile?.occupation}</h5>
+              <h2>{profile?.name}</h2>
+              <h3>{profile?.occupation}</h3>
             </div>
           </DivUser>
 
@@ -81,6 +78,7 @@ const Forum = () => {
                   postsImage={posts.image}
                   postsName={posts.name}
                   postsOccupation={posts.occupation}
+                  postidCard={posts.id}
                 />
               ))}
             </ul>

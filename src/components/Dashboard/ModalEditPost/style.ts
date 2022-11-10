@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RegisterTech = styled.div`
+export const RegisterPost = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

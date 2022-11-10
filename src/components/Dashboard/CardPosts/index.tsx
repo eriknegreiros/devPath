@@ -1,21 +1,25 @@
 import { ContainerPost, EditPost, SectionPost } from "./style";
 
 import { useContext } from "react";
-import { UserContext } from "../../../Context/UserContext";
 
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { useState } from "react";
 import ModalEdit from "../ModalEditPost";
 
+import { ForumContext, iPost } from "../../../Context/ForumContext";
+
 export interface iPropsModal {
   handleModalUpdate: () => void;
+  postsContent: string;
+  postidCard: number;
 }
 interface IPostProps {
   postsContent: string;
-  postsUId: string;
+  postsUId: number;
   postsName: string;
   postsImage: string;
   postsOccupation: string;
+  postidCard: number;
 }
 
 const CardPosts = ({
@@ -23,8 +27,14 @@ const CardPosts = ({
   postsName,
   postsImage,
   postsOccupation,
+  postidCard,
+  postsUId,
 }: IPostProps) => {
   const [editModal, setEditModal] = useState<boolean>(false);
+  const { handleDelete } = useContext(ForumContext);
+  const [post, setPost] = useState([] as iPost[]);
+
+  console.log(post);
 
   const handleModalUpdate = () => {
     if (editModal === false) {
@@ -34,11 +44,16 @@ const CardPosts = ({
       setEditModal(false);
     }
   };
-  const { profile } = useContext(UserContext);
 
   return (
     <>
-      {editModal && <ModalEdit handleModalUpdate={handleModalUpdate} />}
+      {editModal && (
+        <ModalEdit
+          handleModalUpdate={handleModalUpdate}
+          postidCard={postidCard}
+          postsContent={postsContent}
+        />
+      )}
 
       <ContainerPost>
         <main>
@@ -52,12 +67,12 @@ const CardPosts = ({
           </div>
         </main>
 
-        <EditPost>
-          <span className="editPost">
+        {post.filter((elem) => elem.id === postsUId) ? (
+          <EditPost>
             <AiOutlineEdit onClick={() => handleModalUpdate()} />
-          </span>
-          <span className="deletePost"><AiOutlineDelete /></span>
-        </EditPost>
+            <AiOutlineDelete onClick={() => handleDelete(postidCard)} />
+          </EditPost>
+        ) : null}
       </ContainerPost>
     </>
   );

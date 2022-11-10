@@ -57,7 +57,7 @@ export const ContainerPost = styled.li`
   }
 
   @media (max-width: 500px) {
-    min-width: 80%;
+    min-width: 90%;
   }
 `;
 
