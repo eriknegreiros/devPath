@@ -15,6 +15,7 @@ export interface iPost {
   image: string;
   occupation: string;
   id:number;
+  idResponse:number;
 }
 
 
@@ -51,9 +52,7 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
 
       const user = await instance.get("/posts");
       setPost([...user.data.splice(0, 10)]);
-      
     
-      console.log(user)      
 
     } catch (error) {
       console.log(error);

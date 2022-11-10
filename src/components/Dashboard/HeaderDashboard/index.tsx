@@ -1,10 +1,10 @@
 import { Header } from "./style";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import logout from "../../../Assets/logout.png";
 import  { BsChatLeftText } from "react-icons/bs"
 
 const HeaderDashboard = () => {
-  const navigate = useNavigate()
+ 
   
   return (
     <>
@@ -16,7 +16,7 @@ const HeaderDashboard = () => {
           </Link>
         </div>
         
-        <Link to="/">
+        <Link to="/" onClick={()=> window.localStorage.clear() }>
           <img src={logout} alt="deslogar" />
         </Link>
       </Header>
