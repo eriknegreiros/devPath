@@ -1,14 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import CardPosts from "../../Components/Dashboard/CardPosts";
-import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
-import { ForumContext, iPost } from "../../context/ForumContext";
+import { ForumContext, iPost } from "../../Context/ForumContext";
 import { DivButton, DivUser, Container } from "./style";
 import { motion } from "framer-motion";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../Context/UserContext";
+import HeaderDashboardForum from "../../Components/Dashboard/HeaderDashboard/HeaderForum";
 
 export interface iPostProps {
   post: iPost[];
@@ -41,18 +41,18 @@ const Forum = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
-        <HeaderDashboard />
+        <HeaderDashboardForum />
         <Container>
           <DivUser>
             <img src={profile?.image} alt="foto do usuário" />
             <div>
-              <h4>{profile?.name}</h4>
-              <h5>{profile?.occupation}</h5>
+              <h2>{profile?.name}</h2>
+              <h3>{profile?.occupation}</h3>
             </div>
           </DivUser>
 
           <section>
-            <h5>Compartilhe conosco!</h5>
+            <span>Compartilhe conosco!</span>
             <form onSubmit={handleSubmit(newPost)}>
               <textarea
                 {...register("text")}
@@ -78,7 +78,7 @@ const Forum = () => {
                   postsName={posts.name}
                   postsOccupation={posts.occupation}
                   postidCard={posts.id}
-                  />
+                />
               ))}
             </ul>
           </section>
@@ -88,8 +88,5 @@ const Forum = () => {
     </>
   );
 };
-
-
-
 
 export default Forum;
