@@ -66,9 +66,10 @@ const Forum = () => {
                   <h2>Nada por aqui 😪</h2>
                 </li>
               )}
-              {post?.map((posts, index) => (
+              {post?.map((posts) => (
                 <CardPosts
-                  key={index}
+                  id={posts.id}
+                  key={posts.id}
                   postsContent={posts.text}
                   postsUId={posts.userId}
                   postsImage={posts.image}
