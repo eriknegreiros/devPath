@@ -11,6 +11,8 @@ const InputContainer = styled.div`
   display: flex;
   align-items: center;
 
+  
+
   input {
     width: 100%;
     border: none;

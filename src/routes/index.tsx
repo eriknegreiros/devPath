@@ -15,22 +15,20 @@ import ProtectedRoutes from "../Components/ProtectedRoutes";
 const RoutesMain = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route index element={<Home />} />
       <Route path="*" element={<Navigate to={"/"} />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />
+      <Route path="/dashboard/selectTask" element={<SelectTask />} />
 
-      <Route element={<ProtectedRoutes/>}>
-        
+      <Route element={<ProtectedRoutes />}>
         <Route path="/dashboard/selectTask" element={<SelectTask />} />
         <Route path="dashboard/Forum" element={<Forum />} />
-
         <Route
           path="logicaprogramacao"
           element={<DashboardLogicaProgramacao />}
         />
-
         <Route path="dashboard/frontEnd" element={<SelectFrontEnd />}>
           <Route index element={<DashboardFrontBasic />} />
 
@@ -42,7 +40,6 @@ const RoutesMain = () => {
           <Route path="frontEndAdvanced" element={<DashboardFrontAvancado />} />
         </Route>
       </Route>
-      
     </Routes>
   );
 };

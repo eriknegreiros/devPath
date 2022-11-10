@@ -31,17 +31,22 @@ const SelectFrontEnd = () => {
           navigation
           pagination={{ clickable: true }}
           slidesPerView={1}
-          onSlideChange={(e) => {
-            console.log(e);
-            if (location.pathname === "/dashboard/frontEnd") {
-              navigate("frontEndIntermediary");
-            } else if (
-              location.pathname === "/dashboard/frontEnd/frontEndIntermediary"
-            ) {
-              navigate("frontEndAdvanced");
+          onNavigationNext={() => {
+            switch(location.pathname) {
+              case '/dashboard/frontEnd': 
+               return navigate("frontEndIntermediary");
+              case '/dashboard/frontEnd/frontEndIntermediary':
+               return navigate("frontEndAdvanced");
             }
           }}
-          onSwiper={(swiper) => console.log(swiper)}
+          onNavigationPrev={() => {
+            switch(location.pathname) {
+              case '/dashboard/frontEnd/frontEndIntermediary':
+               return navigate("/dashboard/frontEnd");
+              case '/dashboard/frontEnd/frontEndAdvanced':
+               return navigate("frontEndIntermediary");
+            }
+          }}
         >
           <SwiperSlide>{<Outlet />}</SwiperSlide>
           <SwiperSlide>{<Outlet />}</SwiperSlide>

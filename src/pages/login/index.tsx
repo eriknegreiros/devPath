@@ -32,7 +32,6 @@ const Login = () => {
     resolver: yupResolver(Schema),
   });
 
-  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -41,7 +40,7 @@ const Login = () => {
       transition={{ duration: 1 }}
     >
       <ContainerLogin>
-        <Header name='Login' />
+        <Header name="Login" />
         <main>
           <section className="container">
             <img className="img" src={img} alt="" />
@@ -64,9 +63,9 @@ const Login = () => {
               {loading ? "Entrando..." : "Entrar"}
             </Button>
             <section>
-             {`Ou crie uma conta `}
+              {`Ou crie uma conta `}
               <Link to="/signUp" className="toRegister">
-              aqui
+                aqui
               </Link>
             </section>
           </form>

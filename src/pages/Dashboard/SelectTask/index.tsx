@@ -10,9 +10,7 @@ import { useContext } from "react";
 import { UserContext } from "../../../context/UserContext";
 
 const SelectTask = () => {
-
   const { profile } = useContext(UserContext);
-  
 
   return (
     <>

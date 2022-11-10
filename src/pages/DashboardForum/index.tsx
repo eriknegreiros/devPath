@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -7,8 +7,8 @@ import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
 import { ForumContext, iPost } from "../../context/ForumContext";
 import { DivButton, DivUser, Container } from "./style";
-import img from "../../Assets/devs/erik.png";
 import { motion } from "framer-motion";
+import { UserContext } from "../../context/UserContext";
 
 export interface iPostProps {
   post: iPost[];
@@ -16,13 +16,17 @@ export interface iPostProps {
 
 const Forum = () => {
   const { newPost, post } = useContext(ForumContext);
+  const { profile } = useContext(UserContext);
+
+  
+
+
 
   const addPost = yup.object().shape({
     text: yup.string().required("*Campo obrigatório"),
   });
 
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     register,
     handleSubmit,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -30,7 +34,6 @@ const Forum = () => {
   } = useForm<iPost>({
     resolver: yupResolver(addPost),
   });
-  console.log(post);
   return (
     <>
       <motion.div
@@ -42,10 +45,10 @@ const Forum = () => {
         <HeaderDashboard />
         <Container>
           <DivUser>
-            <img src={img} alt="" />
+            <img src={profile?.image} alt="foto do usuário" />
             <div>
-              <h4>Nome do Dev</h4>
-              <h5>Ocupação do dev</h5>
+              <h4>{profile?.name}</h4>
+              <h5>{profile?.occupation}</h5>
             </div>
           </DivUser>
 
@@ -53,25 +56,30 @@ const Forum = () => {
             <h5>Compartilhe conosco!</h5>
             <form onSubmit={handleSubmit(newPost)}>
               <textarea
-                name="post"
-                placeholder="O que temos pra hoje?"
+                {...register("text")}
+                placeholder="Fale um pouco sobre o que está estudando ou compartilhe alguma dica de estudo"
               ></textarea>
               <DivButton>
-                <button>Postar</button>
+                <button type="submit">Postar</button>
               </DivButton>
             </form>
             <ul>
-              {post.length === 0 && (
+              {/* {JSON.stringify(post, null, 2)} */}
+              {post?.length === 0 && (
                 <li>
                   <h2>Nada por aqui 😪</h2>
                 </li>
               )}
-              {post.map((posts, index) => (
+              {post?.map((posts, index) => (
                 <CardPosts
                   key={index}
                   postsContent={posts.text}
                   postsUId={posts.userId}
-                />
+                  postsImage={posts.image}
+                  postsName={posts.name}
+                  postsOccupation={posts.occupation}
+                  postidCard={posts.id}
+                  />
               ))}
             </ul>
           </section>
@@ -81,5 +89,8 @@ const Forum = () => {
     </>
   );
 };
+
+
+
 
 export default Forum;
