@@ -6,12 +6,9 @@ const GlobalModal = ({ onClose, title, children }: React.ReactNode | any) => {
     <Modal>
       <Header>
         <h2>{title}</h2>
-        <section className="butonsSection">
-          <button onClick={onClose} className="done">Concluido</button>
-          <div className="close" onClick={onClose}>
+        <div className="close" onClick={onClose}>
             <span>X</span>
           </div>
-        </section>
       </Header>
 
       <Main>{children}</Main>
