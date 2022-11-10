@@ -21,7 +21,6 @@ const RoutesMain = () => {
       <Route path="/signUp" element={<Register />} />
       <Route path="/quemSomos" element={<WhoWeAre />} />
       <Route path="/dashboard/selectTask" element={<SelectTask />} />
-      <Route path="dashboard/Forum" element={<Forum />} />
 
       <Route element={<ProtectedRoutes />}>
         <Route path="/dashboard/selectTask" element={<SelectTask />} />

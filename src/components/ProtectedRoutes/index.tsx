@@ -1,9 +1,11 @@
 import { useContext } from 'react'
 import { Navigate, Outlet } from 'react-router-dom';
-import { UserContext } from '../../Context/UserContext';
+import { UserContext } from '../../context/UserContext';
 
 const ProtectedRoutes = () => {
-  const { profile } = useContext(UserContext);
+
+  const { profile} = useContext(UserContext);
+  
 
   //   if(refreshing){
   //     return null

@@ -1,25 +1,33 @@
 import { ContainerPost, EditPost, SectionPost } from "./style";
 
 import { useContext } from "react";
-import { UserContext } from "../../../Context/UserContext";
 
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { useState } from "react";
 import ModalEdit from "../ModalEditPost";
+
+import { ForumContext, iPost } from "../../../context/ForumContext";
 
 export interface iPropsModal {
   handleModalUpdate: () => void;
 }
 interface IPostProps {
   postsContent: string;
-  postsUId: string;
+  postsUId: number;
   postsName: string;
   postsImage: string ;
-  postsOccupation: string; 
+  postsOccupation: string;
+  postidCard:number
+   
 }
 
-const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation }: IPostProps) => {
+const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation, postidCard, postsUId }: IPostProps) => {
   const [editModal, setEditModal] = useState<boolean>(false);
+  const {handleDelete} = useContext(ForumContext);
+  const [post, setPost] = useState([] as iPost[]);
+
+
+  console.log(post)
 
   const handleModalUpdate = () => {
     if (editModal === false) {
@@ -29,8 +37,11 @@ const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation }: IPo
       setEditModal(false);
     }
   };
-  const { profile } = useContext(UserContext);
+
   
+  
+
+
 
   return (
     <>
@@ -48,10 +59,16 @@ const CardPosts = ({ postsContent, postsName, postsImage, postsOccupation }: IPo
           </div>
         </main>
 
-        <EditPost>
+      { post.filter((elem) => elem.id === postsUId) ? (
+        <EditPost   >
           <AiOutlineEdit onClick={() => handleModalUpdate()} />
-          <AiOutlineDelete />
-        </EditPost>
+          <AiOutlineDelete onClick={() => handleDelete(postidCard)} />
+        </EditPost>) 
+        :
+        null
+      }
+
+        
       </ContainerPost>
     </>
   );

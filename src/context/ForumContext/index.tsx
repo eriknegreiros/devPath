@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { instance } from "../../Service/api";
+import { instance, instanceHeaders } from "../../Service/api";
 import { UserContext } from "../UserContext";
-import { AxiosResponse } from "axios";
+
 // import { toast } from "react-toastify";
 
 export interface iDefaultContextProps {
@@ -9,11 +9,12 @@ export interface iDefaultContextProps {
 }
 
 export interface iPost {
-  userId: string;
+  userId: number;
   text: string;
   name: string;
   image: string;
   occupation: string;
+  id:number;
 }
 
 
@@ -21,6 +22,7 @@ export interface iPost {
 interface IDashboardContext {
   post: iPost[] ;
   newPost: (data: iPost) => void;
+  handleDelete: (postidCard: number) => Promise <void>;
   
 }
 
@@ -33,6 +35,8 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
   const [state, setState] = useState(false); 
   const { profile } = useContext(UserContext);
   
+  
+
 
   useEffect(() => {
     getPosts();
@@ -49,14 +53,19 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
       setPost([...user.data.splice(0, 10)]);
       
     
-      console.log(user)
-
-      
+      console.log(user)      
 
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handleDelete = async (postidCard: number): Promise <void> => {
+
+    await instanceHeaders.delete(`/posts/${postidCard}`)
+
+    getPosts();
+  }
 
 
 
@@ -95,6 +104,7 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
       value={{
         newPost,
         post, 
+        handleDelete
       
       }}
     >

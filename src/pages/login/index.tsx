@@ -9,7 +9,7 @@ import Header from "../../Components/Register/Header";
 import img from "../../Assets/login.gif";
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "../../context/UserContext";
 
 export interface iLogin {
   email: string;
