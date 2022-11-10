@@ -6,7 +6,7 @@ import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { useState } from "react";
 import ModalEdit from "../ModalEditPost";
 
-import { ForumContext, iPost } from "../../../context/ForumContext";
+import { ForumContext, iPost } from "../../../Context/ForumContext";
 
 export interface iPropsModal {
   handleModalUpdate: () => void;

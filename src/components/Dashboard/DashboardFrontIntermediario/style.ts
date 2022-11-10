@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
 export const UlStyle = styled.li`
-  margin-top: 70px;
+  margin-top: 80px;
   height:85vh;
   
   
-  .cardAjuste {
-    margin: 90px 0 110px 63%;
+  .cardIntermediary {
+    width:33%;
+    margin: 125px 0 110px 63%;
   }
   
   @media (max-width: 540px){
-    .cardAjuste {
-      margin: 90px 0 110px 72%;
+    .cardIntermediary {
+      margin: 120px 0 120px 72%;
   }
   @media (max-width: 350px){ 
       height: 80vh;

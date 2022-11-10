@@ -4,8 +4,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./Styles/global";
 import { BrowserRouter } from "react-router-dom";
-import { DashboardForum } from "./context/ForumContext";
-import { AuthProvider } from "./context/UserContext";
+import { DashboardForum } from "./Context/ForumContext";
+import { AuthProvider } from "./Context/UserContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

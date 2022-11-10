@@ -7,7 +7,7 @@ import front from "../../../Assets/front.png";
 import back from "../../../Assets/back.png";
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { UserContext } from "../../../context/UserContext";
+import { UserContext } from "../../../Context/UserContext";
 
 const SelectTask = () => {
   const { profile } = useContext(UserContext);

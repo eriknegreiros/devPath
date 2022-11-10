@@ -36,7 +36,7 @@ const DashboardLogicaProgramacao = () => {
 
           <UlLogicaProgramacao>
             <CardTechStyled
-              className="cardAjuste"
+              className="cardLogica"
               onClick={() => setBlogsIsOpen(true)}
             >
               <h3>Blogs</h3>
@@ -55,7 +55,7 @@ const DashboardLogicaProgramacao = () => {
             </CardTechStyled>
 
             <CardTechStyled
-              className="cardAjuste "
+              className="cardLogica "
               onClick={() => setChallengesIsOpen(true)}
             >
               <h3>Desafios</h3>
@@ -65,7 +65,7 @@ const DashboardLogicaProgramacao = () => {
               </p>
             </CardTechStyled>
 
-            <img src={logicaProgramacao} alt="Linha do Tempo tecnologias" />
+            <img className="imgLogicaProgramacao" src={logicaProgramacao} alt="Linha do Tempo tecnologias" />
           </UlLogicaProgramacao>
         </ContainerMain>
 
