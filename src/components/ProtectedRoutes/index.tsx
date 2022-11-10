@@ -4,10 +4,10 @@ import { UserContext } from '../../Context/UserContext';
 
 const ProtectedRoutes = () => {
 
-  const { profile} = useContext(UserContext);
+  const { profile, refreshing } = useContext(UserContext);
    
 
-  // if(refreshing){return null}
+  if(refreshing){return null}
 
   return profile ? <Outlet /> : <Navigate to="/login" replace={true} />;
 };
