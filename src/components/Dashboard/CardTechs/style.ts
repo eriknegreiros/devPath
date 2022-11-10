@@ -15,6 +15,8 @@ export const CardTechStyled = styled.li`
 
     cursor: pointer;
 
+    
+
     h3 {
       font-style: normal;
       font-weight: 500;
