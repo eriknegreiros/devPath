@@ -6,10 +6,12 @@ import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { useState } from "react";
 import ModalEdit from "../ModalEditPost";
 
-import { ForumContext, iPost } from "../../../Context/ForumContext/index";
+import { ForumContext, iPost } from "../../../Context/ForumContext";
 
 export interface iPropsModal {
   handleModalUpdate: () => void;
+  postsContent: string;
+  postidCard: number;
 }
 interface IPostProps {
   postsContent: string;
@@ -45,7 +47,13 @@ const CardPosts = ({
 
   return (
     <>
-      {editModal && <ModalEdit handleModalUpdate={handleModalUpdate} />}
+      {editModal && (
+        <ModalEdit
+          handleModalUpdate={handleModalUpdate}
+          postidCard={postidCard}
+          postsContent={postsContent}
+        />
+      )}
 
       <ContainerPost>
         <main>

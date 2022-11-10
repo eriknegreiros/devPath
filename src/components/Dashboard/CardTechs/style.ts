@@ -11,13 +11,9 @@ export const CardTechStyled = styled.li`
     min-width: 105px;
     max-width: 350px;
 
-    margin: 0px 0 0 58%;
+    margin: 30px 0 40px 58%;
 
     cursor: pointer;
-
-
-
-  
 
     h3 {
       font-style: normal;
@@ -46,7 +42,7 @@ export const CardTechStyled = styled.li`
     min-width: 105px;
     max-width: 350px;
 
-    margin: 0px 0 0 9%;
+    margin: 30px 0 0 9%;
     cursor: pointer;
 
     h3 {

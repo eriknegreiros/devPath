@@ -7,8 +7,8 @@ export const instance = axios.create({
   timeout: 20000,
 });
 
- export const instanceHeaders = axios.create({
+export const instanceHeaders = axios.create({
   baseURL: "https://api-devpath.herokuapp.com",
-   timeout: 20000,
-   headers: { Authorization: `Bearer ${token}` },
- });
+  timeout: 20000,
+  headers: { Authorization: `Bearer ${token}` },
+});

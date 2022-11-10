@@ -26,7 +26,7 @@ const DashboardFrontIntermediario = () => {
 
         <UlStyle>
           <CardTechStyled
-            className="cardAjuste"
+            className="cardIntermediary"
             onClick={() => setArrayIsOpen(true)}
           >
             <h3>Métodos de array </h3>
@@ -46,11 +46,11 @@ const DashboardFrontIntermediario = () => {
           </CardTechStyled>
 
           <CardTechStyled
-            className="cardAjuste"
+            className="cardIntermediary"
             onClick={() => setApiIsOpen(true)}
           >
-            <h3 className="adjust">API</h3>
-            <p className="adjustP">
+            <h3>API</h3>
+            <p>
               As APIs são um tipo de “ponte” que conectam aplicações, podendo
               ser utilizadas para os mais variados tipos de negócio, por
               empresas de diversos nichos de mercado ou tamanho.

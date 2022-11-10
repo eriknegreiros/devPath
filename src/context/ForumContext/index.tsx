@@ -21,6 +21,8 @@ interface IDashboardContext {
   post: iPost[];
   newPost: (data: iPost) => void;
   handleDelete: (postidCard: number) => Promise<void>;
+  setPost: any;
+  getPosts: any;
 }
 
 export const ForumContext = createContext<IDashboardContext>(
@@ -88,6 +90,8 @@ export const DashboardForum = ({ children }: iDefaultContextProps) => {
         newPost,
         post,
         handleDelete,
+        setPost,
+        getPosts,
       }}
     >
       {children}
