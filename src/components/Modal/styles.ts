@@ -7,13 +7,11 @@ export const Modal = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
-
   color: var(--white);
   background: var(--main-color4);
 `;

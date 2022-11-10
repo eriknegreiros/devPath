@@ -2,14 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  text-align: center;
-  gap: 20px;
-  max-width: 1600px;
-  min-height: 100vh;
+  
 
   img {
     max-width: 12.5rem;
@@ -112,14 +105,15 @@ export const DivUser = styled.div`
   align-items: center;
   text-align: center;
   gap: 1rem;
-
+  
   @media (min-width: 768px) {
     width: 250px;
     height: auto;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     margin: 0 20px;
     text-align: center;
+    position: absolute;
   }
 
   .circleImage {

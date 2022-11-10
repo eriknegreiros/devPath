@@ -14,7 +14,6 @@ export const CardTechStyled = styled.li`
     margin: 30px 0 40px 58%;
 
     cursor: pointer;
-
     
 
     h3 {

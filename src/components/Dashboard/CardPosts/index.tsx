@@ -73,8 +73,8 @@ const CardPosts = ({
 
         {postsUId === profile?.id ? (
           <EditPost>
-            <AiOutlineEdit onClick={() => handleModalUpdate()} />
-            <AiOutlineDelete onClick={() => handleDelete(postidCard)} />
+            <AiOutlineEdit className="edit" color="#d29e00" onClick={() => handleModalUpdate()} />
+            <AiOutlineDelete className="delete" color="#ff000096" onClick={() => handleDelete(postidCard)} />
           </EditPost>
         ) : null}
       </ContainerPost>

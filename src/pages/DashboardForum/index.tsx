@@ -9,6 +9,7 @@ import { DivButton, DivUser, Container } from "./style";
 import { motion } from "framer-motion";
 import { UserContext } from "../../Context/UserContext";
 import HeaderDashboardForum from "../../Components/Dashboard/HeaderDashboard/HeaderForum";
+import { useState } from "react";
 
 export interface iPostProps {
   post: iPost[];
@@ -17,6 +18,7 @@ export interface iPostProps {
 const Forum = () => {
   const { newPost, post } = useContext(ForumContext);
   const { profile } = useContext(UserContext);
+  const [reset, setReset] = useState('')
 
   const addPost = yup.object().shape({
     text: yup.string().required("*Campo obrigatório"),
@@ -60,7 +62,7 @@ const Forum = () => {
                 placeholder="Fale um pouco sobre o que está estudando ou compartilhe alguma dica de estudo"
               ></textarea>
               <DivButton>
-                <button type="submit">Postar</button>
+                <button  type="submit">Postar</button>
               </DivButton>
             </form>
 

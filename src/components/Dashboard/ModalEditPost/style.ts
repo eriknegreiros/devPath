@@ -10,13 +10,13 @@ export const RegisterPost = styled.div`
   left: 0px;
   right: 0px;
   width: 100%;
-  height: 110%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 
   main {
     width: 30%;
     min-width: 320px;
-    height: 350px;
+    height: auto;
     background-color: var(--main-color);
     border-radius: 4px;
     gap: 16px;
@@ -45,7 +45,7 @@ export const RegisterPost = styled.div`
   textarea {
     font-family: "Inter";
     color: black;
-    height: 200px;
+    height: 170px;
     max-width: 100%;
     font-size: var(--text-size4);
     border-radius: 4px;

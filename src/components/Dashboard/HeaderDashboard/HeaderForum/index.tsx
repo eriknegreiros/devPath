@@ -9,7 +9,7 @@ const HeaderDashboardForum = () => {
     <>
       <Header>
         <div className="containerHeader">
-          <h1>DevPath</h1>
+        <Link to='/dashboard/selectTask'> <h1>DevPath</h1></Link> 
           <div>
             <Link className="backpage" to={"/dashboard/selectTask"}>
               Voltar

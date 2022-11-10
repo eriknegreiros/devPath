@@ -9,7 +9,7 @@ const HeaderDashboard = () => {
   return (
     <>
       <Header>
-        <h1>DevPath</h1>
+      <Link to='/dashboard/selectTask'>  <h1>DevPath</h1></Link>
         <div className="forum">
           <Link to="/dashboard/Forum">
             Forum

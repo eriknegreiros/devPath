@@ -38,6 +38,11 @@ export const ContainerPost = styled.li`
     }
   }
 
+  section{
+    width: auto;
+  }
+
+ 
   h6 {
     font-family: "Inter";
     font-style: normal;
@@ -62,7 +67,7 @@ export const ContainerPost = styled.li`
 `;
 
 export const SectionPost = styled.section`
-  width: 100%;
+  width: 50%;
   height: 90%;
   align-items: flex-start;
   padding: 2px 5px;
@@ -73,12 +78,22 @@ export const SectionPost = styled.section`
   p {
     text-align: start;
     font-size: var(--text-size4);
+   
   }
 `;
 
 export const EditPost = styled.div`
   width: 100%;
   height: 12%;
+
+  .edit{
+    cursor: pointer;
+  }
+
+  .delete{
+    cursor: pointer;
+  }
+
 
   display: flex;
   justify-content: center;
@@ -89,7 +104,7 @@ export const EditPost = styled.div`
     width: auto;
     height: auto;
     transition: 0.5s;
-
+    width: 50vw;
     border-radius: 5px;
 
     &:hover {
