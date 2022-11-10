@@ -5,10 +5,10 @@ import * as yup from "yup";
 import CardPosts from "../../Components/Dashboard/CardPosts";
 import HeaderDashboard from "../../Components/Dashboard/HeaderDashboard";
 import Footer from "../../Components/Footer";
-import { ForumContext, iPost } from "../../context/ForumContext";
+import { ForumContext, iPost } from "../../Context/ForumContext";
 import { DivButton, DivUser, Container } from "./style";
 import { motion } from "framer-motion";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../Context/UserContext";
 
 export interface iPostProps {
   post: iPost[];
@@ -30,9 +30,6 @@ const Forum = () => {
   } = useForm<iPost>({
     resolver: yupResolver(addPost),
   });
-  console.log(post);
-
-  console.log(profile);
   return (
     <>
       <motion.div
@@ -78,7 +75,7 @@ const Forum = () => {
                   postsName={posts.name}
                   postsOccupation={posts.occupation}
                   postidCard={posts.id}
-                  />
+                />
               ))}
             </ul>
           </section>
@@ -88,8 +85,5 @@ const Forum = () => {
     </>
   );
 };
-
-
-
 
 export default Forum;

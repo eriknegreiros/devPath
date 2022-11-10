@@ -1,10 +1,10 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { iUser, UserContext } from "../../../context/UserContext";
+import { iUser, UserContext } from "../../../Context/UserContext";
 import { useContext, useState } from "react";
 import { HiUser, HiOutlineMail } from "react-icons/hi";
-import {BsImageFill} from 'react-icons/bs'
+import { BsImageFill } from "react-icons/bs";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 import FormStyles from "./styles";
@@ -39,13 +39,12 @@ const Form = () => {
     resolver: yupResolver(formSchema),
   });
 
-
-  const [visibility, setVisibility] = useState(false)
+  const [visibility, setVisibility] = useState(false);
   const toggleBtn = () => {
     setVisibility((prevState) => !prevState);
   };
 
-  const [visibilityConfirm, setVisibilityConfirm] = useState(false)
+  const [visibilityConfirm, setVisibilityConfirm] = useState(false);
   const toggleBtnConfirm = () => {
     setVisibilityConfirm((prevState) => !prevState);
   };
@@ -80,14 +79,17 @@ const Form = () => {
       <div>
         <input
           type={visibility ? "text" : "password"}
-          placeholder='Senha'
+          placeholder="Senha"
           autoComplete="on"
           {...register("password")}
         />
-         <span className="eye"  onClick={toggleBtn}>
-        {visibility ? <AiOutlineEyeInvisible color="#5c6ca4" /> : <AiOutlineEye color="#5c6ca4" />}
-      </span>
-        
+        <span className="eye" onClick={toggleBtn}>
+          {visibility ? (
+            <AiOutlineEyeInvisible color="#5c6ca4" />
+          ) : (
+            <AiOutlineEye color="#5c6ca4" />
+          )}
+        </span>
       </div>
       <p className="error">{errors.password?.message}</p>
 
@@ -100,10 +102,13 @@ const Form = () => {
           autoComplete="on"
           {...register("confirmPassword")}
         />
-         <span className="eye"  onClick={toggleBtnConfirm}>
-        {visibilityConfirm ? <AiOutlineEyeInvisible color="#5c6ca4" /> : <AiOutlineEye color="#5c6ca4" />}
-      </span>
-       
+        <span className="eye" onClick={toggleBtnConfirm}>
+          {visibilityConfirm ? (
+            <AiOutlineEyeInvisible color="#5c6ca4" />
+          ) : (
+            <AiOutlineEye color="#5c6ca4" />
+          )}
+        </span>
       </div>
       <p className="error">{errors.confirmPassword?.message}</p>
 
